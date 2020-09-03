@@ -17,7 +17,8 @@ public class Main {
 
         String s = "唯品会-小笑牛jitx";
         String b = "\\u552f\\u54c1\\u4f1a\\u002d\\u0046\\u0049\\u004c\\u0041\\u002d\\u004a\\u0049\\u0054\\u0058";
-        System.out.println(s + " --Unicode编码："+ XCodec.encodeUnicode(s));
+
         System.out.println(b + " --转换成中文是："+ XCodec.decodeUnicode(b));
+        System.out.println(s + " --Unicode编码："+ XCodec.encodeUnicode(s));
     }
 }
