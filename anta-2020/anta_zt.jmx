@@ -1342,7 +1342,7 @@ vars.put(&quot;kcjs_sign&quot;,sign);
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 常规订单" enabled="false">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 常规订单" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="Threads initial delay">1</stringProp>
@@ -3650,7 +3650,7 @@ WriteFileUtil.writeFile(jitxBillNoFile, txtcontent);</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - XPOS订单" enabled="true">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - XPOS订单" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="Threads initial delay">1</stringProp>
@@ -4484,7 +4484,7 @@ String txtcontent = billNo + &quot;,&quot;
 				+ deliveryNo + &quot;,&quot;
 				+ deliveryCode;
 				
-log.info(txtcontent);
+//log.info(txtcontent);
 
 String xposBillNoFile=vars.get(&quot;xposBillNoFile&quot;);
 WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
