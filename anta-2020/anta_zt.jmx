@@ -2821,7 +2821,7 @@ vars.put(&quot;ddfd_sign&quot;,sign);</stringProp>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器-whareaTypeId_return" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
               <stringProp name="RegexExtractor.refname">whareaTypeId_return</stringProp>
-              <stringProp name="RegexExtractor.regex">&quot;whareaTypeId&quot;:(.+?)}</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;whareaTypeId&quot;:(\d*)</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
               <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">0</stringProp>
@@ -2873,7 +2873,10 @@ if (deliveryTypeIdRet.equals(&quot;100001&quot;)) {
 vars.put(&quot;shopNameEncode&quot;, shopNameEncode);
 vars.put(&quot;deliveryTypeCode&quot;, deliveryTypeCode);
 vars.put(&quot;deliveryTypeName&quot;, deliveryTypeName);
-vars.put(&quot;deliveryTypeNameEncode&quot;, deliveryTypeNameEncode);</stringProp>
+vars.put(&quot;deliveryTypeNameEncode&quot;, deliveryTypeNameEncode);
+
+log.info(vars.get(&quot;whareaTypeId_return&quot;));
+</stringProp>
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
@@ -4905,7 +4908,7 @@ WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="样例调试" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="样例调试" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
