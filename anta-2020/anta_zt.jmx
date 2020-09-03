@@ -7,15 +7,9 @@
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="JMETER_LIB_EXT_PATH" elementType="Argument">
-            <stringProp name="Argument.name">JMETER_LIB_EXT_PATH</stringProp>
-            <stringProp name="Argument.value">/Users/qilei.ran/Documents/code/anta/perfrunner/apache-jmeter-5.1.1/lib/ext</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
+        <collectionProp name="Arguments.arguments"/>
       </elementProp>
-      <stringProp name="TestPlan.user_define_classpath">C:\apache-jmeter-5.1.1\lib\ext\antajmeter.jar,C:\apache-jmeter-5.1.1\lib\ext\fastjson-1.2.62.jar,C:\apache-jmeter-5.1.1\lib\ext\qimen-sdk-1.0.jar,C:\apache-jmeter-5.1.1\lib\ext\spring-core-4.3.12.RELEASE.jar,/Users/toplin/Documents/apache-jmeter-5.1.1/lib/ext/antajmeter.jar,/Users/toplin/Documents/apache-jmeter-5.1.1/lib/ext/fastjson-1.2.62.jar,/Users/toplin/Documents/apache-jmeter-5.1.1/lib/ext/qimen-sdk-1.0.jar,/Users/toplin/Documents/apache-jmeter-5.1.1/lib/ext/spring-core-4.3.12.RELEASE.jar,${JMETER_LIB_EXT_PATH}/extjmeter.jar</stringProp>
+      <stringProp name="TestPlan.user_define_classpath">C:\apache-jmeter-5.1.1\lib\ext\antajmeter.jar,C:\apache-jmeter-5.1.1\lib\ext\fastjson-1.2.62.jar,C:\apache-jmeter-5.1.1\lib\ext\qimen-sdk-1.0.jar,C:\apache-jmeter-5.1.1\lib\ext\spring-core-4.3.12.RELEASE.jar,/Users/toplin/Documents/apache-jmeter-5.1.1/lib/ext/antajmeter.jar,/Users/toplin/Documents/apache-jmeter-5.1.1/lib/ext/fastjson-1.2.62.jar,/Users/toplin/Documents/apache-jmeter-5.1.1/lib/ext/qimen-sdk-1.0.jar,/Users/toplin/Documents/apache-jmeter-5.1.1/lib/ext/spring-core-4.3.12.RELEASE.jar</stringProp>
     </TestPlan>
     <hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="订单适配参数化" enabled="false">
@@ -2857,23 +2851,23 @@ vars.put(&quot;ddfd_sign&quot;,sign);</stringProp>
               <stringProp name="parameters"></stringProp>
               <boolProp name="resetInterpreter">false</boolProp>
               <stringProp name="script">import java.util.Date;
-import com.jmeterx.codec.XUnicode;
+import com.jmeterx.codec.XCodec;
 import com.anta.jmeter.WriteFileUtil;
 
 
 String deliveryTypeCode = &quot;sf&quot;;
 String deliveryTypeName = &quot;顺丰速运&quot;;
 String deliveryTypeIdRet = vars.get(&quot;deliveryTypeId_return&quot;);
-String deliveryTypeNameEncode = XUnicode.gbEncoding(deliveryTypeName);
+String deliveryTypeNameEncode = XCodec.encodeUnicode(deliveryTypeName);
 
 
 String shopName = vars.get(&quot;shopName&quot;);
-String shopNameEncode = XUnicode.gbEncoding(shopName);
+String shopNameEncode = XCodec.encodeUnicode(shopName);
 
 if (deliveryTypeIdRet.equals(&quot;100001&quot;)) {
 	deliveryTypeCode = &quot;sf&quot;;
 	deliveryTypeName = &quot;顺丰速运&quot;;
-	deliveryTypeNameEncode = XUnicode.gbEncoding(deliveryTypeName);
+	deliveryTypeNameEncode = XCodec.encodeUnicode(deliveryTypeName);
 }
 
 vars.put(&quot;shopNameEncode&quot;, shopNameEncode);
@@ -4911,7 +4905,7 @@ WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="样例调试" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="样例调试" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4948,7 +4942,7 @@ WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </ConfigTestElement>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单促销" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单促销" enabled="false">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -4974,7 +4968,7 @@ WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单分单" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单分单" enabled="false">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -5086,6 +5080,43 @@ WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell-jar" enabled="true">
+          <stringProp name="BeanShellSampler.query">import java.util.Date;
+import com.jmeterx.codec.XCodec;
+import com.anta.jmeter.WriteFileUtil;
+
+
+String deliveryTypeCode = &quot;sf&quot;;
+String deliveryTypeName = &quot;顺丰速运&quot;;
+String deliveryTypeIdRet = vars.get(&quot;deliveryTypeId_return&quot;);
+String deliveryTypeNameEncode = XCodec.encodeUnicode(deliveryTypeName);
+
+log.info(deliveryTypeNameEncode);
+log.info(XCodec.decodeUnicode(deliveryTypeNameEncode));
+
+
+String txtcontent = deliveryTypeCode + &quot;,&quot; 
+				+ deliveryTypeName;
+				
+log.info(txtcontent);
+String debugBillNoFile=vars.get(&quot;debugBillNoFile&quot;);
+WriteFileUtil.writeFile(debugBillNoFile, txtcontent);</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="debugBillNoFile" elementType="Argument">
+                <stringProp name="Argument.name">debugBillNoFile</stringProp>
+                <stringProp name="Argument.value">debugBillNoFile.csv</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
           <hashTree/>
         </hashTree>
         <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="Switch控制器" enabled="true">
