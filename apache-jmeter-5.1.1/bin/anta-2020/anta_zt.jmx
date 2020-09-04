@@ -12,6 +12,35 @@
       <stringProp name="TestPlan.user_define_classpath">C:\apache-jmeter-5.1.1\lib\ext\antajmeter.jar,C:\apache-jmeter-5.1.1\lib\ext\fastjson-1.2.62.jar,C:\apache-jmeter-5.1.1\lib\ext\qimen-sdk-1.0.jar,C:\apache-jmeter-5.1.1\lib\ext\spring-core-4.3.12.RELEASE.jar,/Users/toplin/Documents/apache-jmeter-5.1.1/lib/ext/antajmeter.jar,/Users/toplin/Documents/apache-jmeter-5.1.1/lib/ext/fastjson-1.2.62.jar,/Users/toplin/Documents/apache-jmeter-5.1.1/lib/ext/qimen-sdk-1.0.jar,/Users/toplin/Documents/apache-jmeter-5.1.1/lib/ext/spring-core-4.3.12.RELEASE.jar</stringProp>
     </TestPlan>
     <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="ip1" elementType="Argument">
+            <stringProp name="Argument.name">ip1</stringProp>
+            <stringProp name="Argument.value">10.211.115.120</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">测试环境内网地址1</stringProp>
+          </elementProp>
+          <elementProp name="ip2" elementType="Argument">
+            <stringProp name="Argument.name">ip2</stringProp>
+            <stringProp name="Argument.value">10.211.115.120</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">测试环境内网地址2</stringProp>
+          </elementProp>
+          <elementProp name="wan" elementType="Argument">
+            <stringProp name="Argument.name">wan</stringProp>
+            <stringProp name="Argument.value">121.199.192.140</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">测试环境外网地址</stringProp>
+          </elementProp>
+          <elementProp name="xenv" elementType="Argument">
+            <stringProp name="Argument.name">xenv</stringProp>
+            <stringProp name="Argument.value">${__P(xenv,debug)}</stringProp>
+            <stringProp name="Argument.desc">命令行-J参数</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="订单适配参数化" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -25,6 +54,20 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
+          <stringProp name="HTTPSampler.port">8085</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="商品数据" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
@@ -69,9 +112,9 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">121.199.192.140</stringProp>
-          <stringProp name="HTTPSampler.port">8085</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">/service/calculatePromotionService/calculatePromotion?${ddcx_urlvar}&amp;sign=${ddcx_sign}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -153,9 +196,9 @@ vars.put(&quot;ddcx_sign&quot;,sign);</stringProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">121.199.192.140</stringProp>
-            <stringProp name="HTTPSampler.port">8085</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path">/service/orderDistributeCalculateService/distributeOrder?${ddfd_urlvar}&amp;sign=${ddfd_sign}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -302,9 +345,9 @@ vars.put(&quot;ddfd_sign&quot;,sign);</stringProp>
                   </elementProp>
                 </collectionProp>
               </elementProp>
-              <stringProp name="HTTPSampler.domain">121.199.192.140</stringProp>
-              <stringProp name="HTTPSampler.port">8085</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
               <stringProp name="HTTPSampler.path">/service/retailOrderService/create?${ddcj_urlvar}&amp;sign=${ddcj_sign}</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -385,9 +428,9 @@ vars.put(&quot;ddcj_sign&quot;,sign);</stringProp>
                     </elementProp>
                   </collectionProp>
                 </elementProp>
-                <stringProp name="HTTPSampler.domain">121.199.192.140</stringProp>
-                <stringProp name="HTTPSampler.port">8085</stringProp>
-                <stringProp name="HTTPSampler.protocol">http</stringProp>
+                <stringProp name="HTTPSampler.domain"></stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol"></stringProp>
                 <stringProp name="HTTPSampler.contentEncoding"></stringProp>
                 <stringProp name="HTTPSampler.path">/service/regionalExpressService/filterExpress?${kdsp_urlvar}&amp;sign=${kdsp_sign}</stringProp>
                 <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -504,9 +547,9 @@ WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
                       </elementProp>
                     </collectionProp>
                   </elementProp>
-                  <stringProp name="HTTPSampler.domain">121.199.192.140</stringProp>
-                  <stringProp name="HTTPSampler.port">8085</stringProp>
-                  <stringProp name="HTTPSampler.protocol">http</stringProp>
+                  <stringProp name="HTTPSampler.domain"></stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol"></stringProp>
                   <stringProp name="HTTPSampler.contentEncoding"></stringProp>
                   <stringProp name="HTTPSampler.path">/service/api/oms/FXOMS?${tswms_fxoms_urlvar}&amp;app_secret=${tswms_fxoms_secret}&amp;sign=${tswms_fxoms_sign}</stringProp>
                   <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -887,6 +930,20 @@ WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
+          <stringProp name="HTTPSampler.port">8085</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单出库" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -898,9 +955,9 @@ WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">121.199.192.140</stringProp>
-          <stringProp name="HTTPSampler.port">8085</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">/service/api/wms/EWMS</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -1117,6 +1174,20 @@ vars.put(&quot;ddck_sign&quot;,sign);</stringProp>
           </collectionProp>
         </HeaderManager>
         <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
+          <stringProp name="HTTPSampler.port">8085</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="仓库数据" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
@@ -1140,9 +1211,9 @@ vars.put(&quot;ddck_sign&quot;,sign);</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">121.199.192.140</stringProp>
-          <stringProp name="HTTPSampler.port">8085</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">/service/api/wms/OBAO?${kcjs_urlvar}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -1342,17 +1413,17 @@ vars.put(&quot;kcjs_sign&quot;,sign);
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 常规订单" enabled="false">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 常规订单" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">40</stringProp>
+        <stringProp name="ThreadGroup.num_threads">400</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
-        <stringProp name="Start users count">10</stringProp>
-        <stringProp name="Start users count burst">10</stringProp>
-        <stringProp name="Start users period">30</stringProp>
+        <stringProp name="Start users count">100</stringProp>
+        <stringProp name="Start users count burst">100</stringProp>
+        <stringProp name="Start users period">300</stringProp>
         <stringProp name="Stop users count">30</stringProp>
         <stringProp name="Stop users period">1</stringProp>
-        <stringProp name="flighttime">60</stringProp>
-        <stringProp name="rampUp">5</stringProp>
+        <stringProp name="flighttime">300</stringProp>
+        <stringProp name="rampUp">1</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
@@ -1392,28 +1463,11 @@ vars.put(&quot;kcjs_sign&quot;,sign);
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="ip1" elementType="Argument">
-              <stringProp name="Argument.name">ip1</stringProp>
-              <stringProp name="Argument.value">121.199.192.140</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">10.211.115.112</stringProp>
-            </elementProp>
-            <elementProp name="ip2" elementType="Argument">
-              <stringProp name="Argument.name">ip2</stringProp>
-              <stringProp name="Argument.value">121.199.192.140</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">10.211.115.103</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
         <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${__RandomFromMultipleVars(ip1|ip2,)}</stringProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
           <stringProp name="HTTPSampler.port">8085</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -1797,7 +1851,7 @@ vars.put(&quot;ddcj_sign&quot;,sign);</stringProp>
                     </elementProp>
                     <elementProp name="billNoFile" elementType="Argument">
                       <stringProp name="Argument.name">billNoFile</stringProp>
-                      <stringProp name="Argument.value">data/billNo.csv</stringProp>
+                      <stringProp name="Argument.value">anta-2020/data/billNo.csv</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                     </elementProp>
                   </collectionProp>
@@ -2069,12 +2123,7 @@ WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
                       </elementProp>
                       <elementProp name="billNoFile" elementType="Argument">
                         <stringProp name="Argument.name">billNoFile</stringProp>
-                        <stringProp name="Argument.value">c:\\apache-jmeter-5.1.1\\bin\\script\\data\\billNo.csv</stringProp>
-                        <stringProp name="Argument.metadata">=</stringProp>
-                      </elementProp>
-                      <elementProp name="billNoFile2" elementType="Argument">
-                        <stringProp name="Argument.name">billNoFile2</stringProp>
-                        <stringProp name="Argument.value">/Users/toplin/Documents/apache-jmeter-5.1.1/bin/script/data/billNo.csv</stringProp>
+                        <stringProp name="Argument.value">anta-2020/data/billNo.csv</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                       </elementProp>
                     </collectionProp>
@@ -2117,7 +2166,7 @@ vars.put(&quot;tswms_fxoms_sign&quot;,sign);</stringProp>
                     <intProp name="Assertion.test_type">16</intProp>
                   </ResponseAssertion>
                   <hashTree/>
-                  <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 后置处理程序" enabled="true">
+                  <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 后置处理程序" enabled="false">
                     <stringProp name="filename"></stringProp>
                     <stringProp name="parameters"></stringProp>
                     <boolProp name="resetInterpreter">false</boolProp>
@@ -2126,7 +2175,7 @@ vars.put(&quot;tswms_fxoms_sign&quot;,sign);</stringProp>
 String billNo = vars.get(&quot;billNo&quot;);
 String billNoFile=vars.get(&quot;billNoFile&quot;);
 
-WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
+//WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
                   </BeanShellPostProcessor>
                   <hashTree/>
                 </hashTree>
@@ -2316,6 +2365,20 @@ WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
         </elementProp>
       </kg.apc.jmeter.threads.SteppingThreadGroup>
       <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
+          <stringProp name="HTTPSampler.port">8085</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单出库" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -2327,9 +2390,9 @@ WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">121.199.192.140</stringProp>
-          <stringProp name="HTTPSampler.port">8085</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">/service/api/wms/EWMS</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -2574,28 +2637,11 @@ vars.put(&quot;ddck_sign&quot;,sign);</stringProp>
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="ip1" elementType="Argument">
-              <stringProp name="Argument.name">ip1</stringProp>
-              <stringProp name="Argument.value">121.199.192.140</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">10.211.115.112</stringProp>
-            </elementProp>
-            <elementProp name="ip2" elementType="Argument">
-              <stringProp name="Argument.name">ip2</stringProp>
-              <stringProp name="Argument.value">121.199.192.140</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">10.211.115.103</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
         <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${__RandomFromMultipleVars(ip1|ip2,)}</stringProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
           <stringProp name="HTTPSampler.port">8085</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -3512,28 +3558,11 @@ WriteFileUtil.writeFile(jitxBillNoFile, txtcontent);</stringProp>
         </elementProp>
       </kg.apc.jmeter.threads.SteppingThreadGroup>
       <hashTree>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="ip1" elementType="Argument">
-              <stringProp name="Argument.name">ip1</stringProp>
-              <stringProp name="Argument.value">121.199.192.140</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">10.211.115.112</stringProp>
-            </elementProp>
-            <elementProp name="ip2" elementType="Argument">
-              <stringProp name="Argument.name">ip2</stringProp>
-              <stringProp name="Argument.value">121.199.192.140</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">10.211.115.103</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
         <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${__RandomFromMultipleVars(ip1|ip2,)}</stringProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
           <stringProp name="HTTPSampler.port">8085</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -3704,7 +3733,7 @@ WriteFileUtil.writeFile(jitxBillNoFile, txtcontent);</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - XPOS订单" enabled="true">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - XPOS订单" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="Threads initial delay">1</stringProp>
@@ -3754,28 +3783,11 @@ WriteFileUtil.writeFile(jitxBillNoFile, txtcontent);</stringProp>
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="ip1" elementType="Argument">
-              <stringProp name="Argument.name">ip1</stringProp>
-              <stringProp name="Argument.value">121.199.192.140</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">10.211.115.112</stringProp>
-            </elementProp>
-            <elementProp name="ip2" elementType="Argument">
-              <stringProp name="Argument.name">ip2</stringProp>
-              <stringProp name="Argument.value">121.199.192.140</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">10.211.115.103</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
         <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${__RandomFromMultipleVars(ip1|ip2,)}</stringProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
           <stringProp name="HTTPSampler.port">8085</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -4752,28 +4764,11 @@ WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
         </elementProp>
       </kg.apc.jmeter.threads.SteppingThreadGroup>
       <hashTree>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="ip1" elementType="Argument">
-              <stringProp name="Argument.name">ip1</stringProp>
-              <stringProp name="Argument.value">121.199.192.140</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">10.211.115.112</stringProp>
-            </elementProp>
-            <elementProp name="ip2" elementType="Argument">
-              <stringProp name="Argument.name">ip2</stringProp>
-              <stringProp name="Argument.value">121.199.192.140</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">10.211.115.103</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
         <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${__RandomFromMultipleVars(ip1|ip2,)}</stringProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
           <stringProp name="HTTPSampler.port">8085</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -4948,7 +4943,7 @@ WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -4959,9 +4954,9 @@ WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
       <hashTree>
         <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
           <collectionProp name="Arguments.arguments">
-            <elementProp name="ip" elementType="Argument">
-              <stringProp name="Argument.name">ip</stringProp>
-              <stringProp name="Argument.value">121.199.192.140</stringProp>
+            <elementProp name="xoxb" elementType="Argument">
+              <stringProp name="Argument.name">xoxb</stringProp>
+              <stringProp name="Argument.value">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
@@ -4971,7 +4966,7 @@ WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${ip}</stringProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
           <stringProp name="HTTPSampler.port">8085</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -4981,7 +4976,7 @@ WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </ConfigTestElement>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单促销" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单促销" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -5141,7 +5136,14 @@ String txtcontent = deliveryTypeCode + &quot;,&quot;
 				
 log.info(txtcontent);
 String debugBillNoFile=vars.get(&quot;debugBillNoFile&quot;);
-WriteFileUtil.writeFile(debugBillNoFile, txtcontent);</stringProp>
+WriteFileUtil.writeFile(debugBillNoFile, txtcontent);
+log.info(&quot;net&quot;);
+log.info(vars.get(&quot;xenv&quot;));
+log.info(vars.get(&quot;wan&quot;));
+
+log.info(&quot;xoxb&quot;);
+log.info(vars.get(&quot;xoxb&quot;));
+</stringProp>
           <stringProp name="BeanShellSampler.filename"></stringProp>
           <stringProp name="BeanShellSampler.parameters"></stringProp>
           <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
@@ -5159,16 +5161,9 @@ WriteFileUtil.writeFile(debugBillNoFile, txtcontent);</stringProp>
           <hashTree/>
         </hashTree>
         <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="Switch控制器" enabled="true">
-          <stringProp name="SwitchController.value">__Random(1,5,)</stringProp>
+          <stringProp name="SwitchController.value">__Random(0,3,)}</stringProp>
         </SwitchController>
         <hashTree>
-          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell0" enabled="true">
-            <stringProp name="BeanShellSampler.query"></stringProp>
-            <stringProp name="BeanShellSampler.filename"></stringProp>
-            <stringProp name="BeanShellSampler.parameters"></stringProp>
-            <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
-          </BeanShellSampler>
-          <hashTree/>
           <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell1" enabled="true">
             <stringProp name="BeanShellSampler.query"></stringProp>
             <stringProp name="BeanShellSampler.filename"></stringProp>
