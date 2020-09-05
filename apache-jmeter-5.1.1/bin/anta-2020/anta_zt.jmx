@@ -34,7 +34,7 @@
           </elementProp>
           <elementProp name="xenv" elementType="Argument">
             <stringProp name="Argument.name">xenv</stringProp>
-            <stringProp name="Argument.value">${__P(xenv,debug)}</stringProp>
+            <stringProp name="Argument.value">${__P(xenv,beta)}</stringProp>
             <stringProp name="Argument.desc">命令行-J参数</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -1919,7 +1919,7 @@ vars.put(&quot;kdsp_sign&quot;,sign);</stringProp>
 String billNo = vars.get(&quot;billNo&quot;);
 String billNoFile=vars.get(&quot;billNoFile&quot;);
 
-WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
+//WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
                 </BeanShellPostProcessor>
                 <hashTree/>
               </hashTree>
@@ -4943,7 +4943,7 @@ WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <intProp name="LoopController.loops">-1</intProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -4976,7 +4976,7 @@ WriteFileUtil.writeFile(xposBillNoFile, txtcontent);</stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </ConfigTestElement>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单促销" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单促销" enabled="false">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -5143,6 +5143,7 @@ log.info(vars.get(&quot;wan&quot;));
 
 log.info(&quot;xoxb&quot;);
 log.info(vars.get(&quot;xoxb&quot;));
+log.info(System.getenv(&quot;JAVA_HOME&quot;));
 </stringProp>
           <stringProp name="BeanShellSampler.filename"></stringProp>
           <stringProp name="BeanShellSampler.parameters"></stringProp>
