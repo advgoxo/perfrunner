@@ -1507,7 +1507,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
-	String responseData = prev.getResponseDataAsString();
+	//String responseData = prev.getResponseDataAsString();
+	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -2474,7 +2475,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
-	String responseData = prev.getResponseDataAsString();
+	//String responseData = prev.getResponseDataAsString();
+	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -2745,7 +2747,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
-	String responseData = prev.getResponseDataAsString();
+	//String responseData = prev.getResponseDataAsString();
+	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -3731,7 +3734,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
-	String responseData = prev.getResponseDataAsString();
+	//String responseData = prev.getResponseDataAsString();
+	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -3955,7 +3959,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
-	String responseData = prev.getResponseDataAsString();
+	//String responseData = prev.getResponseDataAsString();
+	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -5001,7 +5006,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
-	String responseData = prev.getResponseDataAsString();
+	//String responseData = prev.getResponseDataAsString();
+	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -5225,7 +5231,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
-	String responseData = prev.getResponseDataAsString();
+	//String responseData = prev.getResponseDataAsString();
+	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);

@@ -24,8 +24,7 @@ public class AsyncFileUtils {
             if (!dir.exists()) {
                 dir.mkdirs();
             }
-
-            System.out.println("dir = " + dir);
+            
             FileOutputStream f = null;
             try {
                 f = new FileOutputStream(this.path, true);
@@ -136,6 +135,9 @@ public class AsyncFileUtils {
             try {
                 w.wcnt += 1;
                 w.file.write(data.getBytes());
+                if (w.wcnt % 512 == 0) {
+                    w.file.flush();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }

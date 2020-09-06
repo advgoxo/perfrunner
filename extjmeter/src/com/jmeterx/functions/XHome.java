@@ -8,10 +8,10 @@ import java.util.Properties;
 
 import org.apache.jmeter.samplers.Sampler;
 import org.apache.jmeter.samplers.SampleResult;
-import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.jmeter.threads.JMeterVariables;
 import org.apache.jmeter.functions.AbstractFunction;
 import org.apache.jmeter.engine.util.CompoundVariable;
+import org.apache.jmeter.threads.JMeterContextService;
 import org.apache.jmeter.functions.InvalidVariableException;
 
 public class XHome extends AbstractFunction {
