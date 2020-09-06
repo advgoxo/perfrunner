@@ -50,7 +50,7 @@
           </elementProp>
           <elementProp name="errSamplerFile" elementType="Argument">
             <stringProp name="Argument.name">errSamplerFile</stringProp>
-            <stringProp name="Argument.value">${__xhome(xreport/${__P(xplan,100)}/error.log,)}</stringProp>
+            <stringProp name="Argument.value">${__xhome(xreport/zt/${__P(xplan,100)}/error.log,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
