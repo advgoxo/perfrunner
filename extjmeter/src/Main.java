@@ -1,26 +1,42 @@
-import com.jmeterx.async.Phone;
-import com.jmeterx.async.WriteRunnable;
-import com.jmeterx.async.WriterThread;
+import com.jmeterx.async.AsyncFileUtils;
+import com.jmeterx.async.QueueThread;
 import com.jmeterx.codec.XCodec;
-
-import java.text.SimpleDateFormat;
 
 public class Main {
     public static void main(String args[]) {
-        System.out.println(Phone.randomCellphone());
 
-        WriterThread thread1 = new WriterThread("A");
-        WriterThread thread2 = new WriterThread("B");
+        QueueThread thread1 = new QueueThread("A");
         thread1.start();
-        thread2.start();
 
-        new Thread(new WriteRunnable("C")).start();
-        new Thread(new WriteRunnable("D")).start();
+        thread1.add(()->{
+            System.out.println("A");
+        });
+        thread1.add(()->{
+            System.out.println("B");
+        });
+        thread1.add(()->{
+            System.out.println("C");
+        });
+
+        thread1.safeStop();
 
         String s = "唯品会-小笑牛jitx";
         String b = "\\u552f\\u54c1\\u4f1a\\u002d\\u0046\\u0049\\u004c\\u0041\\u002d\\u004a\\u0049\\u0054\\u0058";
 
-        System.out.println(b + " --转换成中文是："+ XCodec.decodeUnicode(b));
-        System.out.println(s + " --Unicode编码："+ XCodec.encodeUnicode(s));
+        System.out.println(b + " --转换成中文是：" + XCodec.decodeUnicode(b));
+        System.out.println(s + " --Unicode编码：" + XCodec.encodeUnicode(s));
+
+        String data = "";
+        for (int i = 0; i < 1023; ++i) {
+            data += "a";
+        }
+
+        long beg = System.currentTimeMillis();
+        for (int i = 0; i < 200000; i++) {
+            AsyncFileUtils.writeLine("debug/a.txt", data);
+        }
+
+        AsyncFileUtils.stop();
+        System.out.println("cost = " + (System.currentTimeMillis() - beg));
     }
 }
