@@ -1,9 +1,7 @@
 package com.jmeterx.async;
 
 import java.io.*;
-import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class AsyncFileUtils {
@@ -16,9 +14,11 @@ public class AsyncFileUtils {
         public int wcnt;
         public String path;
         public BufferedOutputStream file;
+        public long lastFlush;
         public AsyncFile(String f) {
             this.wcnt = 0;
             this.path = f;
+            this.lastFlush = System.currentTimeMillis();
         }
 
         public boolean open() {
@@ -41,8 +41,52 @@ public class AsyncFileUtils {
 
         public void close() {
             try {
-                this.file.close();
-                this.file = null;
+                if (this.file != null) {
+                    this.file.close();
+                    this.file = null;
+                }
+                System.out.println("close " + this.path);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public void flush() {
+            try {
+                if (this.file == null
+                        || this.wcnt <= 0) {
+                    return;
+                }
+
+                this.wcnt = 0;
+                this.file.flush();
+                this.lastFlush = System.currentTimeMillis();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public boolean canClose() {
+            long now =System.currentTimeMillis();
+            if (this.wcnt <= 0 &&
+                    now - this.lastFlush >= 30000) {
+                return true;
+            }
+
+            return false;
+        }
+
+        public void write(byte[] data) {
+            if (this.file == null) {
+                return;
+            }
+
+            try {
+                this.wcnt += 1;
+                this.file.write(data);
+                if (this.wcnt % 512 == 0) {
+                    this.flush();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -102,6 +146,7 @@ public class AsyncFileUtils {
     }
 
     private void asyncFlushAll() {
+        List<AsyncFile> closes = new ArrayList<>();
         for(Map.Entry<String, AsyncFile> entry:
                 this.filesHashMap.entrySet()) {
             AsyncFile w = entry.getValue();
@@ -109,17 +154,22 @@ public class AsyncFileUtils {
                 continue;
             }
 
-            this.writerThread.add(()->{
-                try {
-                    if (w.file != null) {
-                        w.file.flush();
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            if (w.canClose()) {
+                closes.add(w);
+                continue;
+            }
 
-                // System.out.println("flush " + w.path);
+            this.writerThread.add(()->{
+                w.flush();
             });
+        }
+
+        for (AsyncFile w : closes) {
+            this.writerThread.add(()->{
+                w.close();
+            });
+
+            this.filesHashMap.remove(w.path);
         }
     }
 
@@ -132,11 +182,7 @@ public class AsyncFileUtils {
             }
 
             this.writerThread.add(()->{
-                if (w.file != null) {
-                    w.close();
-                }
-
-                System.out.println("close " + w.path);
+                w.close();
             });
         }
 
@@ -150,11 +196,7 @@ public class AsyncFileUtils {
         }
 
         this.writerThread.add(()->{
-            if (w.file != null) {
-                w.close();
-            }
-
-            System.out.println("close " + fpath);
+            w.close();
         });
 
         this.filesHashMap.remove(fpath);
@@ -167,21 +209,7 @@ public class AsyncFileUtils {
         }
 
         this.writerThread.add(()->{
-            if (w.file == null) {
-                return;
-            }
-
-            try {
-                w.wcnt += 1;
-                w.file.write(data.getBytes());
-                if (w.wcnt % 512 == 0) {
-                    w.file.flush();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            //System.out.println("write " + data);
+            w.write(data.getBytes());
         });
     }
 

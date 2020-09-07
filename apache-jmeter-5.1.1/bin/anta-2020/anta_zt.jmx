@@ -4307,12 +4307,12 @@ if (!prev.isSuccessful()) {
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">300</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
-        <stringProp name="Start users count">25</stringProp>
-        <stringProp name="Start users count burst">25</stringProp>
-        <stringProp name="Start users period">150</stringProp>
+        <stringProp name="Start users count">50</stringProp>
+        <stringProp name="Start users count burst">50</stringProp>
+        <stringProp name="Start users period">300</stringProp>
         <stringProp name="Stop users count">30</stringProp>
         <stringProp name="Stop users period">1</stringProp>
-        <stringProp name="flighttime">150</stringProp>
+        <stringProp name="flighttime">300</stringProp>
         <stringProp name="rampUp">5</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -5832,7 +5832,9 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 
 //
-//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());
+
+log.info(&quot;hello jmeter &quot; + vars.get(&quot;xplan&quot;));</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -5979,102 +5981,8 @@ AsyncFileUtils.writeLine(bbbb, txtcontent);
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="错误监听器" enabled="true">
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <boolProp name="resetInterpreter">false</boolProp>
-          <stringProp name="script">import java.text.SimpleDateFormat;
-import com.jmeterx.async.AsyncFileUtils;
-
-String samplerData = prev.getSamplerData();
-System.out.println(&quot;samplerData &quot; + samplerData);
-System.out.println(&quot;xResponseData &quot; + vars.get(&quot;xResponseData&quot;));
-
-/*
-String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
-
-System.out.println( &quot;prev addr is 2 &quot; + System.identityHashCode(prev));
-
-String samplerData = prev.getSamplerData();
-String responseData = prev.getResponseDataAsString();
-System.out.println(&quot;responseData1 &quot; + responseData);
-String responseData2 = sampleResult.getResponseDataAsString();
-System.out.println(&quot;responseData2 &quot; + responseData);
-System.out.println(&quot;samplerData &quot; + samplerData);
-
-
-if (!prev.isSuccessful()) {
-	//String samplerData = prev.getSamplerData();
-	//String responseData = prev.getResponseDataAsString();
-
-	//System.out.println(&quot;responseData &quot; + responseData);
-	
-	SimpleDateFormat fmt =  new 
-		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
-	String begtime = fmt.format(prev.getStartTime());
-	String endtime = fmt.format(prev.getEndTime());
-	
-	String data = &quot;sampler error&quot;
-		+ &quot;\n======beg=======\n&quot; 
-		+ &quot;Sampler &quot; + prev.getSampleLabel()
-		+ &quot;\nTime &quot; + begtime + &quot; - &quot; + endtime 
-		+ &quot;\n&quot; + samplerData
-		+ &quot;\nResponse data:\n&quot; 
-		+ responseData
-		+ &quot;\n======end=======\n&quot;;
-
-	AsyncFileUtils.writeLine(errSamplerFile, data);
-}
-*/
-</stringProp>
-        </BeanShellListener>
-        <hashTree/>
-        <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="简单数据写入器" enabled="true">
-          <boolProp name="ResultCollector.error_logging">true</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>true</responseData>
-              <samplerData>true</samplerData>
-              <xml>true</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>true</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename">${__xhome(xreport/zt/200/error.xml,)}</stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="保存响应到文件" enabled="false">
-          <stringProp name="FileSaver.filename">${__xhome(xreport/zt/200,)}/</stringProp>
-          <boolProp name="FileSaver.errorsonly">true</boolProp>
-          <boolProp name="FileSaver.successonly">false</boolProp>
-          <boolProp name="FileSaver.skipsuffix">false</boolProp>
-          <boolProp name="FileSaver.skipautonumber">false</boolProp>
-        </ResultSaver>
-        <hashTree/>
       </hashTree>
-      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="测试结束 - 数据落地" enabled="true">
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="测试结束 - 数据落地" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
