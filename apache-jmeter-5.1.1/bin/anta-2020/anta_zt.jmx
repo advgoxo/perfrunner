@@ -198,6 +198,17 @@ vars.put(&quot;ddcx_sign&quot;,sign);</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
         </hashTree>
         <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
           <stringProp name="IfController.condition">${__jexl3(&quot;${ddcx_result}&quot; == &quot;SUCCESS&quot;,)}</stringProp>
@@ -347,6 +358,17 @@ vars.put(&quot;ddfd_sign&quot;,sign);</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
             <stringProp name="IfController.condition">${__jexl3(&quot;${ddfd_result}&quot; == &quot;SUCCESS&quot;,)}</stringProp>
@@ -429,6 +451,17 @@ vars.put(&quot;ddcj_sign&quot;,sign);</stringProp>
                 <stringProp name="RegexExtractor.default"></stringProp>
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
               </RegexExtractor>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
               <hashTree/>
             </hashTree>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
@@ -548,6 +581,17 @@ String billNoFile=vars.get(&quot;billNoFile&quot;);
 WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
                 </BeanShellPostProcessor>
                 <hashTree/>
+                <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+                </BeanShellPostProcessor>
+                <hashTree/>
               </hashTree>
               <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="false">
                 <stringProp name="IfController.condition">${__jexl3(&quot;${kdsp_result}&quot; == &quot;SUCCESS&quot;,)}</stringProp>
@@ -664,6 +708,17 @@ String billNo = vars.get(&quot;billNo&quot;);
 String billNoFile=vars.get(&quot;billNoFile&quot;);
 
 WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
+                  </BeanShellPostProcessor>
+                  <hashTree/>
+                  <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                    <boolProp name="resetInterpreter">false</boolProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
                   </BeanShellPostProcessor>
                   <hashTree/>
                 </hashTree>
@@ -947,7 +1002,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
-	String responseData = prev.getResponseDataAsString();
+	String responseData = vars.get(&quot;xResponseData&quot;);
+	//String responseData = prev.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -1091,6 +1147,17 @@ vars.put(&quot;ddck_sign&quot;,sign);</stringProp>
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
         </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -1214,7 +1281,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
-	String responseData = prev.getResponseDataAsString();
+	String responseData = vars.get(&quot;xResponseData&quot;);
+	//String responseData = prev.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -1384,6 +1452,17 @@ vars.put(&quot;kcjs_sign&quot;,sign);
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
         </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -1507,8 +1586,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
 	//String responseData = prev.getResponseDataAsString();
-	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -1532,14 +1611,14 @@ if (!prev.isSuccessful()) {
       </hashTree>
       <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 常规订单" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">400</stringProp>
+        <stringProp name="ThreadGroup.num_threads">300</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
-        <stringProp name="Start users count">100</stringProp>
-        <stringProp name="Start users count burst">100</stringProp>
-        <stringProp name="Start users period">300</stringProp>
+        <stringProp name="Start users count">25</stringProp>
+        <stringProp name="Start users count burst">25</stringProp>
+        <stringProp name="Start users period">150</stringProp>
         <stringProp name="Stop users count">30</stringProp>
         <stringProp name="Stop users period">1</stringProp>
-        <stringProp name="flighttime">300</stringProp>
+        <stringProp name="flighttime">150</stringProp>
         <stringProp name="rampUp">1</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2789,6 +2868,17 @@ vars.put(&quot;ddck_sign&quot;,sign);</stringProp>
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
         </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -2912,8 +3002,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
 	//String responseData = prev.getResponseDataAsString();
-	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -3075,6 +3165,17 @@ vars.put(&quot;ddcx_sign&quot;,sign);</stringProp>
             <stringProp name="RegexExtractor.default"></stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
         <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
@@ -3291,6 +3392,17 @@ log.info(vars.get(&quot;whareaTypeId_return&quot;));
 </stringProp>
             </BeanShellPostProcessor>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
             <stringProp name="IfController.condition">${__jexl3(&quot;${ddfd_result}&quot; == &quot;SUCCESS&quot;,)}</stringProp>
@@ -3373,6 +3485,17 @@ vars.put(&quot;ddcj_sign&quot;,sign);</stringProp>
                 <stringProp name="RegexExtractor.default"></stringProp>
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
               </RegexExtractor>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
               <hashTree/>
             </hashTree>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
@@ -3647,6 +3770,17 @@ ${deliveryNo}
 */</stringProp>
                 </BeanShellPostProcessor>
                 <hashTree/>
+                <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+                </BeanShellPostProcessor>
+                <hashTree/>
               </hashTree>
               <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="Switch控制器" enabled="true">
                 <stringProp name="SwitchController.value">顺丰WMS出库回传-JITX</stringProp>
@@ -3699,6 +3833,17 @@ ${deliveryNo}
                     <boolProp name="Assertion.assume_success">false</boolProp>
                     <intProp name="Assertion.test_type">16</intProp>
                   </ResponseAssertion>
+                  <hashTree/>
+                  <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                    <boolProp name="resetInterpreter">false</boolProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+                  </BeanShellPostProcessor>
                   <hashTree/>
                 </hashTree>
                 <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell-JITX订单落地" enabled="true">
@@ -3899,8 +4044,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
 	//String responseData = prev.getResponseDataAsString();
-	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -4000,6 +4145,17 @@ if (!prev.isSuccessful()) {
             <boolProp name="Assertion.assume_success">false</boolProp>
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
@@ -4124,8 +4280,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
 	//String responseData = prev.getResponseDataAsString();
-	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -4288,6 +4444,17 @@ vars.put(&quot;ddcx_sign&quot;,sign);</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
         </hashTree>
         <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
           <stringProp name="IfController.condition">${__jexl3(&quot;${ddcx_result}&quot; == &quot;SUCCESS&quot;,)}</stringProp>
@@ -4443,6 +4610,17 @@ vars.put(&quot;ddfd_sign&quot;,sign);</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
             <stringProp name="IfController.condition">${__jexl3(&quot;${ddfd_result}&quot; == &quot;SUCCESS&quot;,)}</stringProp>
@@ -4525,6 +4703,17 @@ vars.put(&quot;ddcj_sign&quot;,sign);</stringProp>
                 <stringProp name="RegexExtractor.default"></stringProp>
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
               </RegexExtractor>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
               <hashTree/>
             </hashTree>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
@@ -4652,6 +4841,17 @@ log.info(deliveryName);
 log.info(deliveryCode);
 */
 </stringProp>
+                </BeanShellPostProcessor>
+                <hashTree/>
+                <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
                 </BeanShellPostProcessor>
                 <hashTree/>
               </hashTree>
@@ -4915,6 +5115,17 @@ vars.put(&quot;tswms_fxoms_sign&quot;,sign);</stringProp>
                     <intProp name="Assertion.test_type">16</intProp>
                   </ResponseAssertion>
                   <hashTree/>
+                  <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                    <boolProp name="resetInterpreter">false</boolProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+                  </BeanShellPostProcessor>
+                  <hashTree/>
                 </hashTree>
                 <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="出库回传-XPOS" enabled="true">
                   <stringProp name="SwitchController.value">BeanShell-XPOS订单落地</stringProp>
@@ -4967,6 +5178,17 @@ vars.put(&quot;tswms_fxoms_sign&quot;,sign);</stringProp>
                       <boolProp name="Assertion.assume_success">false</boolProp>
                       <intProp name="Assertion.test_type">16</intProp>
                     </ResponseAssertion>
+                    <hashTree/>
+                    <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                      <boolProp name="resetInterpreter">false</boolProp>
+                      <stringProp name="parameters"></stringProp>
+                      <stringProp name="filename"></stringProp>
+                      <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+                    </BeanShellPostProcessor>
                     <hashTree/>
                   </hashTree>
                   <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell-XPOS订单落地" enabled="true">
@@ -5171,8 +5393,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
 	//String responseData = prev.getResponseDataAsString();
-	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -5272,6 +5494,17 @@ if (!prev.isSuccessful()) {
             <boolProp name="Assertion.assume_success">false</boolProp>
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
@@ -5396,8 +5629,8 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
 	//String responseData = prev.getResponseDataAsString();
-	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
