@@ -1609,7 +1609,7 @@ if (!prev.isSuccessful()) {
         </BeanShellListener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 常规订单" enabled="true">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 常规订单" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">300</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
@@ -3027,14 +3027,14 @@ if (!prev.isSuccessful()) {
       </hashTree>
       <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - JITX订单" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">400</stringProp>
+        <stringProp name="ThreadGroup.num_threads">300</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
-        <stringProp name="Start users count">100</stringProp>
-        <stringProp name="Start users count burst">100</stringProp>
-        <stringProp name="Start users period">300</stringProp>
+        <stringProp name="Start users count">25</stringProp>
+        <stringProp name="Start users count burst">25</stringProp>
+        <stringProp name="Start users period">150</stringProp>
         <stringProp name="Stop users count">30</stringProp>
         <stringProp name="Stop users period">1</stringProp>
-        <stringProp name="flighttime">300</stringProp>
+        <stringProp name="flighttime">150</stringProp>
         <stringProp name="rampUp">5</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3514,7 +3514,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 </collectionProp>
               </Arguments>
               <hashTree/>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="推送顺丰WMS-JITX" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="推送顺丰WMS-JITX" enabled="false">
                 <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                   <collectionProp name="Arguments.arguments">
@@ -4303,16 +4303,16 @@ if (!prev.isSuccessful()) {
         </BeanShellListener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - XPOS订单" enabled="false">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - XPOS订单" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="Threads initial delay">1</stringProp>
-        <stringProp name="Start users count">100</stringProp>
-        <stringProp name="Start users count burst">100</stringProp>
-        <stringProp name="Start users period">300</stringProp>
+        <stringProp name="ThreadGroup.num_threads">300</stringProp>
+        <stringProp name="Threads initial delay">10</stringProp>
+        <stringProp name="Start users count">25</stringProp>
+        <stringProp name="Start users count burst">25</stringProp>
+        <stringProp name="Start users period">150</stringProp>
         <stringProp name="Stop users count">30</stringProp>
         <stringProp name="Stop users period">1</stringProp>
-        <stringProp name="flighttime">300</stringProp>
+        <stringProp name="flighttime">150</stringProp>
         <stringProp name="rampUp">5</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4871,7 +4871,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                   </collectionProp>
                 </Arguments>
                 <hashTree/>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="推送XPOS" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="推送XPOS" enabled="false">
                   <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                     <collectionProp name="Arguments.arguments">
@@ -5127,8 +5127,8 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                   </BeanShellPostProcessor>
                   <hashTree/>
                 </hashTree>
-                <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="出库回传-XPOS" enabled="true">
-                  <stringProp name="SwitchController.value">BeanShell-XPOS订单落地</stringProp>
+                <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="出库回传-XPOS" enabled="false">
+                  <stringProp name="SwitchController.value">出库回传-XPOS</stringProp>
                 </SwitchController>
                 <hashTree>
                   <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="出库回传-XPOS" enabled="true">
@@ -5157,7 +5157,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                     <stringProp name="HTTPSampler.response_timeout">30000</stringProp>
                   </HTTPSamplerProxy>
                   <hashTree>
-                    <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
+                    <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="false">
                       <stringProp name="delimiter">,</stringProp>
                       <stringProp name="fileEncoding">UTF-8</stringProp>
                       <stringProp name="filename">xpos/billNoFile_XPOS.csv</stringProp>
@@ -6074,7 +6074,7 @@ if (!prev.isSuccessful()) {
         </ResultSaver>
         <hashTree/>
       </hashTree>
-      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="测试结束 - 数据落地" enabled="false">
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="测试结束 - 数据落地" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
