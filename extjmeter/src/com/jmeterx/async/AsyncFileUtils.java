@@ -24,7 +24,7 @@ public class AsyncFileUtils {
             if (!dir.exists()) {
                 dir.mkdirs();
             }
-            
+
             FileOutputStream f = null;
             try {
                 f = new FileOutputStream(this.path, true);

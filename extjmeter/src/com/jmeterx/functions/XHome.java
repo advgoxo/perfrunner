@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.Properties;
 
 import org.apache.jmeter.samplers.Sampler;
+import org.apache.jmeter.samplers.SampleEvent;
 import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.threads.JMeterVariables;
 import org.apache.jmeter.functions.AbstractFunction;

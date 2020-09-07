@@ -1530,16 +1530,16 @@ if (!prev.isSuccessful()) {
         </BeanShellListener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 常规订单" enabled="false">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 常规订单" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">400</stringProp>
-        <stringProp name="Threads initial delay">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="Threads initial delay">1</stringProp>
         <stringProp name="Start users count">100</stringProp>
         <stringProp name="Start users count burst">100</stringProp>
         <stringProp name="Start users period">300</stringProp>
         <stringProp name="Stop users count">30</stringProp>
         <stringProp name="Stop users period">1</stringProp>
-        <stringProp name="flighttime">300</stringProp>
+        <stringProp name="flighttime">30</stringProp>
         <stringProp name="rampUp">1</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1670,6 +1670,17 @@ vars.put(&quot;ddcx_sign&quot;,sign);</stringProp>
             <stringProp name="RegexExtractor.default"></stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
         <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
@@ -1838,6 +1849,17 @@ vars.put(&quot;ddfd_sign&quot;,sign);</stringProp>
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
             <stringProp name="IfController.condition">${__jexl3(&quot;${ddfd_result}&quot; == &quot;SUCCESS&quot;,)}</stringProp>
@@ -1920,6 +1942,17 @@ vars.put(&quot;ddcj_sign&quot;,sign);</stringProp>
                 <stringProp name="RegexExtractor.default"></stringProp>
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
               </RegexExtractor>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
               <hashTree/>
             </hashTree>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
@@ -2037,6 +2070,17 @@ String billNo = vars.get(&quot;billNo&quot;);
 String billNoFile=vars.get(&quot;billNoFile&quot;);
 
 WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
+                </BeanShellPostProcessor>
+                <hashTree/>
+                <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
                 </BeanShellPostProcessor>
                 <hashTree/>
               </hashTree>
@@ -2295,6 +2339,17 @@ String billNoFile=vars.get(&quot;billNoFile&quot;);
 //WriteFileUtil.writeFile(billNoFile,billNo);</stringProp>
                   </BeanShellPostProcessor>
                   <hashTree/>
+                  <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                    <boolProp name="resetInterpreter">false</boolProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+                  </BeanShellPostProcessor>
+                  <hashTree/>
                 </hashTree>
               </hashTree>
             </hashTree>
@@ -2475,18 +2530,20 @@ String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
 	//String responseData = prev.getResponseDataAsString();
-	String responseData = sampleResult.getResponseDataAsString();
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
 	String begtime = fmt.format(prev.getStartTime());
 	String endtime = fmt.format(prev.getEndTime());
+	long cost = prev.getEndTime() - prev.getStartTime();
 	
 	String data = &quot;sampler error&quot;
 		+ &quot;\n======beg=======\n&quot; 
 		+ &quot;Sampler &quot; + prev.getSampleLabel()
-		+ &quot;\nTime &quot; + begtime + &quot; - &quot; + endtime 
+		+ &quot;\nTime &quot; + begtime + &quot; - &quot; + endtime
+		+ &quot;\nCost &quot; +  cost
 		+ &quot;\n&quot; + samplerData
 		+ &quot;\nResponse data:\n&quot; 
 		+ responseData
@@ -2770,7 +2827,7 @@ if (!prev.isSuccessful()) {
         </BeanShellListener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - JITX订单" enabled="true">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - JITX订单" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">400</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
@@ -5258,9 +5315,9 @@ if (!prev.isSuccessful()) {
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">10</stringProp>
+          <stringProp name="LoopController.loops">2</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -5279,6 +5336,11 @@ if (!prev.isSuccessful()) {
               <stringProp name="Argument.value">${__xhome(data/b.log,)}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
+            <elementProp name="xrspdata" elementType="Argument">
+              <stringProp name="Argument.name">xrspdata</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
           </collectionProp>
         </Arguments>
         <hashTree/>
@@ -5287,7 +5349,7 @@ if (!prev.isSuccessful()) {
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
           <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
-          <stringProp name="HTTPSampler.port">8086</stringProp>
+          <stringProp name="HTTPSampler.port">${xport}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path"></stringProp>
@@ -5322,13 +5384,13 @@ if (!prev.isSuccessful()) {
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单分单" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单分单" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;dataContent&quot;:&quot;[{\&quot;orderBillNo\&quot;:\&quot;FX1902180063322\&quot;,\&quot;shopCode\&quot;:\&quot;ZZAF_ANTAFXJDOB\&quot;,\&quot;isAllowPart\&quot;:\&quot;1\&quot;,\&quot;supportCashOnDelivery\&quot;:0,\&quot;preSaleOrderBill\&quot;:0,\&quot;contryCode\&quot;:\&quot;1\&quot;,\&quot;provinceCode\&quot;:\&quot;610000\&quot;,\&quot;cityCode\&quot;:\&quot;610100\&quot;,\&quot;areaCode\&quot;:\&quot;610113\&quot;,\&quot;skuDetail\&quot;:[{\&quot;sku\&quot;:\&quot;15817757-3LCN\&quot;,\&quot;barcode\&quot;:\&quot;6901849488797\&quot;,\&quot;qty\&quot;:\&quot;1\&quot;,\&quot;isGift\&quot;:\&quot;0\&quot;}]}]&quot;,&quot;token&quot;:&quot;admin&quot;}</stringProp>
+                <stringProp name="Argument.value">{&quot;dataContent&quot;:&quot;[{\&quot;orderBillNo\&quot;:\&quot;FX1902180063322\&quot;,\&quot;shopCode\&quot;:\&quot;ZZAF_ANTAFXJDOB\&quot;,\&quot;isAllowPart\&quot;:\&quot;1\&quot;,\&quot;supportCashOnDelivery\&quot;:0,\&quot;preSaleOrderBill\&quot;:0,\&quot;contryCode\&quot;:\&quot;1\&quot;,\&quot;provinceCode\&quot;:\&quot;610000\&quot;,\&quot;cityCode\&quot;:\&quot;610100\&quot;,\&quot;areaCode\&quot;:\&quot;610113\&quot;,\&quot;skuDetail\&quot;:[{\&quot;sku\&quot;:\&quot;15817757-3LCN\&quot;,\&quot;barcode\&quot;:\&quot;6901849488797\&quot;,\&quot;qty\&quot;:\&quot;1\&quot;,\&quot;isGift\&quot;:\&quot;0\&quot;}]}]&quot;,&quot;token&quot;:&quot;admin&quot;}${__if(${__Random(0,9,)},2,&quot;aaaaaa&quot;,)}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -5358,8 +5420,44 @@ if (!prev.isSuccessful()) {
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell断言" enabled="false">
+            <stringProp name="BeanShellAssertion.query">
+System.out.println( &quot;prev addr is 1 &quot; + System.identityHashCode(prev));
+System.out.println( &quot;Response code is &quot; + ResponseCode);
+System.out.println( &quot;Response data2 is &quot; + ResponseData);
+
+String response = prev.getResponseDataAsString();
+System.out.println( &quot;Response data2 is &quot; + response);
+
+System.out.println( &quot;SampleResult addr is &quot; + System.identityHashCode(SampleResult));
+
+String samplerData = prev.getSamplerData();
+System.out.println( &quot;prev sampler Data is &quot; + samplerData);
+
+String responseData = prev.getResponseDataAsString();
+System.out.println(&quot;prev responseData &quot; + responseData);
+String responseData2 = SampleResult.getResponseDataAsString();
+System.out.println(&quot;SampleResult responseData &quot; + responseData);
+
+vars.put(&quot;prevrspdata&quot;, prev.getResponseDataAsString());</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单快递适配" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单快递适配" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -5384,7 +5482,19 @@ if (!prev.isSuccessful()) {
           <stringProp name="HTTPSampler.connect_timeout"></stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
-        <hashTree/>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单创建" enabled="false">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -5447,7 +5557,7 @@ if (!prev.isSuccessful()) {
           </HeaderManager>
           <hashTree/>
         </hashTree>
-        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell-jar" enabled="true">
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell-jar" enabled="false">
           <stringProp name="BeanShellSampler.query">import java.util.Date;
 import com.jmeterx.codec.XCodec;
 import com.anta.jmeter.WriteFileUtil;
@@ -5535,11 +5645,28 @@ AsyncFileUtils.writeLine(bbbb, txtcontent);
           <stringProp name="script">import java.text.SimpleDateFormat;
 import com.jmeterx.async.AsyncFileUtils;
 
+String samplerData = prev.getSamplerData();
+System.out.println(&quot;samplerData &quot; + samplerData);
+System.out.println(&quot;xResponseData &quot; + vars.get(&quot;xResponseData&quot;));
+
+/*
 String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
 
+System.out.println( &quot;prev addr is 2 &quot; + System.identityHashCode(prev));
+
+String samplerData = prev.getSamplerData();
+String responseData = prev.getResponseDataAsString();
+System.out.println(&quot;responseData1 &quot; + responseData);
+String responseData2 = sampleResult.getResponseDataAsString();
+System.out.println(&quot;responseData2 &quot; + responseData);
+System.out.println(&quot;samplerData &quot; + samplerData);
+
+
 if (!prev.isSuccessful()) {
-	String samplerData = prev.getSamplerData();
-	String responseData = prev.getResponseDataAsString();
+	//String samplerData = prev.getSamplerData();
+	//String responseData = prev.getResponseDataAsString();
+
+	//System.out.println(&quot;responseData &quot; + responseData);
 	
 	SimpleDateFormat fmt =  new 
 		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
@@ -5557,11 +5684,56 @@ if (!prev.isSuccessful()) {
 
 	AsyncFileUtils.writeLine(errSamplerFile, data);
 }
+*/
 </stringProp>
         </BeanShellListener>
         <hashTree/>
+        <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="简单数据写入器" enabled="true">
+          <boolProp name="ResultCollector.error_logging">true</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>true</responseData>
+              <samplerData>true</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>true</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">${__xhome(xreport/zt/200/error.xml,)}</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="保存响应到文件" enabled="false">
+          <stringProp name="FileSaver.filename">${__xhome(xreport/zt/200,)}/</stringProp>
+          <boolProp name="FileSaver.errorsonly">true</boolProp>
+          <boolProp name="FileSaver.successonly">false</boolProp>
+          <boolProp name="FileSaver.skipsuffix">false</boolProp>
+          <boolProp name="FileSaver.skipautonumber">false</boolProp>
+        </ResultSaver>
+        <hashTree/>
       </hashTree>
-      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="测试结束 - 数据落地" enabled="true">
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="测试结束 - 数据落地" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
