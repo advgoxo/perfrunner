@@ -3,7 +3,7 @@ import com.jmeterx.async.QueueThread;
 import com.jmeterx.codec.XCodec;
 
 public class Main {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws InterruptedException {
 
         QueueThread thread1 = new QueueThread("A");
         thread1.start();
@@ -36,6 +36,7 @@ public class Main {
             AsyncFileUtils.writeLine("debug/a.txt", data);
         }
 
+        Thread.sleep(20000);
         AsyncFileUtils.stop();
         System.out.println("cost = " + (System.currentTimeMillis() - beg));
     }

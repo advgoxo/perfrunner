@@ -2,6 +2,8 @@ package com.jmeterx.async;
 
 import java.io.*;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class AsyncFileUtils {
@@ -47,13 +49,27 @@ public class AsyncFileUtils {
         }
     }
 
+    private Timer timer = null;
     private QueueThread writerThread = null;
     private ConcurrentHashMap<String, AsyncFile> filesHashMap = null;
 
     public AsyncFileUtils() {
+        this.timer = new Timer();
         this.filesHashMap = new ConcurrentHashMap();
         this.writerThread = new QueueThread("AsyncFileUtils");
         this.writerThread.start();
+
+        AsyncFileUtils me = this;
+        this.timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                try {
+                    me.asyncFlushAll();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        },3000,5000);
     }
 
     private AsyncFile getWriteFile(String fpath) {
@@ -80,8 +96,31 @@ public class AsyncFileUtils {
     }
 
     private void safeStop() {
+        this.timer.cancel();
         this.asyncCloseAll();
         this.writerThread.safeStop();
+    }
+
+    private void asyncFlushAll() {
+        for(Map.Entry<String, AsyncFile> entry:
+                this.filesHashMap.entrySet()) {
+            AsyncFile w = entry.getValue();
+            if (w == null) {
+                continue;
+            }
+
+            this.writerThread.add(()->{
+                try {
+                    if (w.file != null) {
+                        w.file.flush();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                // System.out.println("flush " + w.path);
+            });
+        }
     }
 
     private void asyncCloseAll() {
