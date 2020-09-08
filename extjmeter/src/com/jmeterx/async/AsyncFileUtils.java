@@ -53,8 +53,11 @@ public class AsyncFileUtils {
 
         public void flush() {
             try {
-                if (this.file == null
-                        || this.wcnt <= 0) {
+                if (this.wcnt <= 0) {
+                    return;
+                }
+
+                if (this.file == null) {
                     return;
                 }
 
@@ -69,7 +72,7 @@ public class AsyncFileUtils {
         public boolean canClose() {
             long now =System.currentTimeMillis();
             if (this.wcnt <= 0 &&
-                    now - this.lastFlush >= 120000) {
+                    now - this.lastFlush >= 300000) {
                 return true;
             }
 
@@ -113,7 +116,7 @@ public class AsyncFileUtils {
                     e.printStackTrace();
                 }
             }
-        },3000,5000);
+        },3000,10000);
     }
 
     private AsyncFile getWriteFile(String fpath) {
