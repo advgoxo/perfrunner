@@ -53,10 +53,6 @@ public class AsyncFileUtils {
 
         public void flush() {
             try {
-                if (this.wcnt <= 0) {
-                    return;
-                }
-
                 if (this.file == null) {
                     return;
                 }
