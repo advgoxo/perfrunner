@@ -57,9 +57,11 @@ public class AsyncFileUtils {
                     return;
                 }
 
-                this.wcnt = 0;
                 this.file.flush();
-                this.lastFlush = System.currentTimeMillis();
+                if (this.wcnt > 0) {
+                    this.wcnt = 0;
+                    this.lastFlush = System.currentTimeMillis();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
