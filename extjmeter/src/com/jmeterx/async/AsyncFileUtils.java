@@ -69,7 +69,7 @@ public class AsyncFileUtils {
         public boolean canClose() {
             long now =System.currentTimeMillis();
             if (this.wcnt <= 0 &&
-                    now - this.lastFlush >= 30000) {
+                    now - this.lastFlush >= 120000) {
                 return true;
             }
 
