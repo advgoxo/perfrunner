@@ -55,7 +55,7 @@
           </elementProp>
           <elementProp name="errSamplerFile" elementType="Argument">
             <stringProp name="Argument.name">errSamplerFile</stringProp>
-            <stringProp name="Argument.value">${__xhome(xreport/zt/${__P(xplan,100)}/error.log,)}</stringProp>
+            <stringProp name="Argument.value">${__xhome(xreport/zt/${__P(xplan,100)}/error-${__machineIP()}.log,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -1310,7 +1310,7 @@ if (!prev.isSuccessful()) {
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">40</stringProp>
+        <stringProp name="ThreadGroup.num_threads">400</stringProp>
         <stringProp name="ThreadGroup.ramp_time">60</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">300</stringProp>
@@ -1609,16 +1609,378 @@ if (!prev.isSuccessful()) {
         </BeanShellListener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 常规订单" enabled="false">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 库存接收" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">300</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
-        <stringProp name="Start users count">25</stringProp>
-        <stringProp name="Start users count burst">25</stringProp>
-        <stringProp name="Start users period">150</stringProp>
+        <stringProp name="Start users count"></stringProp>
+        <stringProp name="Start users count burst"></stringProp>
+        <stringProp name="Start users period"></stringProp>
         <stringProp name="Stop users count">30</stringProp>
         <stringProp name="Stop users period">1</stringProp>
-        <stringProp name="flighttime">150</stringProp>
+        <stringProp name="flighttime">300</stringProp>
+        <stringProp name="rampUp">30</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+      </kg.apc.jmeter.threads.SteppingThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
+          <stringProp name="HTTPSampler.port">8085</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="仓库数据" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">data/warehouseId.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">warehouseId</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="库存接收" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&amp;sign=6FBFCFBCB7E50F59BB2EEC652DC0D2D3&amp;data={&quot;data&quot;:{&quot;operationTime&quot;:&quot;2019-04-15 16:51:33&quot;,&quot;stores&quot;:{&quot;store&quot;:[{&quot;storeInventories&quot;:{&quot;storeInventory&quot;:[{&quot;billNum&quot;:1,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:2,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:3,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:4,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:5,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:6,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:7,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:8,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:9,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:10,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:11,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:12,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:13,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:14,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:15,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:16,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:17,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:18,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:19,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:20,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:21,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:22,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:23,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:24,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:25,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:26,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:27,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:28,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:29,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:30,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:31,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:32,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:33,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:34,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:35,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:36,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:37,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:38,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:39,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:40,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:41,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:42,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:43,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:44,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:45,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:46,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:47,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:48,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:49,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:50,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:51,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:52,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:53,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:54,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:55,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:56,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:57,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:58,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:59,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:60,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:61,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:62,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:63,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:64,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:65,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:66,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:67,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:68,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:69,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:70,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:71,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:72,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:73,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:74,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:75,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:76,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:77,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:78,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:79,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:80,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:81,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:82,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:83,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:84,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:85,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:86,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:87,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:88,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:89,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:90,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:91,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:92,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:93,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:94,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:95,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:96,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:97,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:98,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:99,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;},{&quot;billNum&quot;:100,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,21000,)})}&quot;}]},&quot;warehouseId&quot;:&quot;${warehouseId}&quot;,&quot;warehouseType&quot;:&quot;STORE&quot;}]},&quot;userId&quot;:&quot;TESTUSER${__Random(11111111,99999999,)}&quot;}}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service/api/wms/OBAO?${kcjs_urlvar}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="sku目录变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="goodsfile" elementType="Argument">
+                <stringProp name="Argument.name">goodsfile</stringProp>
+                <stringProp name="Argument.value">data/skus.csv</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="kcjs_urlvar" elementType="Argument">
+                <stringProp name="Argument.name">kcjs_urlvar</stringProp>
+                <stringProp name="Argument.value">method=taobao.qimen.storeinventory.iteminitial&amp;appkey=Anta_EC_test&amp;timestamp=1545209493</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="kcjs_data_tmp" elementType="Argument">
+                <stringProp name="Argument.name">kcjs_data_tmp</stringProp>
+                <stringProp name="Argument.value">{&quot;data&quot;:{&quot;operationTime&quot;:&quot;2019-04-15 16:51:33&quot;,&quot;stores&quot;:{&quot;store&quot;:[{&quot;storeInventories&quot;:{&quot;storeInventory&quot;:[{&quot;billNum&quot;:1,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:2,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:3,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:4,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:5,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:6,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:7,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:8,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:9,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:10,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:11,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:12,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:13,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:14,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:15,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:16,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:17,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:18,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:19,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:20,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:21,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:22,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:23,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:24,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:25,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:26,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:27,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:28,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:29,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:30,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:31,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:32,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:33,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:34,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:35,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:36,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:37,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:38,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:39,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:40,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:41,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:42,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:43,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:44,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:45,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:46,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:47,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:48,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:49,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:50,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:51,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:52,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:53,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:54,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:55,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:56,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:57,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:58,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:59,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:60,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:61,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:62,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:63,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:64,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:65,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:66,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:67,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:68,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:69,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:70,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:71,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:72,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:73,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:74,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:75,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:76,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:77,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:78,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:79,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:80,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:81,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:82,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:83,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:84,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:85,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:86,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:87,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:88,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:89,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:90,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:91,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:92,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:93,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:94,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:95,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:96,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:97,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:98,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:99,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;},{&quot;billNum&quot;:100,&quot;inventoryType&quot;:&quot;CERTAINTY&quot;,&quot;itemId&quot;:0,&quot;outerId&quot;:&quot;&quot;,&quot;quantity&quot;:10000,&quot;skuId&quot;:&quot;${__CSVRead(${goodsfile},${__Random(0,26000,)})}&quot;}]},&quot;warehouseId&quot;:&quot;ANTA00KL00&quot;,&quot;warehouseType&quot;:&quot;STORE&quot;}]},&quot;userId&quot;:&quot;TESTUSER${__Random(11111111,99999999,)}&quot;}}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="kcjs_secret" elementType="Argument">
+                <stringProp name="Argument.name">kcjs_secret</stringProp>
+                <stringProp name="Argument.value">test123456</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">//import com.anta.jmeter.AntaRSAUtilKCJS;
+//
+//String postjson = vars.get(&quot;kcjs_urlvar&quot;);
+//String content= vars.get(&quot;kcjs_data_tmp&quot;);
+//String secret= vars.get(&quot;kcjs_secret&quot;);
+//String warehouseId = vars.get(&quot;warehouseId&quot;);
+//
+//content = content.replace(&quot;ANTA00KL00&quot;,warehouseId);
+//vars.put(&quot;kcjs_data&quot;,content);
+//String sign =  AntaRSAUtilKCJS.generaSignature(postjson,content,secret);
+//vars.put(&quot;kcjs_sign&quot;,sign);
+
+
+import com.anta.jmeter.AntaRSAUtilKCJS;
+import org.apache.jmeter.config.Arguments;
+
+Arguments args = sampler.getArguments();
+String postjson = vars.get(&quot;kcjs_urlvar&quot;);
+String secret= vars.get(&quot;kcjs_secret&quot;);
+String content = args.toString();
+
+//log.info(content.substring(25, content.length()-2));
+
+String sign =  AntaRSAUtilKCJS.generaSignature(postjson,content.substring(25, content.length()-2), secret);
+
+
+vars.put(&quot;kcjs_sign&quot;,sign);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-628573701">&quot;flag&quot;:&quot;success&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>true</responseData>
+              <samplerData>true</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">30000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ResponseTimesOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Response Times Over Time" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">30000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="错误监听器" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import java.text.SimpleDateFormat;
+import com.jmeterx.async.AsyncFileUtils;
+
+String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
+
+if (!prev.isSuccessful()) {
+	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
+	//String responseData = prev.getResponseDataAsString();
+	
+	SimpleDateFormat fmt =  new 
+		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
+	String begtime = fmt.format(prev.getStartTime());
+	String endtime = fmt.format(prev.getEndTime());
+	
+	String data = &quot;sampler error&quot;
+		+ &quot;\n======beg=======\n&quot; 
+		+ &quot;Sampler &quot; + prev.getSampleLabel()
+		+ &quot;\nTime &quot; + begtime + &quot; - &quot; + endtime 
+		+ &quot;\n&quot; + samplerData
+		+ &quot;\nResponse data:\n&quot; 
+		+ responseData
+		+ &quot;\n======end=======\n&quot;;
+
+	AsyncFileUtils.writeLine(errSamplerFile, data);
+}
+</stringProp>
+        </BeanShellListener>
+        <hashTree/>
+      </hashTree>
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 常规订单" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="Threads initial delay">10</stringProp>
+        <stringProp name="Start users count">50</stringProp>
+        <stringProp name="Start users count burst">25</stringProp>
+        <stringProp name="Start users period">1</stringProp>
+        <stringProp name="Stop users count">30</stringProp>
+        <stringProp name="Stop users period">1</stringProp>
+        <stringProp name="flighttime">1</stringProp>
         <stringProp name="rampUp">1</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1629,7 +1991,7 @@ if (!prev.isSuccessful()) {
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="商品数据" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
-          <stringProp name="filename">data/goods.csv</stringProp>
+          <stringProp name="filename">data/goods.all.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">true</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -4303,13 +4665,13 @@ if (!prev.isSuccessful()) {
         </BeanShellListener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - XPOS订单" enabled="true">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - XPOS订单" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">300</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
-        <stringProp name="Start users count">50</stringProp>
-        <stringProp name="Start users count burst">50</stringProp>
-        <stringProp name="Start users period">300</stringProp>
+        <stringProp name="Start users count">100</stringProp>
+        <stringProp name="Start users count burst">100</stringProp>
+        <stringProp name="Start users period">0</stringProp>
         <stringProp name="Stop users count">30</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">300</stringProp>
@@ -5127,11 +5489,11 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                   </BeanShellPostProcessor>
                   <hashTree/>
                 </hashTree>
-                <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="出库回传-XPOS" enabled="false">
+                <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="出库回传-XPOS" enabled="true">
                   <stringProp name="SwitchController.value">出库回传-XPOS</stringProp>
                 </SwitchController>
                 <hashTree>
-                  <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="出库回传-XPOS" enabled="true">
+                  <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="出库回传-XPOS" enabled="false">
                     <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
                     <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                       <collectionProp name="Arguments.arguments">
