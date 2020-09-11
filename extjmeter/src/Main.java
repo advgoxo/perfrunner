@@ -27,16 +27,16 @@ public class Main {
         System.out.println(s + " --Unicode编码：" + XCodec.encodeUnicode(s));
 
         String data = "";
-        for (int i = 0; i < 1023; ++i) {
-            data += "a";
+        for (int i = 0; i < 16; ++i) {
+            data += "中国万岁";
         }
 
         long beg = System.currentTimeMillis();
-        for (int i = 0; i < 200000; i++) {
+        for (int i = 0; i < 20; i++) {
             AsyncFileUtils.writeLine("debug/a.txt", data);
         }
 
-        Thread.sleep(20000);
+        Thread.sleep(2000);
         AsyncFileUtils.stop();
         System.out.println("cost = " + (System.currentTimeMillis() - beg));
     }

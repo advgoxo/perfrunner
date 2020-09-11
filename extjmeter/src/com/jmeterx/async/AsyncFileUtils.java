@@ -13,7 +13,7 @@ public class AsyncFileUtils {
     private class AsyncFile {
         public int wcnt;
         public String path;
-        public BufferedOutputStream file;
+        public BufferedWriter file;
         public long lastFlush;
         public AsyncFile(String f) {
             this.wcnt = 0;
@@ -30,12 +30,14 @@ public class AsyncFileUtils {
             FileOutputStream f = null;
             try {
                 f = new FileOutputStream(this.path, true);
-            } catch (FileNotFoundException e) {
+                this.file = new BufferedWriter(new OutputStreamWriter(
+                        f, "UTF-8"
+                ));
+            } catch (FileNotFoundException | UnsupportedEncodingException e) {
                 e.printStackTrace();
                 return false;
             }
 
-            this.file = new BufferedOutputStream(f);
             return true;
         }
 
@@ -77,7 +79,7 @@ public class AsyncFileUtils {
             return false;
         }
 
-        public void write(byte[] data) {
+        public void write(String data) {
             if (this.file == null) {
                 return;
             }
@@ -210,7 +212,7 @@ public class AsyncFileUtils {
         }
 
         this.writerThread.add(()->{
-            w.write(data.getBytes());
+            w.write(data);
         });
     }
 
