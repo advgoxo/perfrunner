@@ -19,6 +19,11 @@
             <stringProp name="Argument.value"></stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="errSamplerFile" elementType="Argument">
+            <stringProp name="Argument.name">errSamplerFile</stringProp>
+            <stringProp name="Argument.value">${__xhome(xreport/oms/${__P(xplan,100)}/error-${__machineIP()}.log,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -42,7 +47,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">50</stringProp>
+        <stringProp name="ThreadGroup.num_threads">25</stringProp>
         <stringProp name="ThreadGroup.ramp_time">60</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">300</stringProp>
@@ -226,6 +231,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单列表-/e3/webopm/web/-2" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -303,6 +319,17 @@
                 </elementProp>
               </collectionProp>
             </HeaderManager>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
         </hashTree>
@@ -896,6 +923,27 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-720332537">&quot;status&quot;:1,</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单号查询订单" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -1478,6 +1526,27 @@
                 </elementProp>
               </collectionProp>
             </HeaderManager>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-720332537">&quot;status&quot;:1,</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="手机号查询订单" enabled="true">
@@ -2062,6 +2131,27 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-720332537">&quot;status&quot;:1,</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
           </hashTree>
         </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
@@ -2284,14 +2374,49 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
+        <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="错误监听器" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import java.text.SimpleDateFormat;
+import com.jmeterx.async.AsyncFileUtils;
+
+String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
+
+if (!prev.isSuccessful()) {
+	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
+	//String responseData = prev.getResponseDataAsString();
+	
+	SimpleDateFormat fmt =  new 
+		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
+	String begtime = fmt.format(prev.getStartTime());
+	String endtime = fmt.format(prev.getEndTime());
+	long cost = prev.getEndTime() - prev.getStartTime();
+	
+	String data = &quot;sampler error&quot;
+		+ &quot;\n======beg=======\n&quot; 
+		+ &quot;Sampler &quot; + prev.getSampleLabel()
+		+ &quot;\nTime &quot; + begtime + &quot; - &quot; + endtime
+		+ &quot;\nCost &quot; +  cost
+		+ &quot;\n&quot; + samplerData
+		+ &quot;\nResponse data:\n&quot; 
+		+ responseData
+		+ &quot;\n======end=======\n&quot;;
+
+	AsyncFileUtils.writeLine(errSamplerFile, data);
+}
+</stringProp>
+        </BeanShellListener>
+        <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组-订单修改" enabled="false">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">50</stringProp>
+        <stringProp name="ThreadGroup.num_threads">25</stringProp>
         <stringProp name="ThreadGroup.ramp_time">60</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">300</stringProp>
@@ -2492,6 +2617,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单详情-/e3/webopm/web/?app_act=order/order_list/do_base_info&amp;order_id=95453873&amp;type=get" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -2548,6 +2684,17 @@
                 </elementProp>
               </collectionProp>
             </HeaderManager>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单详情-/e3/webopm/web/?app_act=order/order_list/do_jiesuan&amp;order_id=95453873&amp;type=get" enabled="true">
@@ -2606,6 +2753,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单详情-/e3/webopm/web/?app_act=order/order_list/do_fahuo&amp;order_id=95453873&amp;type=get" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -2663,6 +2821,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单详情-/e3/webopm/web/?app_act=order/order_list/do_fapiao&amp;order_id=95453873&amp;type=get" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -2719,6 +2888,17 @@
                 </elementProp>
               </collectionProp>
             </HeaderManager>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单详情-/e3/webopm/web/?app_act=order/order_list/do_goods&amp;_do_goods_special_=0" enabled="true">
@@ -2792,6 +2972,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单详情-/e3/webopm/web/?app_act=order/order_list/do_money&amp;order_id=95453873&amp;type=get&amp;_do_money_special_=0" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -2849,6 +3040,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单详情-/e3/webopm/web/?app_act=order/order_action/do_list&amp;order_id=95453873&amp;type=get" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -2905,6 +3107,17 @@
                 </elementProp>
               </collectionProp>
             </HeaderManager>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="订单详情-/e3/webopm/web/-2" enabled="true">
@@ -2987,6 +3200,17 @@
                 </elementProp>
               </collectionProp>
             </HeaderManager>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
         </hashTree>
@@ -3077,6 +3301,27 @@
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
               </RegexExtractor>
               <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1769832127">&quot;status&quot;:1000,</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="发货信息-编辑- /e3/webopm/web/?app_act=common/dj/get_ck_stck" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -3141,6 +3386,17 @@
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="发货信息-编辑-/e3/webopm/web/?app_act=order/order_list/get_region-1" enabled="true">
@@ -3207,6 +3463,17 @@
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="发货信息-编辑-/e3/webopm/web/?app_act=order/order_list/get_region-2" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -3272,6 +3539,17 @@
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="发货信息-编辑-/e3/webopm/web/?app_act=order/order_list/get_region-3" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -3336,6 +3614,17 @@
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
               <hashTree/>
             </hashTree>
           </hashTree>
@@ -3541,6 +3830,27 @@
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-720332537">&quot;status&quot;:1,</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="发货信息-保存-/e3/webopm/web/?app_act=order/order_list/do_fahuo&amp;order_id=95453873&amp;type=save" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -3739,6 +4049,27 @@
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1769832127">&quot;status&quot;:1000,</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="发货信息-保存-/e3/webopm/web/?app_act=order/order_action/do_list&amp;order_id=95453873&amp;type=get" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -3795,6 +4126,27 @@
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-720332537">&quot;status&quot;:1,</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="发货信息-保存-/e3/webopm/web/?app_act=order/order_list/do_goods&amp;_do_goods_special_=0-1" enabled="true">
@@ -3875,6 +4227,27 @@
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1769832127">&quot;status&quot;:1000,</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="发货信息-保存-/e3/webopm/web/?app_act=order/order_list/do_goods&amp;_do_goods_special_=0-2" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -3946,6 +4319,27 @@
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1769832127">&quot;status&quot;:1000,</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
           </hashTree>
@@ -4044,6 +4438,27 @@
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
               </RegexExtractor>
               <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-749828021">&quot;status&quot;:1000</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
             </hashTree>
           </hashTree>
           <TestAction guiclass="TestActionGui" testclass="TestAction" testname="等待" enabled="true">
@@ -4137,19 +4552,21 @@
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器-size_id_return" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">size_id_return</stringProp>
-                <stringProp name="RegexExtractor.regex">&apos;size&apos;\);\\&quot;&gt;\\n\\t\\t\\t\\t\\t\\t&lt;option value=\\&quot;(.+?)\\&quot;</stringProp>
+                <stringProp name="RegexExtractor.regex">&apos;size&apos;\);\\&quot;&gt;\\n\\t\\t\\t\\t\\t\\t&lt;option value=\\&quot;(.*?)\\&quot;</stringProp>
                 <stringProp name="RegexExtractor.template">$1$</stringProp>
                 <stringProp name="RegexExtractor.default"></stringProp>
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
+                <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
               </RegexExtractor>
               <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器-color_id_return" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">color_id_return</stringProp>
-                <stringProp name="RegexExtractor.regex">&apos;color&apos;\);\\&quot;&gt;\\n\\t\\t\\t\\t\\t\\t&lt;option value=\\&quot;(.+?)\\&quot;</stringProp>
+                <stringProp name="RegexExtractor.regex">&apos;color&apos;\);\\&quot;&gt;\\n\\t\\t\\t\\t\\t\\t&lt;option value=\\&quot;(.*?)\\&quot;</stringProp>
                 <stringProp name="RegexExtractor.template">$1$</stringProp>
                 <stringProp name="RegexExtractor.default"></stringProp>
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
+                <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
               </RegexExtractor>
               <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器-goods_sn_return" enabled="true">
@@ -4160,6 +4577,27 @@
                 <stringProp name="RegexExtractor.default"></stringProp>
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
               </RegexExtractor>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1769742754">&quot;status&quot;:1300,</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
           </hashTree>
@@ -4301,6 +4739,27 @@
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1769742754">&quot;status&quot;:1300,</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="商品信息-编辑-保存-/e3/webopm/web/?app_act=order/order_action/do_list&amp;order_id=95453873&amp;type=get" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -4357,6 +4816,17 @@
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="商品信息-编辑-保存-/e3/webopm/web/?app_act=order/order_list/do_money&amp;order_id=95453873&amp;type=get&amp;_do_money_special_=0" enabled="true">
@@ -4415,6 +4885,17 @@
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="商品信息-编辑-保存-/e3/webopm/web/?app_act=order/order_list/do_fxjs&amp;order_id=95453873&amp;type=undefined" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -4471,6 +4952,17 @@
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="商品信息-编辑-保存-/e3/webopm/web/?app_act=order/order_list/do_fahuo&amp;order_id=95453873&amp;type=get" enabled="true">
@@ -4529,6 +5021,17 @@
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="商品信息-编辑-保存-/e3/webopm/web/?app_act=order/order_list/do_ncm_buyer_fee&amp;order_id=95453873&amp;type=get" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -4585,6 +5088,17 @@
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
               <hashTree/>
             </hashTree>
           </hashTree>
@@ -4669,6 +5183,27 @@
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1769832127">&quot;status&quot;:1000,</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
           </hashTree>
@@ -4893,14 +5428,49 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
+        <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="错误监听器" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import java.text.SimpleDateFormat;
+import com.jmeterx.async.AsyncFileUtils;
+
+String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
+
+if (!prev.isSuccessful()) {
+	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
+	//String responseData = prev.getResponseDataAsString();
+	
+	SimpleDateFormat fmt =  new 
+		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
+	String begtime = fmt.format(prev.getStartTime());
+	String endtime = fmt.format(prev.getEndTime());
+	long cost = prev.getEndTime() - prev.getStartTime();
+	
+	String data = &quot;sampler error&quot;
+		+ &quot;\n======beg=======\n&quot; 
+		+ &quot;Sampler &quot; + prev.getSampleLabel()
+		+ &quot;\nTime &quot; + begtime + &quot; - &quot; + endtime
+		+ &quot;\nCost &quot; +  cost
+		+ &quot;\n&quot; + samplerData
+		+ &quot;\nResponse data:\n&quot; 
+		+ responseData
+		+ &quot;\n======end=======\n&quot;;
+
+	AsyncFileUtils.writeLine(errSamplerFile, data);
+}
+</stringProp>
+        </BeanShellListener>
+        <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组-订单取消" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <intProp name="LoopController.loops">-1</intProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">50</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">60</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">300</stringProp>
@@ -5092,6 +5662,27 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-720332537">&quot;status&quot;:1,</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
           </hashTree>
         </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
@@ -5314,6 +5905,41 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
+        <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="错误监听器" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import java.text.SimpleDateFormat;
+import com.jmeterx.async.AsyncFileUtils;
+
+String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
+
+if (!prev.isSuccessful()) {
+	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
+	//String responseData = prev.getResponseDataAsString();
+	
+	SimpleDateFormat fmt =  new 
+		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
+	String begtime = fmt.format(prev.getStartTime());
+	String endtime = fmt.format(prev.getEndTime());
+	long cost = prev.getEndTime() - prev.getStartTime();
+	
+	String data = &quot;sampler error&quot;
+		+ &quot;\n======beg=======\n&quot; 
+		+ &quot;Sampler &quot; + prev.getSampleLabel()
+		+ &quot;\nTime &quot; + begtime + &quot; - &quot; + endtime
+		+ &quot;\nCost &quot; +  cost
+		+ &quot;\n&quot; + samplerData
+		+ &quot;\nResponse data:\n&quot; 
+		+ responseData
+		+ &quot;\n======end=======\n&quot;;
+
+	AsyncFileUtils.writeLine(errSamplerFile, data);
+}
+</stringProp>
+        </BeanShellListener>
+        <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组-通知配货" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
@@ -5357,6 +5983,7 @@
         <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="仅一次控制器" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="中台登录" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
@@ -5366,7 +5993,6 @@
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <stringProp name="HTTPSampler.domain">121.199.192.140</stringProp>
             <stringProp name="HTTPSampler.port">8083</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
