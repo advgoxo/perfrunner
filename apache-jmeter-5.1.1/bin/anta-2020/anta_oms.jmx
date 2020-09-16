@@ -339,7 +339,9 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
           <stringProp name="ActionProcessor.duration">1000</stringProp>
         </TestAction>
         <hashTree/>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="简单控制器-订单查询" enabled="true"/>
+        <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="随机控制器-订单查询" enabled="true">
+          <intProp name="InterleaveControl.style">1</intProp>
+        </RandomController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="交易号查询订单" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
