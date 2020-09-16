@@ -2413,7 +2413,7 @@ if (!prev.isSuccessful()) {
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组-订单修改" enabled="false">
-        <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
@@ -4544,7 +4544,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器-size_id_return" enabled="false">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">size_id_return</stringProp>
-                <stringProp name="RegexExtractor.regex">&apos;size&apos;\);\\&quot;&gt;.*&lt;option value=\\&quot;(.*?)\\&quot; selected&gt;.*&lt;\\/select&gt;</stringProp>
+                <stringProp name="RegexExtractor.regex">&apos;size&apos;\);\\&quot;&gt;\\n\\t\\t\\t\\t\\t\\t&lt;option value=\\&quot;(.*?)\\&quot;</stringProp>
                 <stringProp name="RegexExtractor.template">$1$</stringProp>
                 <stringProp name="RegexExtractor.default"></stringProp>
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
