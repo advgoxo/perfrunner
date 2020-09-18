@@ -5985,7 +5985,7 @@ if (!prev.isSuccessful()) {
           <stringProp name="variableNames">order_id_cancel</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -17161,7 +17161,7 @@ if (!prev.isSuccessful()) {
         <hashTree/>
       </hashTree>
       <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - cancel" enabled="false">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
         <stringProp name="ThreadGroup.num_threads">650</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
         <stringProp name="Start users count">100</stringProp>
@@ -17328,7 +17328,7 @@ if (!prev.isSuccessful()) {
         <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="取消发货" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
-          <boolProp name="TransactionController.parent">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="取消发货-/e3/webopm/web/?app_act=order/order_process/do_process&amp;ajax=1&amp;type=wtzph&amp;order_id=95453871&amp;ext=&amp;force=-1" enabled="true">
@@ -17646,6 +17646,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 import com.jmeterx.async.AsyncFileUtils;
 
 String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
+
 
 if (!prev.isSuccessful()) {
 	String samplerData = prev.getSamplerData();
