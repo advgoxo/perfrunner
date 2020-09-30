@@ -32,7 +32,7 @@ public class XHome extends AbstractFunction {
     @Override
     public synchronized String execute(SampleResult previousResult,
                                        Sampler currentSampler) throws InvalidVariableException {
-        String r = getParameter(0);
+        String r = getParameter(0).trim();
         Properties props = JMeterContextService.getContext().getProperties();
         String result = new File(props.getProperty(
                 "xhome", (new File("")
