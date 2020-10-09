@@ -974,3 +974,902 @@ Caused by: java.net.SocketException: Socket closed
 
 ======end=======
 
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-09 15:54:16.459 - 2020-10-09 15:54:16.612
+Cost 153
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --搜索-搜索商品展示
+Time 2020-10-09 15:54:17.110 - 2020-10-09 15:54:17.268
+Cost 158
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=55092%2C55093%2C53293%2C53358%2C53297%2C53298%2C53299%2C53334%2C52158%2C52222%2C52180%2C52186%2C52187%2C52215%2C44972%2C46926%2C46638%2C46354%2C46362%2C46404%2C46353%2C46709%2C38081%2C46332%2C44928%2C44929%2C44924%2C44925%2C38635%2C45157%2C45156%2C40673%2C40654%2C40687%2C41010%2C39111%2C39112%2C41174%2C41008%2C40987%2C40512%2C38449%2C40179%2C40180%2C31259%2C31269%2C23017%2C39124%2C28672%2C39095%2C28660%2C28671%2C39028%2C39029%2C39045%2C38634%2C38639%2C38616%2C38459%2C38464&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --砍价-获取推荐商品的列表
+Time 2020-10-09 15:54:17.805 - 2020-10-09 15:54:17.948
+Cost 143
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=15261%2C942%2C6964%2C12734%2C6968%2C7616&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --优惠券-发放商家券
+Time 2020-10-09 15:54:17.950 - 2020-10-09 15:54:18.095
+Cost 145
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.ump.ticket.sendticket
+
+POST data:
+id_promos=1410%2C1411%2C1412%2C1413&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --分类页-右侧菜单子分类
+Time 2020-10-09 15:54:21.347 - 2020-10-09 15:54:21.931
+Cost 584
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.categoryPagesById
+
+POST data:
+page_id=196&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-09 15:54:23.843 - 2020-10-09 15:54:23.989
+Cost 146
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=b822e712d77b66a7b21308e72c7265ba
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --搜索-搜索商品展示
+Time 2020-10-09 15:54:24.476 - 2020-10-09 15:54:24.625
+Cost 149
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=46945%2C46933%2C46927%2C46928%2C46929%2C46930%2C46934%2C46944%2C46931%2C46932%2C46935%2C46936%2C46938%2C46940%2C46941%2C46942%2C46943%2C46926%2C46937%2C46939%2C46638%2C46362%2C46377%2C46325%2C46707%2C31700%2C44938%2C38644%2C39413%2C38631%2C40748%2C40661%2C40662%2C40663%2C40664%2C40665%2C40619%2C38615%2C38636%2C38643%2C38614%2C26897%2C38302%2C31701%2C30604%2C28674%2C956%2C28066%2C9282%2C9289%2C23659%2C9465%2C23221%2C9286%2C9287%2C9250%2C8794%2C8856%2C8845%2C8859&id_shop=4&session3rd=b822e712d77b66a7b21308e72c7265ba
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --砍价-获取推荐商品的列表
+Time 2020-10-09 15:54:25.018 - 2020-10-09 15:54:25.168
+Cost 150
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=15261%2C942%2C6964%2C12734%2C6968%2C7616&id_shop=4&session3rd=b822e712d77b66a7b21308e72c7265ba
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --优惠券-发放商家券
+Time 2020-10-09 15:54:25.172 - 2020-10-09 15:54:25.316
+Cost 144
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.ump.ticket.sendticket
+
+POST data:
+id_promos=1410%2C1411%2C1412%2C1413&id_shop=4&session3rd=b822e712d77b66a7b21308e72c7265ba
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --分类页-右侧菜单子分类
+Time 2020-10-09 15:54:27.188 - 2020-10-09 15:54:27.563
+Cost 375
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.categoryPagesById
+
+POST data:
+page_id=196&id_shop=4&session3rd=b822e712d77b66a7b21308e72c7265ba
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-09 15:54:29.401 - 2020-10-09 15:54:29.547
+Cost 146
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=91c8dd169b9a0e778306b6541f6a3d36
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --搜索-搜索商品展示
+Time 2020-10-09 15:54:30.033 - 2020-10-09 15:54:30.186
+Cost 153
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=55604%2C51724%2C53329%2C53363%2C53414%2C53231%2C53232%2C52216%2C52166%2C52173%2C52174%2C47147%2C46377%2C46325%2C46370%2C46320%2C46643%2C46707%2C46708%2C46632%2C46382%2C46333%2C46334%2C44973%2C44930%2C44974%2C45157%2C45156%2C40674%2C43746%2C40653%2C40654%2C40675%2C40676%2C40677%2C39111%2C39112%2C40678%2C40679%2C41173%2C41008%2C39588%2C39578%2C39579%2C39580%2C39028%2C39029%2C38639%2C38616%2C28658%2C28667%2C38302%2C28657%2C27876%2C28665%2C28666%2C28659%2C28669%2C27999%2C956&id_shop=4&session3rd=91c8dd169b9a0e778306b6541f6a3d36
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --砍价-获取推荐商品的列表
+Time 2020-10-09 15:54:30.484 - 2020-10-09 15:54:31.067
+Cost 583
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=15261%2C942%2C6964%2C12734%2C6968%2C7616&id_shop=4&session3rd=91c8dd169b9a0e778306b6541f6a3d36
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --优惠券-发放商家券
+Time 2020-10-09 15:54:31.068 - 2020-10-09 15:54:31.419
+Cost 351
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.ump.ticket.sendticket
+
+POST data:
+id_promos=1410%2C1411%2C1412%2C1413&id_shop=4&session3rd=91c8dd169b9a0e778306b6541f6a3d36
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --分类页-右侧菜单子分类
+Time 2020-10-09 15:54:33.877 - 2020-10-09 15:54:34.023
+Cost 146
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.categoryPagesById
+
+POST data:
+page_id=196&id_shop=4&session3rd=91c8dd169b9a0e778306b6541f6a3d36
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-09 15:54:35.808 - 2020-10-09 15:54:35.954
+Cost 146
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=f7d9164b41393792dc5d5287655ee297
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --搜索-搜索商品展示
+Time 2020-10-09 15:54:36.433 - 2020-10-09 15:54:36.450
+Cost 17
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=53366%2C46649%2C46415%2C46652%2C46633%2C38067%2C44935%2C44978%2C44933%2C44934%2C44977%2C44942%2C45152%2C38632%2C40656%2C40657%2C40658%2C40762%2C40344%2C40345%2C38621%2C39044%2C38619%2C38623%2C38626%2C38618%2C38620%2C28651%2C28653%2C28647%2C28650%2C38284%2C27885%2C28652%2C38066%2C28082%2C28643%2C28644%2C28646%2C28648%2C28645%2C28649%2C32279%2C31724%2C30984%2C28083%2C942%2C28051%2C28189%2C24965%2C5028%2C15264%2C12729%2C944%2C949%2C951%2C7629%2C7630%2C7631%2C4998&id_shop=4&session3rd=f7d9164b41393792dc5d5287655ee297
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-09 15:54:54.049 - 2020-10-09 15:54:54.199
+Cost 150
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --搜索-搜索商品展示
+Time 2020-10-09 15:54:54.677 - 2020-10-09 15:54:54.829
+Cost 152
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=55092%2C55093%2C53293%2C53358%2C53297%2C53298%2C53299%2C53334%2C52158%2C52222%2C52180%2C52186%2C52187%2C52215%2C44972%2C46926%2C46638%2C46354%2C46362%2C46404%2C46353%2C46709%2C38081%2C46332%2C44928%2C44929%2C44924%2C44925%2C38635%2C45157%2C45156%2C40673%2C40654%2C40687%2C41010%2C39111%2C39112%2C41174%2C41008%2C40987%2C40512%2C38449%2C40179%2C40180%2C31259%2C31269%2C23017%2C39124%2C28672%2C39095%2C28660%2C28671%2C39028%2C39029%2C39045%2C38634%2C38639%2C38616%2C38459%2C38464&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --砍价-获取推荐商品的列表
+Time 2020-10-09 15:54:55.131 - 2020-10-09 15:54:55.358
+Cost 227
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=15261%2C942%2C6964%2C12734%2C6968%2C7616&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --优惠券-发放商家券
+Time 2020-10-09 15:54:55.360 - 2020-10-09 15:54:55.504
+Cost 144
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.ump.ticket.sendticket
+
+POST data:
+id_promos=1410%2C1411%2C1412%2C1413&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --分类页-右侧菜单子分类
+Time 2020-10-09 15:54:56.373 - 2020-10-09 15:54:56.460
+Cost 87
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.categoryPagesById
+
+POST data:
+page_id=16&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-09 16:00:43.099 - 2020-10-09 16:00:43.251
+Cost 152
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --搜索-搜索商品展示
+Time 2020-10-09 16:00:43.721 - 2020-10-09 16:00:43.874
+Cost 153
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=55092%2C55093%2C53293%2C53358%2C53297%2C53298%2C53299%2C53334%2C52158%2C52222%2C52180%2C52186%2C52187%2C52215%2C44972%2C46926%2C46638%2C46354%2C46362%2C46404%2C46353%2C46709%2C38081%2C46332%2C44928%2C44929%2C44924%2C44925%2C38635%2C45157%2C45156%2C40673%2C40654%2C40687%2C41010%2C39111%2C39112%2C41174%2C41008%2C40987%2C40512%2C38449%2C40179%2C40180%2C31259%2C31269%2C23017%2C39124%2C28672%2C39095%2C28660%2C28671%2C39028%2C39029%2C39045%2C38634%2C38639%2C38616%2C38459%2C38464&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --砍价-获取推荐商品的列表
+Time 2020-10-09 16:00:44.166 - 2020-10-09 16:00:44.420
+Cost 254
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=15261%2C942%2C6964%2C12734%2C6968%2C7616&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --优惠券-发放商家券
+Time 2020-10-09 16:00:44.422 - 2020-10-09 16:00:44.572
+Cost 150
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.ump.ticket.sendticket
+
+POST data:
+id_promos=1410%2C1411%2C1412%2C1413&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --分类页-右侧菜单子分类
+Time 2020-10-09 16:00:46.078 - 2020-10-09 16:00:46.222
+Cost 144
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.categoryPagesById
+
+POST data:
+page_id=196&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --用户中心-获取用户信息
+Time 2020-10-09 16:00:46.224 - 2020-10-09 16:00:46.243
+Cost 19
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.getUserInfo
+
+POST data:
+id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+java.net.SocketException: Socket closed
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:348)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-09 16:02:38.865 - 2020-10-09 16:02:39.005
+Cost 140
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --搜索-搜索商品展示
+Time 2020-10-09 16:02:39.474 - 2020-10-09 16:02:39.613
+Cost 139
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=28650%2C32279%2C28646%2C7287%2C949%2C28652%2C28648%2C28651%2C927%2C28645%2C6964%2C40762%2C10127%2C44933%2C948%2C28647%2C40344%2C44942%2C28653%2C28051%2C9512%2C952%2C46649%2C4933%2C1428%2C44934%2C40345%2C869%2C951%2C24172%2C44935%2C44978%2C39044%2C7630%2C9509%2C27885%2C724%2C40656%2C798%2C5028%2C5050%2C53366%2C23217%2C944%2C23597%2C23639%2C27167%2C28649%2C22969%2C4903%2C950%2C27126%2C28083%2C40657%2C896%2C7549%2C23215%2C23380%2C24289%2C28189&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --砍价-获取推荐商品的列表
+Time 2020-10-09 16:02:40.011 - 2020-10-09 16:02:40.164
+Cost 153
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=15261%2C942%2C6964%2C12734%2C6968%2C7616&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --优惠券-发放商家券
+Time 2020-10-09 16:02:40.166 - 2020-10-09 16:02:40.355
+Cost 189
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.ump.ticket.sendticket
+
+POST data:
+id_promos=1410%2C1411%2C1412%2C1413&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --分类页-右侧菜单子分类
+Time 2020-10-09 16:02:41.928 - 2020-10-09 16:02:42.101
+Cost 173
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.categoryPagesById
+
+POST data:
+page_id=196&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --用户中心-获取用户信息
+Time 2020-10-09 16:02:42.104 - 2020-10-09 16:02:42.197
+Cost 93
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.getUserInfo
+
+POST data:
+id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-09 16:03:08.999 - 2020-10-09 16:03:09.146
+Cost 147
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --搜索-搜索商品展示
+Time 2020-10-09 16:03:09.631 - 2020-10-09 16:03:09.777
+Cost 146
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=53366%2C53233%2C46649%2C44933%2C44934%2C40652%2C39137%2C39139%2C40631%2C39093%2C39094%2C39097%2C39098%2C39100%2C39101%2C39091%2C40344%2C40345%2C28690%2C31326%2C5028%2C2865%2C2866%2C949%2C951%2C6558%2C5024%2C5050%2C27496%2C27502%2C27539%2C27540%2C27059%2C26730%2C26319%2C4455%2C8451%2C4459%2C2850%2C23252%2C23255%2C927%2C4456%2C4454%2C2937%2C2842%2C2914%2C2855%2C2829%2C2616%2C2790%2C10158%2C2860%2C3695%2C2837%2C2831%2C4451%2C2721&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --砍价-获取推荐商品的列表
+Time 2020-10-09 16:03:10.153 - 2020-10-09 16:03:10.307
+Cost 154
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.Search.goods
+
+POST data:
+id_goods=15261%2C942%2C6964%2C12734%2C6968%2C7616&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --优惠券-发放商家券
+Time 2020-10-09 16:03:10.309 - 2020-10-09 16:03:10.450
+Cost 141
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.ump.ticket.sendticket
+
+POST data:
+id_promos=1410%2C1411%2C1412%2C1413&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --分类页-右侧菜单子分类
+Time 2020-10-09 16:03:11.044 - 2020-10-09 16:03:11.100
+Cost 56
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.categoryPagesById
+
+POST data:
+page_id=14&id_shop=4&session3rd=ed14d3af1a695328cd759f590516b340
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --搜索-添加搜索历史
+Time 2020-10-09 16:24:18.001 - 2020-10-09 16:24:18.205
+Cost 204
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.addHistory
+
+POST data:
+session3rd=cae89735b6ac7624b82a1a03e8b51aa4&words=%E7%9F%ADT&id_shop=4&session3rd=cae89735b6ac7624b82a1a03e8b51aa4
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
