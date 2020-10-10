@@ -147,7 +147,7 @@
           <hashTree>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言" enabled="true">
               <stringProp name="JSON_PATH">$.status</stringProp>
-              <stringProp name="EXPECTED_VALUE">1</stringProp>
+              <stringProp name="EXPECTED_VALUE">^([1-9]\d*(\.\d+)?|0)$</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
@@ -324,7 +324,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
           <hashTree>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言" enabled="true">
               <stringProp name="JSON_PATH">$.status</stringProp>
-              <stringProp name="EXPECTED_VALUE">1</stringProp>
+              <stringProp name="EXPECTED_VALUE">^([1-9]\d*(\.\d+)?|0)$</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
@@ -985,7 +985,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
           <hashTree>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言" enabled="true">
               <stringProp name="JSON_PATH">$.status</stringProp>
-              <stringProp name="EXPECTED_VALUE">1</stringProp>
+              <stringProp name="EXPECTED_VALUE">^([1-9]\d*(\.\d+)?|0)$</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
@@ -3508,7 +3508,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
           <hashTree>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言" enabled="true">
               <stringProp name="JSON_PATH">$.status</stringProp>
-              <stringProp name="EXPECTED_VALUE">1</stringProp>
+              <stringProp name="EXPECTED_VALUE">^([1-9]\d*(\.\d+)?|0)$</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
@@ -3685,7 +3685,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
           <hashTree>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言" enabled="true">
               <stringProp name="JSON_PATH">$.status</stringProp>
-              <stringProp name="EXPECTED_VALUE">1</stringProp>
+              <stringProp name="EXPECTED_VALUE">^([1-9]\d*(\.\d+)?|0)$</stringProp>
               <boolProp name="JSONVALIDATION">true</boolProp>
               <boolProp name="EXPECT_NULL">false</boolProp>
               <boolProp name="INVERT">false</boolProp>
@@ -4712,7 +4712,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             <hashTree>
               <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言" enabled="true">
                 <stringProp name="JSON_PATH">$.status</stringProp>
-                <stringProp name="EXPECTED_VALUE">1</stringProp>
+                <stringProp name="EXPECTED_VALUE">^([1-9]\d*(\.\d+)?|0)$</stringProp>
                 <boolProp name="JSONVALIDATION">true</boolProp>
                 <boolProp name="EXPECT_NULL">false</boolProp>
                 <boolProp name="INVERT">false</boolProp>
