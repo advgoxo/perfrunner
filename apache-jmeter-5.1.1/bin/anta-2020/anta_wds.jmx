@@ -61,7 +61,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="安踏电商" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="安踏电商" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -437,6 +437,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
               <stringProp name="Sample.scope">variable</stringProp>
               <stringProp name="Scope.variable">started</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
             </JSONPostProcessor>
             <hashTree/>
             <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
@@ -459,7 +460,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             <hashTree/>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
-            <stringProp name="IfController.condition">${__jexl3(${started_id_matchNr} &gt; 0,)}</stringProp>
+            <stringProp name="IfController.condition">${__jexl3(${started_id} &gt; 0,)}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
@@ -511,14 +512,14 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 <stringProp name="JSONPostProcessor.referenceNames">kjxq_id</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.id</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">-1</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器-goods_sn" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">goods_sn</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.goods_sn</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">-1</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
@@ -541,7 +542,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <hashTree/>
             </hashTree>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
-              <stringProp name="IfController.condition">${__jexl3(${kjxq_id_matchNr} &gt; 0,)}</stringProp>
+              <stringProp name="IfController.condition">${__jexl3(${kjxq_id} &gt; 0,)}</stringProp>
               <boolProp name="IfController.evaluateAll">false</boolProp>
               <boolProp name="IfController.useExpression">true</boolProp>
             </IfController>
@@ -593,7 +594,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                   <stringProp name="JSONPostProcessor.referenceNames">bargainUserUid</stringProp>
                   <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.bargainUserUid</stringProp>
                   <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                  <stringProp name="JSONPostProcessor.defaultValues">-1</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
                 </JSONPostProcessor>
                 <hashTree/>
                 <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
@@ -662,7 +663,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                   <stringProp name="JSONPostProcessor.referenceNames">bargainUserUid</stringProp>
                   <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.bargainUserUid</stringProp>
                   <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                  <stringProp name="JSONPostProcessor.defaultValues">-1</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
                 </JSONPostProcessor>
                 <hashTree/>
                 <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
@@ -685,7 +686,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 <hashTree/>
               </hashTree>
               <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
-                <stringProp name="IfController.condition">${__jexl3(${bargainUserUid_matchNr} &gt; 0,)}</stringProp>
+                <stringProp name="IfController.condition">${__jexl3(${bargainUserUid} &gt; 0,)}</stringProp>
                 <boolProp name="IfController.evaluateAll">false</boolProp>
                 <boolProp name="IfController.useExpression">true</boolProp>
               </IfController>
@@ -761,7 +762,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 </hashTree>
               </hashTree>
               <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
-                <stringProp name="IfController.condition">${__jexl3(${goods_sn_matchNr} &gt; 0,)}</stringProp>
+                <stringProp name="IfController.condition">${__jexl3(${goods_sn} &gt; 0,)}</stringProp>
                 <boolProp name="IfController.evaluateAll">false</boolProp>
                 <boolProp name="IfController.useExpression">true</boolProp>
               </IfController>
@@ -899,7 +900,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             <hashTree/>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
-            <stringProp name="IfController.condition">${__jexl3(${id_goods_matchNr} &gt; 0,)}</stringProp>
+            <stringProp name="IfController.condition">${__jexl3(&quot;${id_goods}&quot; != &quot;&quot;,)}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
@@ -1977,7 +1978,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             </DebugPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="--商品详情-购物车商品数量" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="--商品详情-购物车商品数量" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -3425,12 +3426,12 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 首页-&gt;搜索/砍价/优惠券/分类页/用户中心" enabled="true">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 首页-&gt;搜索/砍价/优惠券/分类页/用户中心" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">50</stringProp>
+        <stringProp name="ThreadGroup.num_threads">160</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
-        <stringProp name="Start users count">10</stringProp>
-        <stringProp name="Start users count burst">10</stringProp>
+        <stringProp name="Start users count">50</stringProp>
+        <stringProp name="Start users count burst">50</stringProp>
         <stringProp name="Start users period">120</stringProp>
         <stringProp name="Stop users count">30</stringProp>
         <stringProp name="Stop users period">1</stringProp>
@@ -4161,6 +4162,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
                 <stringProp name="Sample.scope">variable</stringProp>
                 <stringProp name="Scope.variable">started</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
@@ -4183,7 +4185,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <hashTree/>
             </hashTree>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
-              <stringProp name="IfController.condition">${__jexl3(${started_id_matchNr} &gt; 0,)}</stringProp>
+              <stringProp name="IfController.condition">${__jexl3(${started_id} &gt; 0,)}</stringProp>
               <boolProp name="IfController.evaluateAll">false</boolProp>
               <boolProp name="IfController.useExpression">true</boolProp>
             </IfController>
@@ -4235,14 +4237,14 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                   <stringProp name="JSONPostProcessor.referenceNames">kjxq_id</stringProp>
                   <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.id</stringProp>
                   <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                  <stringProp name="JSONPostProcessor.defaultValues">-1</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
                 </JSONPostProcessor>
                 <hashTree/>
                 <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON提取器-goods_sn" enabled="true">
                   <stringProp name="JSONPostProcessor.referenceNames">goods_sn</stringProp>
                   <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.goods_sn</stringProp>
                   <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                  <stringProp name="JSONPostProcessor.defaultValues">-1</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
                 </JSONPostProcessor>
                 <hashTree/>
                 <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
@@ -4265,7 +4267,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 <hashTree/>
               </hashTree>
               <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
-                <stringProp name="IfController.condition">${__jexl3(${kjxq_id_matchNr} &gt; 0,)}</stringProp>
+                <stringProp name="IfController.condition">${__jexl3(${kjxq_id} &gt; 0,)}</stringProp>
                 <boolProp name="IfController.evaluateAll">false</boolProp>
                 <boolProp name="IfController.useExpression">true</boolProp>
               </IfController>
@@ -4317,7 +4319,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                     <stringProp name="JSONPostProcessor.referenceNames">bargainUserUid</stringProp>
                     <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.bargainUserUid</stringProp>
                     <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                    <stringProp name="JSONPostProcessor.defaultValues">-1</stringProp>
+                    <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
                   </JSONPostProcessor>
                   <hashTree/>
                   <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
@@ -4386,7 +4388,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                     <stringProp name="JSONPostProcessor.referenceNames">bargainUserUid</stringProp>
                     <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.bargainUserUid</stringProp>
                     <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                    <stringProp name="JSONPostProcessor.defaultValues">-1</stringProp>
+                    <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
                   </JSONPostProcessor>
                   <hashTree/>
                   <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
@@ -4409,7 +4411,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                   <hashTree/>
                 </hashTree>
                 <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
-                  <stringProp name="IfController.condition">${__jexl3(${bargainUserUid_matchNr} &gt; 0,)}</stringProp>
+                  <stringProp name="IfController.condition">${__jexl3(${bargainUserUid} &gt; 0,)}</stringProp>
                   <boolProp name="IfController.evaluateAll">false</boolProp>
                   <boolProp name="IfController.useExpression">true</boolProp>
                 </IfController>
@@ -4485,7 +4487,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                   </hashTree>
                 </hashTree>
                 <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
-                  <stringProp name="IfController.condition">${__jexl3(${goods_sn_matchNr} &gt; 0,)}</stringProp>
+                  <stringProp name="IfController.condition">${__jexl3(${goods_sn} &gt; 0,)}</stringProp>
                   <boolProp name="IfController.evaluateAll">false</boolProp>
                   <boolProp name="IfController.useExpression">true</boolProp>
                 </IfController>
@@ -4623,7 +4625,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <hashTree/>
             </hashTree>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
-              <stringProp name="IfController.condition">${__jexl3(${id_goods_matchNr} &gt; 0,)}</stringProp>
+              <stringProp name="IfController.condition">${__jexl3(&quot;${id_goods}&quot; != &quot;&quot;,)}</stringProp>
               <boolProp name="IfController.evaluateAll">false</boolProp>
               <boolProp name="IfController.useExpression">true</boolProp>
             </IfController>
@@ -5428,10 +5430,10 @@ if (!prev.isSuccessful()) {
       </hashTree>
       <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 商品详情-&gt;立即购买/加购物车-&gt;下单" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">50</stringProp>
+        <stringProp name="ThreadGroup.num_threads">160</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
-        <stringProp name="Start users count">10</stringProp>
-        <stringProp name="Start users count burst">10</stringProp>
+        <stringProp name="Start users count">50</stringProp>
+        <stringProp name="Start users count burst">50</stringProp>
         <stringProp name="Start users period">120</stringProp>
         <stringProp name="Stop users count">30</stringProp>
         <stringProp name="Stop users period">1</stringProp>
