@@ -6318,3 +6318,665 @@ Caused by: java.net.SocketException: Socket closed
 
 ======end=======
 
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-12 17:53:33.462 - 2020-10-12 17:53:33.533
+Cost 71
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=e40f15745064dd0f225c8d9307612a59
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:40:57.501 - 2020-10-12 21:40:57.673
+Cost 172
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=405739&id_shop=4&session3rd=c1e51caa149aed58459fdc0a75e8c3f8
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:40:57.501 - 2020-10-12 21:40:57.673
+Cost 172
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=405739&id_shop=4&session3rd=c1e51caa149aed58459fdc0a75e8c3f8
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:10.029 - 2020-10-12 21:41:10.099
+Cost 70
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=427935&id_shop=4&session3rd=2c9f636c4edb5266dd52bf9255d833a8
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:10.029 - 2020-10-12 21:41:10.099
+Cost 70
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=427935&id_shop=4&session3rd=2c9f636c4edb5266dd52bf9255d833a8
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:11.447 - 2020-10-12 21:41:11.515
+Cost 68
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=149627&id_shop=4&session3rd=2287f803ade03a52d76a1dad5979f7fd
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:11.447 - 2020-10-12 21:41:11.515
+Cost 68
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=149627&id_shop=4&session3rd=2287f803ade03a52d76a1dad5979f7fd
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-下单
+Time 2020-10-12 21:41:18.615 - 2020-10-12 21:41:18.758
+Cost 143
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buysnaptake
+
+POST data:
+snap=2e68ffc482a51ce195fc8096df1dd05e&id_ud=294406&id_shop=4&session3rd=ba18f997e4b06d725bd4287a24ad9d9d
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-佣金结算
+Time 2020-10-12 21:41:18.759 - 2020-10-12 21:41:18.798
+Cost 39
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.record.settleCps
+
+POST data:
+id_order=&id_shop=4&session3rd=ba18f997e4b06d725bd4287a24ad9d9d
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"id_order\u4e0d\u80fd\u4e3a\u7a7a"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-佣金结算
+Time 2020-10-12 21:41:18.759 - 2020-10-12 21:41:18.798
+Cost 39
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.record.settleCps
+
+POST data:
+id_order=&id_shop=4&session3rd=ba18f997e4b06d725bd4287a24ad9d9d
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"id_order\u4e0d\u80fd\u4e3a\u7a7a"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:21.383 - 2020-10-12 21:41:21.439
+Cost 56
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=249857&id_shop=4&session3rd=76e68cb62472ae46db5c46d87a0fa77e
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:21.383 - 2020-10-12 21:41:21.439
+Cost 56
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=249857&id_shop=4&session3rd=76e68cb62472ae46db5c46d87a0fa77e
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-下单
+Time 2020-10-12 21:41:24.260 - 2020-10-12 21:41:24.382
+Cost 122
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buysnaptake
+
+POST data:
+snap=715b55195b8a41325c0ace6c0d2a0ec0&id_ud=485576&id_shop=4&session3rd=0c37196879ff4bfec8e767de412acc97
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-佣金结算
+Time 2020-10-12 21:41:24.384 - 2020-10-12 21:41:24.430
+Cost 46
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.record.settleCps
+
+POST data:
+id_order=&id_shop=4&session3rd=0c37196879ff4bfec8e767de412acc97
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"id_order\u4e0d\u80fd\u4e3a\u7a7a"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-佣金结算
+Time 2020-10-12 21:41:24.384 - 2020-10-12 21:41:24.430
+Cost 46
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.record.settleCps
+
+POST data:
+id_order=&id_shop=4&session3rd=0c37196879ff4bfec8e767de412acc97
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"id_order\u4e0d\u80fd\u4e3a\u7a7a"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-下单
+Time 2020-10-12 21:41:33.465 - 2020-10-12 21:41:33.687
+Cost 222
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buysnaptake
+
+POST data:
+snap=6bacd1e4e9a46c5a633c611e775d175b&id_ud=488936&id_shop=4&session3rd=e40f15745064dd0f225c8d9307612a59
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-佣金结算
+Time 2020-10-12 21:41:33.690 - 2020-10-12 21:41:33.735
+Cost 45
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.record.settleCps
+
+POST data:
+id_order=&id_shop=4&session3rd=e40f15745064dd0f225c8d9307612a59
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"id_order\u4e0d\u80fd\u4e3a\u7a7a"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-佣金结算
+Time 2020-10-12 21:41:33.690 - 2020-10-12 21:41:33.735
+Cost 45
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.record.settleCps
+
+POST data:
+id_order=&id_shop=4&session3rd=e40f15745064dd0f225c8d9307612a59
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"id_order\u4e0d\u80fd\u4e3a\u7a7a"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:45.239 - 2020-10-12 21:41:45.311
+Cost 72
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=218220&id_shop=4&session3rd=da8ee39ca0ebcf7d9f41010667fb579a
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:45.239 - 2020-10-12 21:41:45.311
+Cost 72
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=218220&id_shop=4&session3rd=da8ee39ca0ebcf7d9f41010667fb579a
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:48.602 - 2020-10-12 21:41:48.736
+Cost 134
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=382692&id_shop=4&session3rd=17e8afc24ca1daade55d00e4ff51a490
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:48.602 - 2020-10-12 21:41:48.736
+Cost 134
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=382692&id_shop=4&session3rd=17e8afc24ca1daade55d00e4ff51a490
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:49.842 - 2020-10-12 21:41:49.912
+Cost 70
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=249651&id_shop=4&session3rd=31169a6cebaa5f2e55af5202bf70e227
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:49.842 - 2020-10-12 21:41:49.912
+Cost 70
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=249651&id_shop=4&session3rd=31169a6cebaa5f2e55af5202bf70e227
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:51.017 - 2020-10-12 21:41:51.081
+Cost 64
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=280252&id_shop=4&session3rd=feb9695d77a0d9957575e4405d20bea0
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --立即购买-立即购买下单
+Time 2020-10-12 21:41:51.017 - 2020-10-12 21:41:51.081
+Cost 64
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buynowtake
+
+POST data:
+id_ud=280252&id_shop=4&session3rd=feb9695d77a0d9957575e4405d20bea0
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-下单
+Time 2020-10-12 21:41:53.986 - 2020-10-12 21:41:54.114
+Cost 128
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buysnaptake
+
+POST data:
+snap=107506fd6982831a207e1c2ee7eb17ed&id_ud=151825&id_shop=4&session3rd=f3d3e03c0a567491b58152c06a9dab94
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-佣金结算
+Time 2020-10-12 21:41:54.115 - 2020-10-12 21:41:54.158
+Cost 43
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.record.settleCps
+
+POST data:
+id_order=&id_shop=4&session3rd=f3d3e03c0a567491b58152c06a9dab94
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"id_order\u4e0d\u80fd\u4e3a\u7a7a"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-佣金结算
+Time 2020-10-12 21:41:54.115 - 2020-10-12 21:41:54.158
+Cost 43
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.record.settleCps
+
+POST data:
+id_order=&id_shop=4&session3rd=f3d3e03c0a567491b58152c06a9dab94
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"id_order\u4e0d\u80fd\u4e3a\u7a7a"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-下单
+Time 2020-10-12 21:41:56.702 - 2020-10-12 21:41:56.783
+Cost 81
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buysnaptake
+
+POST data:
+snap=387e97c8e42b96d315dd3e15eac98669&id_ud=467346&id_shop=4&session3rd=40e919fb221c51fd2a8f4f8b643938de
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-佣金结算
+Time 2020-10-12 21:41:56.785 - 2020-10-12 21:41:56.839
+Cost 54
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.record.settleCps
+
+POST data:
+id_order=&id_shop=4&session3rd=40e919fb221c51fd2a8f4f8b643938de
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"id_order\u4e0d\u80fd\u4e3a\u7a7a"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-佣金结算
+Time 2020-10-12 21:41:56.785 - 2020-10-12 21:41:56.839
+Cost 54
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.record.settleCps
+
+POST data:
+id_order=&id_shop=4&session3rd=40e919fb221c51fd2a8f4f8b643938de
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"id_order\u4e0d\u80fd\u4e3a\u7a7a"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-下单
+Time 2020-10-12 21:42:17.549 - 2020-10-12 21:42:17.663
+Cost 114
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.trade.bill.buysnaptake
+
+POST data:
+snap=8c2ebb99d6470673a6a4256ac70912d1&id_ud=489606&id_shop=4&session3rd=500940686ef7362a50e5c75a70a433f3
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"\u9519\u8bef"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-佣金结算
+Time 2020-10-12 21:42:17.664 - 2020-10-12 21:42:17.736
+Cost 72
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.record.settleCps
+
+POST data:
+id_order=&id_shop=4&session3rd=500940686ef7362a50e5c75a70a433f3
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"id_order\u4e0d\u80fd\u4e3a\u7a7a"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --下单页面-佣金结算
+Time 2020-10-12 21:42:17.664 - 2020-10-12 21:42:17.736
+Cost 72
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.record.settleCps
+
+POST data:
+id_order=&id_shop=4&session3rd=500940686ef7362a50e5c75a70a433f3
+
+[no cookies]
+
+Response data:
+{"status":0,"msg":"id_order\u4e0d\u80fd\u4e3a\u7a7a"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --商品详情-获取促销信息
+Time 2020-10-12 21:42:20.229 - 2020-10-12 21:42:20.378
+Cost 149
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.goods.online.getPromoDataInfoByIdGoods
+
+POST data:
+id_goods=1440&id_shop=4&session3rd=2676e2ae99bf304a7c03bf97ea3b7266
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
