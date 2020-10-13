@@ -6013,7 +6013,7 @@ if (!prev.isSuccessful()) {
         </ConfigTestElement>
         <hashTree/>
         <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="随机变量-buyway" enabled="true">
-          <stringProp name="maximumValue">0</stringProp>
+          <stringProp name="maximumValue">1</stringProp>
           <stringProp name="minimumValue">0</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <boolProp name="perThread">true</boolProp>
