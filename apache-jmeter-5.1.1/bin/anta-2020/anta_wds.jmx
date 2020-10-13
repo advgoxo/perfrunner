@@ -2459,7 +2459,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             <hashTree/>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
-            <stringProp name="IfController.condition">${__jexl3(&quot;${shdz_id_ud}&quot; != &quot;&quot;,)}</stringProp>
+            <stringProp name="IfController.condition">${__jexl3(&quot;${shdz_id_ud}&quot; != &quot;&quot; &amp;&amp; ${stock} &gt; 0,)}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
@@ -6744,7 +6744,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <hashTree/>
             </hashTree>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
-              <stringProp name="IfController.condition">${__jexl3(&quot;${shdz_id_ud}&quot; != &quot;&quot;,)}</stringProp>
+              <stringProp name="IfController.condition">${__jexl3(&quot;${shdz_id_ud}&quot; != &quot;&quot; &amp;&amp; ${stock} &gt; 0,)}</stringProp>
               <boolProp name="IfController.evaluateAll">false</boolProp>
               <boolProp name="IfController.useExpression">true</boolProp>
             </IfController>
