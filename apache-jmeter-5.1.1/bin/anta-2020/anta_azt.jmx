@@ -182,11 +182,12 @@ vars.put(&quot;ddcx_sign&quot;,sign);</stringProp>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="1100399465">&quot;result&quot;:&quot;SUCCESS&quot;,&quot;success&quot;:true</stringProp>
+              <stringProp name="-705399362">&quot;errorCode&quot;:&quot;无促销数据&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
+            <intProp name="Assertion.test_type">48</intProp>
           </ResponseAssertion>
           <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器_ddcx_result" enabled="true">
