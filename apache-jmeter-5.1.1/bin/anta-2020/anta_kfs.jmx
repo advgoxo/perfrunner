@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="测试计划" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="ip1" elementType="Argument">
+            <stringProp name="Argument.name">ip1</stringProp>
+            <stringProp name="Argument.value">121.199.192.140</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">测试环境内网地址1</stringProp>
+          </elementProp>
+          <elementProp name="ip2" elementType="Argument">
+            <stringProp name="Argument.name">ip2</stringProp>
+            <stringProp name="Argument.value">121.199.192.140</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">测试环境内网地址2</stringProp>
+          </elementProp>
+          <elementProp name="wan" elementType="Argument">
+            <stringProp name="Argument.name">wan</stringProp>
+            <stringProp name="Argument.value">121.199.192.140</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">测试环境外网地址</stringProp>
+          </elementProp>
+          <elementProp name="xenv" elementType="Argument">
+            <stringProp name="Argument.name">xenv</stringProp>
+            <stringProp name="Argument.value">${__P(xenv,beta)}</stringProp>
+            <stringProp name="Argument.desc">命令行-J参数</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="xhome" elementType="Argument">
+            <stringProp name="Argument.name">xhome</stringProp>
+            <stringProp name="Argument.value">${__P(xhome,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="xplan" elementType="Argument">
+            <stringProp name="Argument.name">xplan</stringProp>
+            <stringProp name="Argument.value">${__P(xplan,100)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="xport" elementType="Argument">
+            <stringProp name="Argument.name">xport</stringProp>
+            <stringProp name="Argument.value">${__if(${__P(xenv,beta)},debug,8085,8085,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="errSamplerFile" elementType="Argument">
+            <stringProp name="Argument.name">errSamplerFile</stringProp>
+            <stringProp name="Argument.value">${__xhome(xreport/azt/${__P(xplan,100)}/error-${__machineIP()}.log,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="客服系统" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">60</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">300</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
+          <stringProp name="HTTPSampler.port">8085</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="Content-Type" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="取消订单" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;shopCode&quot;: &quot;${shopCode}&quot;,&#xd;
+	&quot;orderType&quot;: &quot;3&quot;,&#xd;
+	&quot;tradeNo&quot;: &quot;${tradeNo}&quot;,&#xd;
+	&quot;buyerNick&quot;: &quot;萧飒筱岚&quot;,&#xd;
+	&quot;billType&quot;: &quot;1&quot;,&#xd;
+	&quot;mobile&quot;: &quot;13054577108&quot;,&#xd;
+	&quot;goodsList&quot;: [{&#xd;
+		&quot;unitPrice&quot;: &quot;680.0&quot;,&#xd;
+		&quot;deliveryTypeName&quot;: &quot;顺丰速运&quot;,&#xd;
+		&quot;subTradeNo&quot;: &quot;${subTradeNo}&quot;,&#xd;
+		&quot;goodsId&quot;: &quot;612766563860&quot;,&#xd;
+		&quot;qty&quot;: &quot;1&quot;,&#xd;
+		&quot;styleNo&quot;: &quot;F11W028601F&quot;,&#xd;
+		&quot;refundStatus&quot;: &quot;0&quot;,&#xd;
+		&quot;goodsTitle&quot;: &quot;FILA 斐乐官方女士针织长裤2020秋季新款薄款运动裤宽松休闲卫裤&quot;,&#xd;
+		&quot;skuInfo&quot;: &quot;颜色分类:传奇蓝-NV;尺码:165/66A/M&quot;,&#xd;
+		&quot;barcode&quot;: &quot;6918030313738&quot;,&#xd;
+		&quot;skuId&quot;: &quot;4480312850076&quot;&#xd;
+	}],&#xd;
+	&quot;orderStatus&quot;: &quot;0&quot;,&#xd;
+	&quot;remark&quot;: &quot;评价送袜子&quot;,&#xd;
+	&quot;userId&quot;: &quot;110442252&quot;,&#xd;
+	&quot;createBy&quot;: &quot;王冰雪&quot;,&#xd;
+	&quot;createTime&quot;: &quot;2020-10-13 14:56:46&quot;,&#xd;
+	&quot;giftBarcode&quot;: &quot;女袜 F13W018304FWT&quot;,&#xd;
+	&quot;appId&quot;: &quot;2544&quot;,&#xd;
+	&quot;projectId&quot;: &quot;3387&quot;,&#xd;
+	&quot;taskId&quot;: &quot;${__Random(100,999,)}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service/api/cms/BN_TM?method=anta.audit.order.push&amp;app_key=bn1test&amp;target_app_key=bn1test</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="257022250">&quot;result&quot;:&quot;success&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="取消订单数据" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="filename">kfs/cancel.csv</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.group</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">tradeNo,subTradeNo,shopCode</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="退款管理" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;trid&quot;: &quot;${__Random(1000000,9999999,)}&quot;,&#xd;
+	&quot;shop_id&quot;: &quot;32984&quot;,&#xd;
+	&quot;refund_id&quot;: &quot;${__Random(10000000,99999999,)}${__Random(100000000,999999999,)}&quot;,&#xd;
+	&quot;tid&quot;: &quot;${__Random(10000000,99999999,)}${__Random(10000000,99999999,)}${__Random(100,999,)}&quot;,&#xd;
+	&quot;oid&quot;: &quot;${__Random(10000000,99999998,)}${__Random(10000000,99999998,)}${__Random(100,999,)}&quot;,&#xd;
+	&quot;alipay_no&quot;: &quot;2020100722001128771419539583&quot;,&#xd;
+	&quot;total_fee&quot;: &quot;494.10&quot;,&#xd;
+	&quot;buyer_nick&quot;: &quot;~U6MQ9oFSByAcmCXWxrNP8A==~QJ\/4AzeVnJplLyf0\/hOFEjqX~1~~&quot;,&#xd;
+	&quot;seller_nick&quot;: &quot;fila\u7ae5\u88c5\u65d7\u8230\u5e97&quot;,&#xd;
+	&quot;created&quot;: &quot;2020-10-10 19:14:16&quot;,&#xd;
+	&quot;modified&quot;: &quot;2020-10-13 14:55:09&quot;,&#xd;
+	&quot;order_status&quot;: &quot;TRADE_CLOSED&quot;,&#xd;
+	&quot;status&quot;: &quot;${status}&quot;,&#xd;
+	&quot;good_status&quot;: &quot;BUYER_RETURNED_GOODS&quot;,&#xd;
+	&quot;has_good_return&quot;: &quot;1&quot;,&#xd;
+	&quot;refund_fee&quot;: &quot;494.10&quot;,&#xd;
+	&quot;payment&quot;: &quot;0.00&quot;,&#xd;
+	&quot;reason&quot;: &quot;${reasonEncode}&quot;,&#xd;
+	&quot;tr_desc&quot;: &quot;&quot;,&#xd;
+	&quot;iid&quot;: &quot;&quot;,&#xd;
+	&quot;title&quot;: &quot;FILA\u6590\u4e50\u7ae5\u978b\u7537\u7ae5\u5973\u7ae5\u590d\u53e4\u8dd1\u978b2020\u5e74\u79cb\u5b63\u65b0\u6b3e\u4f11\u95f2\u513f\u7ae5\u8001\u7239\u8fd0\u52a8\u978b&quot;,&#xd;
+	&quot;price&quot;: &quot;680.00&quot;,&#xd;
+	&quot;num&quot;: &quot;1&quot;,&#xd;
+	&quot;good_return_time&quot;: &quot;2020-10-11 09:18:30&quot;,&#xd;
+	&quot;company_name&quot;: &quot;\u4e2d\u901a\u5feb\u9012&quot;,&#xd;
+	&quot;sid&quot;: &quot;75395719013880&quot;,&#xd;
+	&quot;address&quot;: &quot;\u9648\u68a6\uff0c17706068776\uff0c 0595-85925052\uff0c \u798f\u5efa\u7701\u6cc9\u5dde\u5e02\u664b\u6c5f\u5e02    \u9648\u57ed\u9547\u54c1\u724c\u5927\u9053\u5b89\u8e0f\u7269\u6d41\u56ed1\u53f7\u95e8_D\u4ed3D25\u53f7\u6708\u53f0\uff08fila\u7ae5\u88c5\u5e97\u9000\u8d27\u7ec4\uff09\uff08\u6d3e\u9001\u8054\u7cfb\u7535\u8bdd\uff1a0595-68008700\uff09\uff0c 362200&quot;,&#xd;
+	&quot;shipping_type&quot;: &quot;express&quot;,&#xd;
+	&quot;num_iid&quot;: &quot;618380729196&quot;,&#xd;
+	&quot;remind_type&quot;: &quot;&quot;,&#xd;
+	&quot;exist_timeout&quot;: &quot;1&quot;,&#xd;
+	&quot;timeout&quot;: &quot;2020-10-21 09:18:32&quot;,&#xd;
+	&quot;errcode&quot;: &quot;0&quot;,&#xd;
+	&quot;errmsg&quot;: &quot;\u9000\u5355\u53f7\uff1aAT90101017565&quot;,&#xd;
+	&quot;is_tran_success&quot;: &quot;1&quot;,&#xd;
+	&quot;error_num&quot;: &quot;0&quot;,&#xd;
+	&quot;refund_version&quot;: &quot;1602328456433&quot;,&#xd;
+	&quot;refund_type&quot;: &quot;return&quot;,&#xd;
+	&quot;operation_contraint&quot;: &quot;null&quot;,&#xd;
+	&quot;actual_refund_fee&quot;: &quot;494.10&quot;,&#xd;
+	&quot;current_phase_timeout&quot;: &quot;2020-10-21 09:18:32&quot;,&#xd;
+	&quot;cs_status&quot;: &quot;1&quot;,&#xd;
+	&quot;refund_phase&quot;: &quot;onsale&quot;,&#xd;
+	&quot;source&quot;: &quot;tb&quot;,&#xd;
+	&quot;agree_tk_sp&quot;: &quot;0&quot;,&#xd;
+	&quot;lastchanged&quot;: &quot;2020-10-13 14:56:08&quot;,&#xd;
+	&quot;shipping_fee&quot;: &quot;0.00&quot;,&#xd;
+	&quot;good_payment&quot;: &quot;494.1&quot;,&#xd;
+	&quot;is_sm&quot;: &quot;0&quot;,&#xd;
+	&quot;smr&quot;: &quot;&quot;,&#xd;
+	&quot;smrq&quot;: &quot;0&quot;,&#xd;
+	&quot;return_apply_id&quot;: &quot;0&quot;,&#xd;
+	&quot;return_apply_djbh&quot;: &quot;&quot;,&#xd;
+	&quot;return_apply_bz&quot;: &quot;&quot;,&#xd;
+	&quot;hold_result&quot;: null,&#xd;
+	&quot;hold_step&quot;: null,&#xd;
+	&quot;hold_time&quot;: &quot;&quot;,&#xd;
+	&quot;is_prime&quot;: &quot;0&quot;,&#xd;
+	&quot;is_all_refund&quot;: &quot;0&quot;,&#xd;
+	&quot;wbag_status&quot;: &quot;0&quot;,&#xd;
+	&quot;wbag_time&quot;: &quot;0&quot;,&#xd;
+	&quot;do_order&quot;: &quot;1&quot;,&#xd;
+	&quot;do_order_msg&quot;: &quot;&quot;,&#xd;
+	&quot;do_order_time&quot;: null,&#xd;
+	&quot;time_success&quot;: &quot;2020-10-13 14:55:09&quot;,&#xd;
+	&quot;lsth_status&quot;: &quot;0&quot;,&#xd;
+	&quot;created_at&quot;: &quot;2020-10-10 19:15:06&quot;,&#xd;
+	&quot;is_sync_e3plus&quot;: &quot;0&quot;,&#xd;
+	&quot;sync_err_count&quot;: &quot;0&quot;,&#xd;
+	&quot;sync_err_msg&quot;: &quot;&quot;,&#xd;
+	&quot;shop_code&quot;: &quot;${shop_code}&quot;,&#xd;
+	&quot;shop_name&quot;: &quot;${shopNameEncode}&quot;,&#xd;
+	&quot;barcode&quot;: &quot;6918030618093&quot;,&#xd;
+	&quot;logistics_no&quot;: &quot;SF1042229742835&quot;,&#xd;
+	&quot;logistics_sn&quot;: &quot;\u987a\u4e30\u901f\u8fd0&quot;,&#xd;
+	&quot;shipping_time_ck&quot;: 0,&#xd;
+	&quot;receiver_mobile&quot;: &quot;$EgAO13ZYw5K+yCy+IBxfjQ==$rnAuhG7n0Fuk3rAbkl4bzg==$1$$&quot;,&#xd;
+	&quot;goods_url&quot;: &quot;https:\/\/item.taobao.com\/item.htm?id=618380729196&amp;spm=2014.12440355.0.0&quot;,&#xd;
+	&quot;sku&quot;: &quot;4538626010983|\u989c\u8272\u5206\u7c7b:\u4f20\u5947\u84dd\/\u9a91\u58eb\u84dd-NB-\u7537;\u5c3a\u7801:34\u7801\/\u5185\u957f22.4cm\/\u524d\u638c\u811a\u5bbd7.4cm&quot;,&#xd;
+	&quot;from_platform&quot;: &quot;ALI_OMS_TM&quot;,&#xd;
+	&quot;token&quot;: &quot;admin&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service/api/cms/ALI_OMS_TM?app_key=23212136&amp;target_app_key=23212136&amp;method=taobao_refund_get×tamp=2020-10-13+15%3A51%3A55&amp;format=json&amp;sign_method=md5&amp;v = 2.0＆sign = BBD72D0924735FEDF919A60C53A5B7D3</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="257022250">&quot;result&quot;:&quot;success&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="kfs-shop" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="filename">kfs/shop.csv</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.group</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">shop_code,shop_name</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="kfs-status" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="filename">kfs/status.csv</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.group</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">status</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="kfs-reason" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="filename">kfs/reason.csv</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.group</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">reason</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import com.jmeterx.codec.XCodec;
+
+String reason = vars.get(&quot;reason&quot;);
+String reasonEncode = XCodec.encodeUnicode(reason);
+
+String shopName = vars.get(&quot;shop_name&quot;);
+String shopNameEncode = XCodec.encodeUnicode(shopName);
+
+vars.put(&quot;reasonEncode&quot;, reasonEncode);
+vars.put(&quot;shopNameEncode&quot;, shopNameEncode);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="响应时间图" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="错误监听器" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import java.text.SimpleDateFormat;
+import com.jmeterx.async.AsyncFileUtils;
+
+String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
+
+if (!prev.isSuccessful()) {
+	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
+	//String responseData = prev.getResponseDataAsString();
+	
+	SimpleDateFormat fmt =  new 
+		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
+	String begtime = fmt.format(prev.getStartTime());
+	String endtime = fmt.format(prev.getEndTime());
+	
+	String data = &quot;sampler error&quot;
+		+ &quot;\n======beg=======\n&quot; 
+		+ &quot;Sampler &quot; + prev.getSampleLabel()
+		+ &quot;\nTime &quot; + begtime + &quot; - &quot; + endtime 
+		+ &quot;\n&quot; + samplerData
+		+ &quot;\nResponse data:\n&quot; 
+		+ responseData
+		+ &quot;\n======end=======\n&quot;;
+
+	AsyncFileUtils.writeLine(errSamplerFile, data);
+}
+</stringProp>
+        </BeanShellListener>
+        <hashTree/>
+      </hashTree>
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 客服系统" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.num_threads">300</stringProp>
+        <stringProp name="Threads initial delay">10</stringProp>
+        <stringProp name="Start users count"></stringProp>
+        <stringProp name="Start users count burst"></stringProp>
+        <stringProp name="Start users period">300</stringProp>
+        <stringProp name="Stop users count">30</stringProp>
+        <stringProp name="Stop users period">0</stringProp>
+        <stringProp name="flighttime">300</stringProp>
+        <stringProp name="rampUp">0</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+      </kg.apc.jmeter.threads.SteppingThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
+          <stringProp name="HTTPSampler.port">8085</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="Content-Type" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="取消订单" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;shopCode&quot;: &quot;${shopCode}&quot;,&#xd;
+	&quot;orderType&quot;: &quot;3&quot;,&#xd;
+	&quot;tradeNo&quot;: &quot;${tradeNo}&quot;,&#xd;
+	&quot;buyerNick&quot;: &quot;萧飒筱岚&quot;,&#xd;
+	&quot;billType&quot;: &quot;1&quot;,&#xd;
+	&quot;mobile&quot;: &quot;13054577108&quot;,&#xd;
+	&quot;goodsList&quot;: [{&#xd;
+		&quot;unitPrice&quot;: &quot;680.0&quot;,&#xd;
+		&quot;deliveryTypeName&quot;: &quot;顺丰速运&quot;,&#xd;
+		&quot;subTradeNo&quot;: &quot;${subTradeNo}&quot;,&#xd;
+		&quot;goodsId&quot;: &quot;612766563860&quot;,&#xd;
+		&quot;qty&quot;: &quot;1&quot;,&#xd;
+		&quot;styleNo&quot;: &quot;F11W028601F&quot;,&#xd;
+		&quot;refundStatus&quot;: &quot;0&quot;,&#xd;
+		&quot;goodsTitle&quot;: &quot;FILA 斐乐官方女士针织长裤2020秋季新款薄款运动裤宽松休闲卫裤&quot;,&#xd;
+		&quot;skuInfo&quot;: &quot;颜色分类:传奇蓝-NV;尺码:165/66A/M&quot;,&#xd;
+		&quot;barcode&quot;: &quot;6918030313738&quot;,&#xd;
+		&quot;skuId&quot;: &quot;4480312850076&quot;&#xd;
+	}],&#xd;
+	&quot;orderStatus&quot;: &quot;0&quot;,&#xd;
+	&quot;remark&quot;: &quot;评价送袜子&quot;,&#xd;
+	&quot;userId&quot;: &quot;110442252&quot;,&#xd;
+	&quot;createBy&quot;: &quot;王冰雪&quot;,&#xd;
+	&quot;createTime&quot;: &quot;2020-10-13 14:56:46&quot;,&#xd;
+	&quot;giftBarcode&quot;: &quot;女袜 F13W018304FWT&quot;,&#xd;
+	&quot;appId&quot;: &quot;2544&quot;,&#xd;
+	&quot;projectId&quot;: &quot;3387&quot;,&#xd;
+	&quot;taskId&quot;: &quot;${__Random(100,999,)}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service/api/cms/BN_TM?method=anta.audit.order.push&amp;app_key=bn1test&amp;target_app_key=bn1test</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="257022250">&quot;result&quot;:&quot;success&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="取消订单数据" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="filename">kfs/cancel.csv</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.group</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">tradeNo,subTradeNo,shopCode</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="退款管理" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;trid&quot;: &quot;${__Random(1000000,9999999,)}&quot;,&#xd;
+	&quot;shop_id&quot;: &quot;32984&quot;,&#xd;
+	&quot;refund_id&quot;: &quot;${__Random(10000000,99999999,)}${__Random(100000000,999999999,)}&quot;,&#xd;
+	&quot;tid&quot;: &quot;${__Random(10000000,99999999,)}${__Random(10000000,99999999,)}${__Random(100,999,)}&quot;,&#xd;
+	&quot;oid&quot;: &quot;${__Random(10000000,99999998,)}${__Random(10000000,99999998,)}${__Random(100,999,)}&quot;,&#xd;
+	&quot;alipay_no&quot;: &quot;2020100722001128771419539583&quot;,&#xd;
+	&quot;total_fee&quot;: &quot;494.10&quot;,&#xd;
+	&quot;buyer_nick&quot;: &quot;~U6MQ9oFSByAcmCXWxrNP8A==~QJ\/4AzeVnJplLyf0\/hOFEjqX~1~~&quot;,&#xd;
+	&quot;seller_nick&quot;: &quot;fila\u7ae5\u88c5\u65d7\u8230\u5e97&quot;,&#xd;
+	&quot;created&quot;: &quot;2020-10-10 19:14:16&quot;,&#xd;
+	&quot;modified&quot;: &quot;2020-10-13 14:55:09&quot;,&#xd;
+	&quot;order_status&quot;: &quot;TRADE_CLOSED&quot;,&#xd;
+	&quot;status&quot;: &quot;${status}&quot;,&#xd;
+	&quot;good_status&quot;: &quot;BUYER_RETURNED_GOODS&quot;,&#xd;
+	&quot;has_good_return&quot;: &quot;1&quot;,&#xd;
+	&quot;refund_fee&quot;: &quot;494.10&quot;,&#xd;
+	&quot;payment&quot;: &quot;0.00&quot;,&#xd;
+	&quot;reason&quot;: &quot;${reasonEncode}&quot;,&#xd;
+	&quot;tr_desc&quot;: &quot;&quot;,&#xd;
+	&quot;iid&quot;: &quot;&quot;,&#xd;
+	&quot;title&quot;: &quot;FILA\u6590\u4e50\u7ae5\u978b\u7537\u7ae5\u5973\u7ae5\u590d\u53e4\u8dd1\u978b2020\u5e74\u79cb\u5b63\u65b0\u6b3e\u4f11\u95f2\u513f\u7ae5\u8001\u7239\u8fd0\u52a8\u978b&quot;,&#xd;
+	&quot;price&quot;: &quot;680.00&quot;,&#xd;
+	&quot;num&quot;: &quot;1&quot;,&#xd;
+	&quot;good_return_time&quot;: &quot;2020-10-11 09:18:30&quot;,&#xd;
+	&quot;company_name&quot;: &quot;\u4e2d\u901a\u5feb\u9012&quot;,&#xd;
+	&quot;sid&quot;: &quot;75395719013880&quot;,&#xd;
+	&quot;address&quot;: &quot;\u9648\u68a6\uff0c17706068776\uff0c 0595-85925052\uff0c \u798f\u5efa\u7701\u6cc9\u5dde\u5e02\u664b\u6c5f\u5e02    \u9648\u57ed\u9547\u54c1\u724c\u5927\u9053\u5b89\u8e0f\u7269\u6d41\u56ed1\u53f7\u95e8_D\u4ed3D25\u53f7\u6708\u53f0\uff08fila\u7ae5\u88c5\u5e97\u9000\u8d27\u7ec4\uff09\uff08\u6d3e\u9001\u8054\u7cfb\u7535\u8bdd\uff1a0595-68008700\uff09\uff0c 362200&quot;,&#xd;
+	&quot;shipping_type&quot;: &quot;express&quot;,&#xd;
+	&quot;num_iid&quot;: &quot;618380729196&quot;,&#xd;
+	&quot;remind_type&quot;: &quot;&quot;,&#xd;
+	&quot;exist_timeout&quot;: &quot;1&quot;,&#xd;
+	&quot;timeout&quot;: &quot;2020-10-21 09:18:32&quot;,&#xd;
+	&quot;errcode&quot;: &quot;0&quot;,&#xd;
+	&quot;errmsg&quot;: &quot;\u9000\u5355\u53f7\uff1aAT90101017565&quot;,&#xd;
+	&quot;is_tran_success&quot;: &quot;1&quot;,&#xd;
+	&quot;error_num&quot;: &quot;0&quot;,&#xd;
+	&quot;refund_version&quot;: &quot;1602328456433&quot;,&#xd;
+	&quot;refund_type&quot;: &quot;return&quot;,&#xd;
+	&quot;operation_contraint&quot;: &quot;null&quot;,&#xd;
+	&quot;actual_refund_fee&quot;: &quot;494.10&quot;,&#xd;
+	&quot;current_phase_timeout&quot;: &quot;2020-10-21 09:18:32&quot;,&#xd;
+	&quot;cs_status&quot;: &quot;1&quot;,&#xd;
+	&quot;refund_phase&quot;: &quot;onsale&quot;,&#xd;
+	&quot;source&quot;: &quot;tb&quot;,&#xd;
+	&quot;agree_tk_sp&quot;: &quot;0&quot;,&#xd;
+	&quot;lastchanged&quot;: &quot;2020-10-13 14:56:08&quot;,&#xd;
+	&quot;shipping_fee&quot;: &quot;0.00&quot;,&#xd;
+	&quot;good_payment&quot;: &quot;494.1&quot;,&#xd;
+	&quot;is_sm&quot;: &quot;0&quot;,&#xd;
+	&quot;smr&quot;: &quot;&quot;,&#xd;
+	&quot;smrq&quot;: &quot;0&quot;,&#xd;
+	&quot;return_apply_id&quot;: &quot;0&quot;,&#xd;
+	&quot;return_apply_djbh&quot;: &quot;&quot;,&#xd;
+	&quot;return_apply_bz&quot;: &quot;&quot;,&#xd;
+	&quot;hold_result&quot;: null,&#xd;
+	&quot;hold_step&quot;: null,&#xd;
+	&quot;hold_time&quot;: &quot;&quot;,&#xd;
+	&quot;is_prime&quot;: &quot;0&quot;,&#xd;
+	&quot;is_all_refund&quot;: &quot;0&quot;,&#xd;
+	&quot;wbag_status&quot;: &quot;0&quot;,&#xd;
+	&quot;wbag_time&quot;: &quot;0&quot;,&#xd;
+	&quot;do_order&quot;: &quot;1&quot;,&#xd;
+	&quot;do_order_msg&quot;: &quot;&quot;,&#xd;
+	&quot;do_order_time&quot;: null,&#xd;
+	&quot;time_success&quot;: &quot;2020-10-13 14:55:09&quot;,&#xd;
+	&quot;lsth_status&quot;: &quot;0&quot;,&#xd;
+	&quot;created_at&quot;: &quot;2020-10-10 19:15:06&quot;,&#xd;
+	&quot;is_sync_e3plus&quot;: &quot;0&quot;,&#xd;
+	&quot;sync_err_count&quot;: &quot;0&quot;,&#xd;
+	&quot;sync_err_msg&quot;: &quot;&quot;,&#xd;
+	&quot;shop_code&quot;: &quot;${shop_code}&quot;,&#xd;
+	&quot;shop_name&quot;: &quot;${shopNameEncode}&quot;,&#xd;
+	&quot;barcode&quot;: &quot;6918030618093&quot;,&#xd;
+	&quot;logistics_no&quot;: &quot;SF1042229742835&quot;,&#xd;
+	&quot;logistics_sn&quot;: &quot;\u987a\u4e30\u901f\u8fd0&quot;,&#xd;
+	&quot;shipping_time_ck&quot;: 0,&#xd;
+	&quot;receiver_mobile&quot;: &quot;$EgAO13ZYw5K+yCy+IBxfjQ==$rnAuhG7n0Fuk3rAbkl4bzg==$1$$&quot;,&#xd;
+	&quot;goods_url&quot;: &quot;https:\/\/item.taobao.com\/item.htm?id=618380729196&amp;spm=2014.12440355.0.0&quot;,&#xd;
+	&quot;sku&quot;: &quot;4538626010983|\u989c\u8272\u5206\u7c7b:\u4f20\u5947\u84dd\/\u9a91\u58eb\u84dd-NB-\u7537;\u5c3a\u7801:34\u7801\/\u5185\u957f22.4cm\/\u524d\u638c\u811a\u5bbd7.4cm&quot;,&#xd;
+	&quot;from_platform&quot;: &quot;ALI_OMS_TM&quot;,&#xd;
+	&quot;token&quot;: &quot;admin&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service/api/cms/ALI_OMS_TM?app_key=23212136&amp;target_app_key=23212136&amp;method=taobao_refund_get×tamp=2020-10-13+15%3A51%3A55&amp;format=json&amp;sign_method=md5&amp;v = 2.0＆sign = BBD72D0924735FEDF919A60C53A5B7D3</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="257022250">&quot;result&quot;:&quot;success&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="kfs-shop" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="filename">kfs/shop.csv</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.group</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">shop_code,shop_name</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="kfs-status" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="filename">kfs/status.csv</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.group</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">status</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="kfs-reason" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="filename">kfs/reason.csv</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.group</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">reason</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import com.jmeterx.codec.XCodec;
+
+String reason = vars.get(&quot;reason&quot;);
+String reasonEncode = XCodec.encodeUnicode(reason);
+
+String shopName = vars.get(&quot;shop_name&quot;);
+String shopNameEncode = XCodec.encodeUnicode(shopName);
+
+vars.put(&quot;reasonEncode&quot;, reasonEncode);
+vars.put(&quot;shopNameEncode&quot;, shopNameEncode);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>true</responseData>
+              <samplerData>true</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">30000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ResponseTimesOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Response Times Over Time" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">30000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="错误监听器" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import java.text.SimpleDateFormat;
+import com.jmeterx.async.AsyncFileUtils;
+
+String errSamplerFile = vars.get(&quot;errSamplerFile&quot;);
+
+if (!prev.isSuccessful()) {
+	String samplerData = prev.getSamplerData();
+	String responseData = vars.get(&quot;xResponseData&quot;);
+	//String responseData = prev.getResponseDataAsString();
+	
+	SimpleDateFormat fmt =  new 
+		SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss.SSS&quot;);
+	String begtime = fmt.format(prev.getStartTime());
+	String endtime = fmt.format(prev.getEndTime());
+	
+	String data = &quot;sampler error&quot;
+		+ &quot;\n======beg=======\n&quot; 
+		+ &quot;Sampler &quot; + prev.getSampleLabel()
+		+ &quot;\nTime &quot; + begtime + &quot; - &quot; + endtime 
+		+ &quot;\n&quot; + samplerData
+		+ &quot;\nResponse data:\n&quot; 
+		+ responseData
+		+ &quot;\n======end=======\n&quot;;
+
+	AsyncFileUtils.writeLine(errSamplerFile, data);
+}
+</stringProp>
+        </BeanShellListener>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
