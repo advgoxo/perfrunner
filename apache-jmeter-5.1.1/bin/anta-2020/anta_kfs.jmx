@@ -61,7 +61,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="客服系统" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="客服系统" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -513,7 +513,7 @@ if (!prev.isSuccessful()) {
         </BeanShellListener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 客服系统" enabled="false">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 客服系统" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">100</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
@@ -739,7 +739,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/service/api/cms/ALI_OMS_TM?app_key=23212136&amp;target_app_key=23212136&amp;method=taobao_refund_get×tamp=2020-10-13+15%3A51%3A55&amp;format=json&amp;sign_method=md5&amp;v = 2.0＆sign = BBD72D0924735FEDF919A60C53A5B7D3</stringProp>
+          <stringProp name="HTTPSampler.path">/service/api/cms/ALI_OMS_TM?app_key=23212136&amp;target_app_key=23212136&amp;method=taobao_refund_get</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -752,7 +752,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
         <hashTree>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="257022250">&quot;result&quot;:&quot;success&quot;</stringProp>
+              <stringProp name="-1998788965">&quot;status&quot;:1,&quot;code&quot;:200,&quot;message&quot;:&quot;OK&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
