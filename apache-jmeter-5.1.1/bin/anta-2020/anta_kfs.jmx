@@ -141,7 +141,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/service/api/cms/BN_TM?method=anta.audit.order.push&amp;app_key=bn1test&amp;target_app_key=bn1test</stringProp>
+          <stringProp name="HTTPSampler.path">/service/api/cms/BN_TM?method=anta.audit.order.push</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -597,7 +597,7 @@ if (!prev.isSuccessful()) {
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/service/api/cms/BN_TM?method=anta.audit.order.push&amp;app_key=bn1test&amp;target_app_key=bn1test</stringProp>
+          <stringProp name="HTTPSampler.path">/service/api/cms/BN_TM?method=anta.audit.order.push</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
