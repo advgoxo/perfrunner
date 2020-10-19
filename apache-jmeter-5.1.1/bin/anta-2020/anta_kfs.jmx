@@ -16,13 +16,13 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="ip1" elementType="Argument">
             <stringProp name="Argument.name">ip1</stringProp>
-            <stringProp name="Argument.value">121.199.192.140</stringProp>
+            <stringProp name="Argument.value">10.211.115.120</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">测试环境内网地址1</stringProp>
           </elementProp>
           <elementProp name="ip2" elementType="Argument">
             <stringProp name="Argument.name">ip2</stringProp>
-            <stringProp name="Argument.value">121.199.192.140</stringProp>
+            <stringProp name="Argument.value">10.211.115.120</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">测试环境内网地址2</stringProp>
           </elementProp>
