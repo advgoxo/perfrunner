@@ -105,7 +105,7 @@
           <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
           <stringProp name="HTTPSampler.port">8085</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
           <stringProp name="HTTPSampler.path"></stringProp>
           <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
           <stringProp name="HTTPSampler.connect_timeout"></stringProp>
@@ -114,7 +114,7 @@
         <hashTree/>
         <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
           <collectionProp name="HeaderManager.headers">
-            <elementProp name="Content-Type" elementType="Header">
+            <elementProp name="" elementType="Header">
               <stringProp name="Header.name">Content-Type</stringProp>
               <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
             </elementProp>
@@ -133,7 +133,7 @@
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
 	&quot;shopCode&quot;: &quot;${shopCode}&quot;,&#xd;
-	&quot;orderType&quot;: &quot;3&quot;,&#xd;
+	&quot;orderType&quot;: &quot;4&quot;,&#xd;
 	&quot;tradeNo&quot;: &quot;${tradeNo}&quot;,&#xd;
 	&quot;buyerNick&quot;: &quot;萧飒筱岚&quot;,&#xd;
 	&quot;billType&quot;: &quot;1&quot;,&#xd;
@@ -152,14 +152,14 @@
 		&quot;skuId&quot;: &quot;4480312850076&quot;&#xd;
 	}],&#xd;
 	&quot;orderStatus&quot;: &quot;0&quot;,&#xd;
-	&quot;remark&quot;: &quot;评价送袜子&quot;,&#xd;
+	&quot;remark&quot;: &quot;&quot;,&#xd;
 	&quot;userId&quot;: &quot;110442252&quot;,&#xd;
 	&quot;createBy&quot;: &quot;王冰雪&quot;,&#xd;
 	&quot;createTime&quot;: &quot;2020-10-13 14:56:46&quot;,&#xd;
 	&quot;giftBarcode&quot;: &quot;女袜 F13W018304FWT&quot;,&#xd;
 	&quot;appId&quot;: &quot;2544&quot;,&#xd;
 	&quot;projectId&quot;: &quot;3387&quot;,&#xd;
-	&quot;taskId&quot;: &quot;${__Random(100,999,)}&quot;&#xd;
+	&quot;taskId&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(111111,999999,)}&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -214,7 +214,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="换货工单" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="换货工单" enabled="false">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -263,7 +263,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 	&quot;createTime&quot;: &quot;2020-10-19 14:38:33&quot;,&#xd;
 	&quot;appId&quot;: &quot;2544&quot;,&#xd;
 	&quot;projectId&quot;: &quot;3595&quot;,&#xd;
-	&quot;taskId&quot;: &quot;${__Random(1000,9999,)}&quot;&#xd;
+	&quot;taskId&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(111111,999999,)}&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -318,16 +318,16 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="换货管理" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="换货管理" enabled="false">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-	&quot;trid&quot;: &quot;${__Random(1000000,9999999,)}&quot;,&#xd;
+	&quot;trid&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(111111,999999,)}&quot;,&#xd;
 	&quot;shop_id&quot;: &quot;32973&quot;,&#xd;
-	&quot;dispute_id&quot;: &quot;${__Random(10000000000000000,99999999999999999,)}&quot;,&#xd;
+	&quot;dispute_id&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(1111111,9999999,)}&quot;,&#xd;
 	&quot;biz_order_id&quot;: &quot;${biz_order_id}&quot;,&#xd;
 	&quot;alipay_no&quot;: &quot;${biz_order_id}&quot;,&#xd;
 	&quot;buyer_nick&quot;: &quot;t_1513007712203_0857&quot;,&#xd;
@@ -435,7 +435,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 String shopName = vars.get(&quot;shop_name&quot;);
 String shopNameEncode = XCodec.encodeUnicode(shopName);
 
-String biz_order_id = String.valueOf((int)(Math.random()*1000))
+String biz_order_id = &quot;TS&quot; + String.valueOf((int)(Math.random()*100))
 				+ String.valueOf((int)(Math.random()*1000000000)) 
 				+ String.valueOf((int)(Math.random()*1000000000));
 
@@ -455,7 +455,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="退货工单" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="退货工单" enabled="false">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -490,7 +490,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 	&quot;createTime&quot;: &quot;2020-10-19 16:05:45&quot;,&#xd;
 	&quot;appId&quot;: &quot;2544&quot;,&#xd;
 	&quot;projectId&quot;: &quot;3595&quot;,&#xd;
-	&quot;taskId&quot;: &quot;${__Random(1000,9999,)}&quot;&#xd;
+	&quot;taskId&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(1111111,9999999,)}&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -545,18 +545,18 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="退款管理" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="退款管理" enabled="false">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-	&quot;trid&quot;: &quot;${__Random(1000000,9999999,)}&quot;,&#xd;
+	&quot;trid&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(1111111,9999999,)}&quot;,&#xd;
 	&quot;shop_id&quot;: &quot;32984&quot;,&#xd;
-	&quot;refund_id&quot;: &quot;${__Random(10000000,99999999,)}${__Random(100000000,999999999,)}&quot;,&#xd;
-	&quot;tid&quot;: &quot;${__Random(10000000,99999999,)}${__Random(10000000,99999999,)}${__Random(100,999,)}&quot;,&#xd;
-	&quot;oid&quot;: &quot;${__Random(10000000,99999998,)}${__Random(10000000,99999998,)}${__Random(100,999,)}&quot;,&#xd;
+	&quot;refund_id&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(1111111,9999999,)}&quot;,&#xd;
+	&quot;tid&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(1111111,9999999,)}&quot;,&#xd;
+	&quot;oid&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(1111111,9999999,)}&quot;,&#xd;
 	&quot;alipay_no&quot;: &quot;2020100722001128771419539583&quot;,&#xd;
 	&quot;total_fee&quot;: &quot;494.10&quot;,&#xd;
 	&quot;buyer_nick&quot;: &quot;~U6MQ9oFSByAcmCXWxrNP8A==~QJ\/4AzeVnJplLyf0\/hOFEjqX~1~~&quot;,&#xd;
@@ -921,7 +921,7 @@ if (!prev.isSuccessful()) {
           <stringProp name="HTTPSampler.domain">${__if(${xenv},debug,${wan},${__RandomFromMultipleVars(ip1|ip2,)},)}</stringProp>
           <stringProp name="HTTPSampler.port">8085</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
           <stringProp name="HTTPSampler.path"></stringProp>
           <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
           <stringProp name="HTTPSampler.connect_timeout"></stringProp>
@@ -941,7 +941,7 @@ if (!prev.isSuccessful()) {
           <intProp name="InterleaveControl.style">1</intProp>
         </RandomController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="取消订单" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="取消订单" enabled="false">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -949,7 +949,7 @@ if (!prev.isSuccessful()) {
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
 	&quot;shopCode&quot;: &quot;${shopCode}&quot;,&#xd;
-	&quot;orderType&quot;: &quot;3&quot;,&#xd;
+	&quot;orderType&quot;: &quot;4&quot;,&#xd;
 	&quot;tradeNo&quot;: &quot;${tradeNo}&quot;,&#xd;
 	&quot;buyerNick&quot;: &quot;萧飒筱岚&quot;,&#xd;
 	&quot;billType&quot;: &quot;1&quot;,&#xd;
@@ -968,14 +968,14 @@ if (!prev.isSuccessful()) {
 		&quot;skuId&quot;: &quot;4480312850076&quot;&#xd;
 	}],&#xd;
 	&quot;orderStatus&quot;: &quot;0&quot;,&#xd;
-	&quot;remark&quot;: &quot;评价送袜子&quot;,&#xd;
+	&quot;remark&quot;: &quot;&quot;,&#xd;
 	&quot;userId&quot;: &quot;110442252&quot;,&#xd;
 	&quot;createBy&quot;: &quot;王冰雪&quot;,&#xd;
 	&quot;createTime&quot;: &quot;2020-10-13 14:56:46&quot;,&#xd;
 	&quot;giftBarcode&quot;: &quot;女袜 F13W018304FWT&quot;,&#xd;
 	&quot;appId&quot;: &quot;2544&quot;,&#xd;
 	&quot;projectId&quot;: &quot;3387&quot;,&#xd;
-	&quot;taskId&quot;: &quot;${__Random(100,999,)}&quot;&#xd;
+	&quot;taskId&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(111111,999999,)}&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -1079,7 +1079,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 	&quot;createTime&quot;: &quot;2020-10-19 14:38:33&quot;,&#xd;
 	&quot;appId&quot;: &quot;2544&quot;,&#xd;
 	&quot;projectId&quot;: &quot;3595&quot;,&#xd;
-	&quot;taskId&quot;: &quot;${__Random(1000,9999,)}&quot;&#xd;
+	&quot;taskId&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(111111,999999,)}&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -1141,9 +1141,9 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-	&quot;trid&quot;: &quot;${__Random(1000000,9999999,)}&quot;,&#xd;
+	&quot;trid&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(111111,999999,)}&quot;,&#xd;
 	&quot;shop_id&quot;: &quot;32973&quot;,&#xd;
-	&quot;dispute_id&quot;: &quot;${__Random(10000000000000000,99999999999999999,)}&quot;,&#xd;
+	&quot;dispute_id&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(1111111,9999999,)}&quot;,&#xd;
 	&quot;biz_order_id&quot;: &quot;${biz_order_id}&quot;,&#xd;
 	&quot;alipay_no&quot;: &quot;${biz_order_id}&quot;,&#xd;
 	&quot;buyer_nick&quot;: &quot;t_1513007712203_0857&quot;,&#xd;
@@ -1251,7 +1251,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 String shopName = vars.get(&quot;shop_name&quot;);
 String shopNameEncode = XCodec.encodeUnicode(shopName);
 
-String biz_order_id = String.valueOf((int)(Math.random()*1000))
+String biz_order_id = &quot;TS&quot; + String.valueOf((int)(Math.random()*100))
 				+ String.valueOf((int)(Math.random()*1000000000)) 
 				+ String.valueOf((int)(Math.random()*1000000000));
 
@@ -1306,7 +1306,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 	&quot;createTime&quot;: &quot;2020-10-19 16:05:45&quot;,&#xd;
 	&quot;appId&quot;: &quot;2544&quot;,&#xd;
 	&quot;projectId&quot;: &quot;3595&quot;,&#xd;
-	&quot;taskId&quot;: &quot;${__Random(1000,9999,)}&quot;&#xd;
+	&quot;taskId&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(1111111,9999999,)}&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -1368,11 +1368,11 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-	&quot;trid&quot;: &quot;${__Random(1000000,9999999,)}&quot;,&#xd;
+	&quot;trid&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(1111111,9999999,)}&quot;,&#xd;
 	&quot;shop_id&quot;: &quot;32984&quot;,&#xd;
-	&quot;refund_id&quot;: &quot;${__Random(10000000,99999999,)}${__Random(100000000,999999999,)}&quot;,&#xd;
-	&quot;tid&quot;: &quot;${__Random(10000000,99999999,)}${__Random(10000000,99999999,)}${__Random(100,999,)}&quot;,&#xd;
-	&quot;oid&quot;: &quot;${__Random(10000000,99999998,)}${__Random(10000000,99999998,)}${__Random(100,999,)}&quot;,&#xd;
+	&quot;refund_id&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(1111111,9999999,)}&quot;,&#xd;
+	&quot;tid&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(1111111,9999999,)}&quot;,&#xd;
+	&quot;oid&quot;: &quot;TS${__time(yyMMddHHmmssSSS,)}${__Random(1111111,9999999,)}&quot;,&#xd;
 	&quot;alipay_no&quot;: &quot;2020100722001128771419539583&quot;,&#xd;
 	&quot;total_fee&quot;: &quot;494.10&quot;,&#xd;
 	&quot;buyer_nick&quot;: &quot;~U6MQ9oFSByAcmCXWxrNP8A==~QJ\/4AzeVnJplLyf0\/hOFEjqX~1~~&quot;,&#xd;
