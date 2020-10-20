@@ -74,6 +74,30 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="商品数据" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">kfs/goods.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">goodsId,singleProductId,sku,barcode,platformGoodsId,hasStock</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="商品数据2" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">kfs/goods2.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">goodsId2,singleProductId2,sku2,barcode2,platformGoodsId2,hasStock2</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
@@ -124,7 +148,7 @@
 		&quot;refundStatus&quot;: &quot;0&quot;,&#xd;
 		&quot;goodsTitle&quot;: &quot;FILA 斐乐官方女士针织长裤2020秋季新款薄款运动裤宽松休闲卫裤&quot;,&#xd;
 		&quot;skuInfo&quot;: &quot;颜色分类:传奇蓝-NV;尺码:165/66A/M&quot;,&#xd;
-		&quot;barcode&quot;: &quot;6918030313738&quot;,&#xd;
+		&quot;barcode&quot;: &quot;${barcode}&quot;,&#xd;
 		&quot;skuId&quot;: &quot;4480312850076&quot;&#xd;
 	}],&#xd;
 	&quot;orderStatus&quot;: &quot;0&quot;,&#xd;
@@ -214,7 +238,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 		&quot;exchangeList&quot;: [{&#xd;
 			&quot;exchangeSize&quot;: &quot;175/92A/XL&quot;,&#xd;
 			&quot;goodsId&quot;: &quot;601289103525&quot;,&#xd;
-			&quot;exchangeBarcode&quot;: &quot;6906557045317&quot;,&#xd;
+			&quot;exchangeBarcode&quot;: &quot;${barcode2}&quot;,&#xd;
 			&quot;exchangeQty&quot;: 1,&#xd;
 			&quot;exchangeColor&quot;: &quot;明黄色&quot;&#xd;
 		}],&#xd;
@@ -223,7 +247,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 		&quot;qty&quot;: &quot;1&quot;,&#xd;
 		&quot;goodsTitle&quot;: &quot;FILA 斐乐官方  女子多彩卫衣 2019年冬季新款长款连帽卫衣&quot;,&#xd;
 		&quot;skuInfo&quot;: &quot;颜色分类:明黄色[乳黄-BG];尺码:180/96A/XXL&quot;,&#xd;
-		&quot;barcode&quot;: &quot;6906557045324&quot;,&#xd;
+		&quot;barcode&quot;: &quot;${barcode}&quot;,&#xd;
 		&quot;skuId&quot;: &quot;4203905573725&quot;&#xd;
 	}],&#xd;
 	&quot;orderStatus&quot;: &quot;0&quot;,&#xd;
@@ -232,7 +256,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 	&quot;exchangeList&quot;: [{&#xd;
 		&quot;exchangeSize&quot;: &quot;175/92A/XL&quot;,&#xd;
 		&quot;goodsId&quot;: &quot;601289103525&quot;,&#xd;
-		&quot;exchangeBarcode&quot;: &quot;6906557045317&quot;,&#xd;
+		&quot;exchangeBarcode&quot;: &quot;${barcode2}&quot;,&#xd;
 		&quot;exchangeQty&quot;: 1,&#xd;
 		&quot;exchangeColor&quot;: &quot;明黄色&quot;&#xd;
 	}],&#xd;
@@ -294,6 +318,143 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="换货管理" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;trid&quot;: &quot;${__Random(1000000,9999999,)}&quot;,&#xd;
+	&quot;shop_id&quot;: &quot;32973&quot;,&#xd;
+	&quot;dispute_id&quot;: &quot;${__Random(10000000000000000,99999999999999999,)}&quot;,&#xd;
+	&quot;biz_order_id&quot;: &quot;${biz_order_id}&quot;,&#xd;
+	&quot;alipay_no&quot;: &quot;${biz_order_id}&quot;,&#xd;
+	&quot;buyer_nick&quot;: &quot;t_1513007712203_0857&quot;,&#xd;
+	&quot;buyer_name&quot;: &quot;\u674e\u5fd7\u798f&quot;,&#xd;
+	&quot;seller_nick&quot;: &quot;fila\u6590\u4e50\u9876\u70b9\u4e13\u5356\u5e97&quot;,&#xd;
+	&quot;created&quot;: &quot;2020-10-19 14:40:27&quot;,&#xd;
+	&quot;modified&quot;: &quot;2020-10-19 14:40:27&quot;,&#xd;
+	&quot;status&quot;: &quot;\u6362\u8d27\u5f85\u5904\u7406&quot;,&#xd;
+	&quot;good_status&quot;: null,&#xd;
+	&quot;tr_desc&quot;: null,&#xd;
+	&quot;reason&quot;: &quot;7\u5929\u65e0\u7406\u7531\u6362\u8d27&quot;,&#xd;
+	&quot;title&quot;: &quot;FILA FUSION \u6590\u4e50\u7537\u5b50\u77ed\u8896T\u60642020\u590f\u5b63\u65b0\u6b3e\u5168\u68c9\u7b80\u7ea6\u6f6e\u6d41\u8212\u9002\u77edT\u7537&quot;,&#xd;
+	&quot;price&quot;: &quot;399.00&quot;,&#xd;
+	&quot;payment&quot;: null,&#xd;
+	&quot;num&quot;: &quot;1&quot;,&#xd;
+	&quot;buyer_logistic_name&quot;: &quot;&quot;,&#xd;
+	&quot;seller_logistic_name&quot;: &quot;&quot;,&#xd;
+	&quot;buyer_logistic_no&quot;: &quot;&quot;,&#xd;
+	&quot;seller_logistic_no&quot;: &quot;&quot;,&#xd;
+	&quot;advance_status&quot;: &quot;0&quot;,&#xd;
+	&quot;address&quot;: &quot;&quot;,&#xd;
+	&quot;buyer_address&quot;: &quot;\u4e91\u5357\u7701 \u7ea2\u6cb3\u54c8\u5c3c\u65cf\u5f5d\u65cf\u81ea\u6cbb\u5dde \u7eff\u6625\u53bf \u5927\u5174\u9547 \u4e91\u5357\u7701\u7ea2\u6cb3\u54c8\u5c3c\u65cf\u5f5d\u65cf\u81ea\u6cbb\u5dde\u7eff\u6625\u53bf\u8fce\u6625\u8def223\u53f73\u680b1\u5355\u5143401\u5ba4&quot;,&#xd;
+	&quot;bought_sku&quot;: &quot;4354660905698&quot;,&#xd;
+	&quot;exchange_sku&quot;: &quot;4354660905708&quot;,&#xd;
+	&quot;buyer_phone&quot;: &quot;18287399851&quot;,&#xd;
+	&quot;time_out&quot;: &quot;2020-10-21 14:40:28&quot;,&#xd;
+	&quot;refund_version&quot;: &quot;0&quot;,&#xd;
+	&quot;cs_status&quot;: &quot;1&quot;,&#xd;
+	&quot;operation_contraint&quot;: &quot;&quot;,&#xd;
+	&quot;refund_phase&quot;: &quot;&quot;,&#xd;
+	&quot;return_order_id&quot;: &quot;0&quot;,&#xd;
+	&quot;errcode&quot;: null,&#xd;
+	&quot;errmsg&quot;: null,&#xd;
+	&quot;error_num&quot;: &quot;0&quot;,&#xd;
+	&quot;tran_err_status&quot;: &quot;0&quot;,&#xd;
+	&quot;tran_err_msg&quot;: &quot;&quot;,&#xd;
+	&quot;lastchanged&quot;: &quot;2020-10-19 14:41:08&quot;,&#xd;
+	&quot;is_tran_success&quot;: &quot;0&quot;,&#xd;
+	&quot;tran_err_num&quot;: &quot;0&quot;,&#xd;
+	&quot;exchange_sys_sku&quot;: &quot;&quot;,&#xd;
+	&quot;bought_sys_sku&quot;: &quot;&quot;,&#xd;
+	&quot;is_sync_e3plus&quot;: &quot;0&quot;,&#xd;
+	&quot;sync_err_count&quot;: &quot;0&quot;,&#xd;
+	&quot;sync_err_msg&quot;: &quot;&quot;,&#xd;
+	&quot;exchange_barcode&quot;: &quot;${barcode2}&quot;,&#xd;
+	&quot;return_barcode&quot;: &quot;${barcode}&quot;,&#xd;
+	&quot;is_set_meal&quot;: 0,&#xd;
+	&quot;shipping_sn&quot;: &quot;SF${__Random(1000000000000,9999999999913,)}&quot;,&#xd;
+	&quot;shipping_name&quot;: &quot;\u987a\u4e30\u901f\u8fd0&quot;,&#xd;
+	&quot;exchange_desc&quot;: null,&#xd;
+	&quot;mobile&quot;: &quot;18287399851&quot;,&#xd;
+	&quot;shop_code&quot;: &quot;${shop_code}&quot;,&#xd;
+	&quot;shop_name&quot;: &quot;${shopNameEncode}&quot;,&#xd;
+	&quot;goods_url&quot;: &quot;https:\/\/item.taobao.com\/item.htm?id=617272054739&amp;spm=2014.12440355.0.0&quot;,&#xd;
+	&quot;from_platform&quot;: &quot;ALI_OMS_TM&quot;,&#xd;
+	&quot;token&quot;: &quot;admin&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/service/api/cms/ALI_OMS_TM?method=tmall.exchange.get&amp;app_key=23212136&amp;target_app_key=23212136</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-161783868">&quot;status&quot;:0</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="kfs-shop" enabled="true">
+              <stringProp name="delimiter">,</stringProp>
+              <stringProp name="fileEncoding">UTF-8</stringProp>
+              <stringProp name="filename">kfs/shop.csv</stringProp>
+              <boolProp name="ignoreFirstLine">true</boolProp>
+              <boolProp name="quotedData">false</boolProp>
+              <boolProp name="recycle">true</boolProp>
+              <stringProp name="shareMode">shareMode.group</stringProp>
+              <boolProp name="stopThread">false</boolProp>
+              <stringProp name="variableNames">shop_code,shop_name</stringProp>
+            </CSVDataSet>
+            <hashTree/>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import com.jmeterx.codec.XCodec;
+
+String shopName = vars.get(&quot;shop_name&quot;);
+String shopNameEncode = XCodec.encodeUnicode(shopName);
+
+String biz_order_id = String.valueOf((int)(Math.random()*1000))
+				+ String.valueOf((int)(Math.random()*1000000000)) 
+				+ String.valueOf((int)(Math.random()*1000000000));
+
+vars.put(&quot;biz_order_id&quot;, biz_order_id.toString());
+vars.put(&quot;shopNameEncode&quot;, shopNameEncode);</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+          </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="退货工单" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -320,7 +481,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 		&quot;qty&quot;: &quot;1&quot;,&#xd;
 		&quot;goodsTitle&quot;: &quot;FILA斐乐童鞋男女小童复古跑鞋2020年秋季新款老爹鞋儿童运动鞋子&quot;,&#xd;
 		&quot;skuInfo&quot;: &quot;颜色分类:奶白;尺码:30码/内长19.8cm/前掌脚宽6.8cm&quot;,&#xd;
-		&quot;barcode&quot;: &quot;6918030359873&quot;,&#xd;
+		&quot;barcode&quot;: &quot;${barcode}&quot;,&#xd;
 		&quot;skuId&quot;: &quot;4445160116769&quot;&#xd;
 	}],&#xd;
 	&quot;orderStatus&quot;: &quot;0&quot;,&#xd;
@@ -463,7 +624,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 	&quot;sync_err_msg&quot;: &quot;&quot;,&#xd;
 	&quot;shop_code&quot;: &quot;${shop_code}&quot;,&#xd;
 	&quot;shop_name&quot;: &quot;${shopNameEncode}&quot;,&#xd;
-	&quot;barcode&quot;: &quot;6918030618093&quot;,&#xd;
+	&quot;barcode&quot;: &quot;${barcode}&quot;,&#xd;
 	&quot;logistics_no&quot;: &quot;SF1042229742835&quot;,&#xd;
 	&quot;logistics_sn&quot;: &quot;\u987a\u4e30\u901f\u8fd0&quot;,&#xd;
 	&quot;shipping_time_ck&quot;: 0,&#xd;
@@ -551,143 +712,6 @@ String shopName = vars.get(&quot;shop_name&quot;);
 String shopNameEncode = XCodec.encodeUnicode(shopName);
 
 vars.put(&quot;reasonEncode&quot;, reasonEncode);
-vars.put(&quot;shopNameEncode&quot;, shopNameEncode);</stringProp>
-            </BeanShellPreProcessor>
-            <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
-              <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="script">// cache response data for monitor write file
-vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
-
-//
-//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
-            </BeanShellPostProcessor>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="换货管理" enabled="true">
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-	&quot;trid&quot;: &quot;${__Random(1000000,9999999,)}&quot;,&#xd;
-	&quot;shop_id&quot;: &quot;32973&quot;,&#xd;
-	&quot;dispute_id&quot;: &quot;${__Random(10000000000000000,99999999999999999,)}&quot;,&#xd;
-	&quot;biz_order_id&quot;: &quot;${biz_order_id}&quot;,&#xd;
-	&quot;alipay_no&quot;: &quot;${biz_order_id}&quot;,&#xd;
-	&quot;buyer_nick&quot;: &quot;t_1513007712203_0857&quot;,&#xd;
-	&quot;buyer_name&quot;: &quot;\u674e\u5fd7\u798f&quot;,&#xd;
-	&quot;seller_nick&quot;: &quot;fila\u6590\u4e50\u9876\u70b9\u4e13\u5356\u5e97&quot;,&#xd;
-	&quot;created&quot;: &quot;2020-10-19 14:40:27&quot;,&#xd;
-	&quot;modified&quot;: &quot;2020-10-19 14:40:27&quot;,&#xd;
-	&quot;status&quot;: &quot;\u6362\u8d27\u5f85\u5904\u7406&quot;,&#xd;
-	&quot;good_status&quot;: null,&#xd;
-	&quot;tr_desc&quot;: null,&#xd;
-	&quot;reason&quot;: &quot;7\u5929\u65e0\u7406\u7531\u6362\u8d27&quot;,&#xd;
-	&quot;title&quot;: &quot;FILA FUSION \u6590\u4e50\u7537\u5b50\u77ed\u8896T\u60642020\u590f\u5b63\u65b0\u6b3e\u5168\u68c9\u7b80\u7ea6\u6f6e\u6d41\u8212\u9002\u77edT\u7537&quot;,&#xd;
-	&quot;price&quot;: &quot;399.00&quot;,&#xd;
-	&quot;payment&quot;: null,&#xd;
-	&quot;num&quot;: &quot;1&quot;,&#xd;
-	&quot;buyer_logistic_name&quot;: &quot;&quot;,&#xd;
-	&quot;seller_logistic_name&quot;: &quot;&quot;,&#xd;
-	&quot;buyer_logistic_no&quot;: &quot;&quot;,&#xd;
-	&quot;seller_logistic_no&quot;: &quot;&quot;,&#xd;
-	&quot;advance_status&quot;: &quot;0&quot;,&#xd;
-	&quot;address&quot;: &quot;&quot;,&#xd;
-	&quot;buyer_address&quot;: &quot;\u4e91\u5357\u7701 \u7ea2\u6cb3\u54c8\u5c3c\u65cf\u5f5d\u65cf\u81ea\u6cbb\u5dde \u7eff\u6625\u53bf \u5927\u5174\u9547 \u4e91\u5357\u7701\u7ea2\u6cb3\u54c8\u5c3c\u65cf\u5f5d\u65cf\u81ea\u6cbb\u5dde\u7eff\u6625\u53bf\u8fce\u6625\u8def223\u53f73\u680b1\u5355\u5143401\u5ba4&quot;,&#xd;
-	&quot;bought_sku&quot;: &quot;4354660905698&quot;,&#xd;
-	&quot;exchange_sku&quot;: &quot;4354660905708&quot;,&#xd;
-	&quot;buyer_phone&quot;: &quot;18287399851&quot;,&#xd;
-	&quot;time_out&quot;: &quot;2020-10-21 14:40:28&quot;,&#xd;
-	&quot;refund_version&quot;: &quot;0&quot;,&#xd;
-	&quot;cs_status&quot;: &quot;1&quot;,&#xd;
-	&quot;operation_contraint&quot;: &quot;&quot;,&#xd;
-	&quot;refund_phase&quot;: &quot;&quot;,&#xd;
-	&quot;return_order_id&quot;: &quot;0&quot;,&#xd;
-	&quot;errcode&quot;: null,&#xd;
-	&quot;errmsg&quot;: null,&#xd;
-	&quot;error_num&quot;: &quot;0&quot;,&#xd;
-	&quot;tran_err_status&quot;: &quot;0&quot;,&#xd;
-	&quot;tran_err_msg&quot;: &quot;&quot;,&#xd;
-	&quot;lastchanged&quot;: &quot;2020-10-19 14:41:08&quot;,&#xd;
-	&quot;is_tran_success&quot;: &quot;0&quot;,&#xd;
-	&quot;tran_err_num&quot;: &quot;0&quot;,&#xd;
-	&quot;exchange_sys_sku&quot;: &quot;&quot;,&#xd;
-	&quot;bought_sys_sku&quot;: &quot;&quot;,&#xd;
-	&quot;is_sync_e3plus&quot;: &quot;0&quot;,&#xd;
-	&quot;sync_err_count&quot;: &quot;0&quot;,&#xd;
-	&quot;sync_err_msg&quot;: &quot;&quot;,&#xd;
-	&quot;exchange_barcode&quot;: &quot;6918030108181&quot;,&#xd;
-	&quot;return_barcode&quot;: &quot;6918030108082&quot;,&#xd;
-	&quot;is_set_meal&quot;: 0,&#xd;
-	&quot;shipping_sn&quot;: &quot;SF${__Random(1000000000000,9999999999913,)}&quot;,&#xd;
-	&quot;shipping_name&quot;: &quot;\u987a\u4e30\u901f\u8fd0&quot;,&#xd;
-	&quot;exchange_desc&quot;: null,&#xd;
-	&quot;mobile&quot;: &quot;18287399851&quot;,&#xd;
-	&quot;shop_code&quot;: &quot;${shop_code}&quot;,&#xd;
-	&quot;shop_name&quot;: &quot;${shopNameEncode}&quot;,&#xd;
-	&quot;goods_url&quot;: &quot;https:\/\/item.taobao.com\/item.htm?id=617272054739&amp;spm=2014.12440355.0.0&quot;,&#xd;
-	&quot;from_platform&quot;: &quot;ALI_OMS_TM&quot;,&#xd;
-	&quot;token&quot;: &quot;admin&quot;&#xd;
-}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain"></stringProp>
-            <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol"></stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/service/api/cms/ALI_OMS_TM?method=tmall.exchange.get&amp;app_key=23212136&amp;target_app_key=23212136</stringProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="-161783868">&quot;status&quot;:0</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="kfs-shop" enabled="true">
-              <stringProp name="delimiter">,</stringProp>
-              <stringProp name="fileEncoding">UTF-8</stringProp>
-              <stringProp name="filename">kfs/shop.csv</stringProp>
-              <boolProp name="ignoreFirstLine">true</boolProp>
-              <boolProp name="quotedData">false</boolProp>
-              <boolProp name="recycle">true</boolProp>
-              <stringProp name="shareMode">shareMode.group</stringProp>
-              <boolProp name="stopThread">false</boolProp>
-              <stringProp name="variableNames">shop_code,shop_name</stringProp>
-            </CSVDataSet>
-            <hashTree/>
-            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-              <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="script">import com.jmeterx.codec.XCodec;
-
-String shopName = vars.get(&quot;shop_name&quot;);
-String shopNameEncode = XCodec.encodeUnicode(shopName);
-
-String biz_order_id = String.valueOf((int)(Math.random()*1000))
-				+ String.valueOf((int)(Math.random()*1000000000)) 
-				+ String.valueOf((int)(Math.random()*1000000000));
-
-vars.put(&quot;biz_order_id&quot;, biz_order_id.toString());
 vars.put(&quot;shopNameEncode&quot;, shopNameEncode);</stringProp>
             </BeanShellPreProcessor>
             <hashTree/>
@@ -851,7 +875,7 @@ if (!prev.isSuccessful()) {
       </hashTree>
       <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 客服系统" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
         <stringProp name="Start users count">20</stringProp>
         <stringProp name="Start users count burst">20</stringProp>
@@ -866,6 +890,30 @@ if (!prev.isSuccessful()) {
         </elementProp>
       </kg.apc.jmeter.threads.SteppingThreadGroup>
       <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="商品数据" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">kfs/goods.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">goodsId,singleProductId,sku,barcode,platformGoodsId,hasStock</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="商品数据2" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">kfs/goods2.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">goodsId2,singleProductId2,sku2,barcode2,platformGoodsId2,hasStock2</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
@@ -916,7 +964,7 @@ if (!prev.isSuccessful()) {
 		&quot;refundStatus&quot;: &quot;0&quot;,&#xd;
 		&quot;goodsTitle&quot;: &quot;FILA 斐乐官方女士针织长裤2020秋季新款薄款运动裤宽松休闲卫裤&quot;,&#xd;
 		&quot;skuInfo&quot;: &quot;颜色分类:传奇蓝-NV;尺码:165/66A/M&quot;,&#xd;
-		&quot;barcode&quot;: &quot;6918030313738&quot;,&#xd;
+		&quot;barcode&quot;: &quot;${barcode}&quot;,&#xd;
 		&quot;skuId&quot;: &quot;4480312850076&quot;&#xd;
 	}],&#xd;
 	&quot;orderStatus&quot;: &quot;0&quot;,&#xd;
@@ -1006,7 +1054,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 		&quot;exchangeList&quot;: [{&#xd;
 			&quot;exchangeSize&quot;: &quot;175/92A/XL&quot;,&#xd;
 			&quot;goodsId&quot;: &quot;601289103525&quot;,&#xd;
-			&quot;exchangeBarcode&quot;: &quot;6906557045317&quot;,&#xd;
+			&quot;exchangeBarcode&quot;: &quot;${barcode2}&quot;,&#xd;
 			&quot;exchangeQty&quot;: 1,&#xd;
 			&quot;exchangeColor&quot;: &quot;明黄色&quot;&#xd;
 		}],&#xd;
@@ -1015,7 +1063,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 		&quot;qty&quot;: &quot;1&quot;,&#xd;
 		&quot;goodsTitle&quot;: &quot;FILA 斐乐官方  女子多彩卫衣 2019年冬季新款长款连帽卫衣&quot;,&#xd;
 		&quot;skuInfo&quot;: &quot;颜色分类:明黄色[乳黄-BG];尺码:180/96A/XXL&quot;,&#xd;
-		&quot;barcode&quot;: &quot;6906557045324&quot;,&#xd;
+		&quot;barcode&quot;: &quot;${barcode}&quot;,&#xd;
 		&quot;skuId&quot;: &quot;4203905573725&quot;&#xd;
 	}],&#xd;
 	&quot;orderStatus&quot;: &quot;0&quot;,&#xd;
@@ -1024,7 +1072,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 	&quot;exchangeList&quot;: [{&#xd;
 		&quot;exchangeSize&quot;: &quot;175/92A/XL&quot;,&#xd;
 		&quot;goodsId&quot;: &quot;601289103525&quot;,&#xd;
-		&quot;exchangeBarcode&quot;: &quot;6906557045317&quot;,&#xd;
+		&quot;exchangeBarcode&quot;: &quot;${barcode2}&quot;,&#xd;
 		&quot;exchangeQty&quot;: 1,&#xd;
 		&quot;exchangeColor&quot;: &quot;明黄色&quot;&#xd;
 	}],&#xd;
@@ -1086,6 +1134,143 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="换货管理" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;trid&quot;: &quot;${__Random(1000000,9999999,)}&quot;,&#xd;
+	&quot;shop_id&quot;: &quot;32973&quot;,&#xd;
+	&quot;dispute_id&quot;: &quot;${__Random(10000000000000000,99999999999999999,)}&quot;,&#xd;
+	&quot;biz_order_id&quot;: &quot;${biz_order_id}&quot;,&#xd;
+	&quot;alipay_no&quot;: &quot;${biz_order_id}&quot;,&#xd;
+	&quot;buyer_nick&quot;: &quot;t_1513007712203_0857&quot;,&#xd;
+	&quot;buyer_name&quot;: &quot;\u674e\u5fd7\u798f&quot;,&#xd;
+	&quot;seller_nick&quot;: &quot;fila\u6590\u4e50\u9876\u70b9\u4e13\u5356\u5e97&quot;,&#xd;
+	&quot;created&quot;: &quot;2020-10-19 14:40:27&quot;,&#xd;
+	&quot;modified&quot;: &quot;2020-10-19 14:40:27&quot;,&#xd;
+	&quot;status&quot;: &quot;\u6362\u8d27\u5f85\u5904\u7406&quot;,&#xd;
+	&quot;good_status&quot;: null,&#xd;
+	&quot;tr_desc&quot;: null,&#xd;
+	&quot;reason&quot;: &quot;7\u5929\u65e0\u7406\u7531\u6362\u8d27&quot;,&#xd;
+	&quot;title&quot;: &quot;FILA FUSION \u6590\u4e50\u7537\u5b50\u77ed\u8896T\u60642020\u590f\u5b63\u65b0\u6b3e\u5168\u68c9\u7b80\u7ea6\u6f6e\u6d41\u8212\u9002\u77edT\u7537&quot;,&#xd;
+	&quot;price&quot;: &quot;399.00&quot;,&#xd;
+	&quot;payment&quot;: null,&#xd;
+	&quot;num&quot;: &quot;1&quot;,&#xd;
+	&quot;buyer_logistic_name&quot;: &quot;&quot;,&#xd;
+	&quot;seller_logistic_name&quot;: &quot;&quot;,&#xd;
+	&quot;buyer_logistic_no&quot;: &quot;&quot;,&#xd;
+	&quot;seller_logistic_no&quot;: &quot;&quot;,&#xd;
+	&quot;advance_status&quot;: &quot;0&quot;,&#xd;
+	&quot;address&quot;: &quot;&quot;,&#xd;
+	&quot;buyer_address&quot;: &quot;\u4e91\u5357\u7701 \u7ea2\u6cb3\u54c8\u5c3c\u65cf\u5f5d\u65cf\u81ea\u6cbb\u5dde \u7eff\u6625\u53bf \u5927\u5174\u9547 \u4e91\u5357\u7701\u7ea2\u6cb3\u54c8\u5c3c\u65cf\u5f5d\u65cf\u81ea\u6cbb\u5dde\u7eff\u6625\u53bf\u8fce\u6625\u8def223\u53f73\u680b1\u5355\u5143401\u5ba4&quot;,&#xd;
+	&quot;bought_sku&quot;: &quot;4354660905698&quot;,&#xd;
+	&quot;exchange_sku&quot;: &quot;4354660905708&quot;,&#xd;
+	&quot;buyer_phone&quot;: &quot;18287399851&quot;,&#xd;
+	&quot;time_out&quot;: &quot;2020-10-21 14:40:28&quot;,&#xd;
+	&quot;refund_version&quot;: &quot;0&quot;,&#xd;
+	&quot;cs_status&quot;: &quot;1&quot;,&#xd;
+	&quot;operation_contraint&quot;: &quot;&quot;,&#xd;
+	&quot;refund_phase&quot;: &quot;&quot;,&#xd;
+	&quot;return_order_id&quot;: &quot;0&quot;,&#xd;
+	&quot;errcode&quot;: null,&#xd;
+	&quot;errmsg&quot;: null,&#xd;
+	&quot;error_num&quot;: &quot;0&quot;,&#xd;
+	&quot;tran_err_status&quot;: &quot;0&quot;,&#xd;
+	&quot;tran_err_msg&quot;: &quot;&quot;,&#xd;
+	&quot;lastchanged&quot;: &quot;2020-10-19 14:41:08&quot;,&#xd;
+	&quot;is_tran_success&quot;: &quot;0&quot;,&#xd;
+	&quot;tran_err_num&quot;: &quot;0&quot;,&#xd;
+	&quot;exchange_sys_sku&quot;: &quot;&quot;,&#xd;
+	&quot;bought_sys_sku&quot;: &quot;&quot;,&#xd;
+	&quot;is_sync_e3plus&quot;: &quot;0&quot;,&#xd;
+	&quot;sync_err_count&quot;: &quot;0&quot;,&#xd;
+	&quot;sync_err_msg&quot;: &quot;&quot;,&#xd;
+	&quot;exchange_barcode&quot;: &quot;${barcode2}&quot;,&#xd;
+	&quot;return_barcode&quot;: &quot;${barcode}&quot;,&#xd;
+	&quot;is_set_meal&quot;: 0,&#xd;
+	&quot;shipping_sn&quot;: &quot;SF${__Random(1000000000000,9999999999913,)}&quot;,&#xd;
+	&quot;shipping_name&quot;: &quot;\u987a\u4e30\u901f\u8fd0&quot;,&#xd;
+	&quot;exchange_desc&quot;: null,&#xd;
+	&quot;mobile&quot;: &quot;18287399851&quot;,&#xd;
+	&quot;shop_code&quot;: &quot;${shop_code}&quot;,&#xd;
+	&quot;shop_name&quot;: &quot;${shopNameEncode}&quot;,&#xd;
+	&quot;goods_url&quot;: &quot;https:\/\/item.taobao.com\/item.htm?id=617272054739&amp;spm=2014.12440355.0.0&quot;,&#xd;
+	&quot;from_platform&quot;: &quot;ALI_OMS_TM&quot;,&#xd;
+	&quot;token&quot;: &quot;admin&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/service/api/cms/ALI_OMS_TM?method=tmall.exchange.get&amp;app_key=23212136&amp;target_app_key=23212136</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-161783868">&quot;status&quot;:0</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="kfs-shop" enabled="true">
+              <stringProp name="delimiter">,</stringProp>
+              <stringProp name="fileEncoding">UTF-8</stringProp>
+              <stringProp name="filename">kfs/shop.csv</stringProp>
+              <boolProp name="ignoreFirstLine">true</boolProp>
+              <boolProp name="quotedData">false</boolProp>
+              <boolProp name="recycle">true</boolProp>
+              <stringProp name="shareMode">shareMode.group</stringProp>
+              <boolProp name="stopThread">false</boolProp>
+              <stringProp name="variableNames">shop_code,shop_name</stringProp>
+            </CSVDataSet>
+            <hashTree/>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import com.jmeterx.codec.XCodec;
+
+String shopName = vars.get(&quot;shop_name&quot;);
+String shopNameEncode = XCodec.encodeUnicode(shopName);
+
+String biz_order_id = String.valueOf((int)(Math.random()*1000))
+				+ String.valueOf((int)(Math.random()*1000000000)) 
+				+ String.valueOf((int)(Math.random()*1000000000));
+
+vars.put(&quot;biz_order_id&quot;, biz_order_id.toString());
+vars.put(&quot;shopNameEncode&quot;, shopNameEncode);</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">// cache response data for monitor write file
+vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
+
+//
+//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+          </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="退货工单" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -1112,7 +1297,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 		&quot;qty&quot;: &quot;1&quot;,&#xd;
 		&quot;goodsTitle&quot;: &quot;FILA斐乐童鞋男女小童复古跑鞋2020年秋季新款老爹鞋儿童运动鞋子&quot;,&#xd;
 		&quot;skuInfo&quot;: &quot;颜色分类:奶白;尺码:30码/内长19.8cm/前掌脚宽6.8cm&quot;,&#xd;
-		&quot;barcode&quot;: &quot;6918030359873&quot;,&#xd;
+		&quot;barcode&quot;: &quot;${barcode}&quot;,&#xd;
 		&quot;skuId&quot;: &quot;4445160116769&quot;&#xd;
 	}],&#xd;
 	&quot;orderStatus&quot;: &quot;0&quot;,&#xd;
@@ -1255,7 +1440,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
 	&quot;sync_err_msg&quot;: &quot;&quot;,&#xd;
 	&quot;shop_code&quot;: &quot;${shop_code}&quot;,&#xd;
 	&quot;shop_name&quot;: &quot;${shopNameEncode}&quot;,&#xd;
-	&quot;barcode&quot;: &quot;6918030618093&quot;,&#xd;
+	&quot;barcode&quot;: &quot;${barcode}&quot;,&#xd;
 	&quot;logistics_no&quot;: &quot;SF1042229742835&quot;,&#xd;
 	&quot;logistics_sn&quot;: &quot;\u987a\u4e30\u901f\u8fd0&quot;,&#xd;
 	&quot;shipping_time_ck&quot;: 0,&#xd;
@@ -1343,143 +1528,6 @@ String shopName = vars.get(&quot;shop_name&quot;);
 String shopNameEncode = XCodec.encodeUnicode(shopName);
 
 vars.put(&quot;reasonEncode&quot;, reasonEncode);
-vars.put(&quot;shopNameEncode&quot;, shopNameEncode);</stringProp>
-            </BeanShellPreProcessor>
-            <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 缓存响应数据" enabled="true">
-              <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="script">// cache response data for monitor write file
-vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
-
-//
-//System.out.println(&quot;sampler response data is &quot; + prev.getResponseDataAsString());</stringProp>
-            </BeanShellPostProcessor>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="换货管理" enabled="true">
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-	&quot;trid&quot;: &quot;${__Random(1000000,9999999,)}&quot;,&#xd;
-	&quot;shop_id&quot;: &quot;32973&quot;,&#xd;
-	&quot;dispute_id&quot;: &quot;${__Random(10000000000000000,99999999999999999,)}&quot;,&#xd;
-	&quot;biz_order_id&quot;: &quot;${biz_order_id}&quot;,&#xd;
-	&quot;alipay_no&quot;: &quot;${biz_order_id}&quot;,&#xd;
-	&quot;buyer_nick&quot;: &quot;t_1513007712203_0857&quot;,&#xd;
-	&quot;buyer_name&quot;: &quot;\u674e\u5fd7\u798f&quot;,&#xd;
-	&quot;seller_nick&quot;: &quot;fila\u6590\u4e50\u9876\u70b9\u4e13\u5356\u5e97&quot;,&#xd;
-	&quot;created&quot;: &quot;2020-10-19 14:40:27&quot;,&#xd;
-	&quot;modified&quot;: &quot;2020-10-19 14:40:27&quot;,&#xd;
-	&quot;status&quot;: &quot;\u6362\u8d27\u5f85\u5904\u7406&quot;,&#xd;
-	&quot;good_status&quot;: null,&#xd;
-	&quot;tr_desc&quot;: null,&#xd;
-	&quot;reason&quot;: &quot;7\u5929\u65e0\u7406\u7531\u6362\u8d27&quot;,&#xd;
-	&quot;title&quot;: &quot;FILA FUSION \u6590\u4e50\u7537\u5b50\u77ed\u8896T\u60642020\u590f\u5b63\u65b0\u6b3e\u5168\u68c9\u7b80\u7ea6\u6f6e\u6d41\u8212\u9002\u77edT\u7537&quot;,&#xd;
-	&quot;price&quot;: &quot;399.00&quot;,&#xd;
-	&quot;payment&quot;: null,&#xd;
-	&quot;num&quot;: &quot;1&quot;,&#xd;
-	&quot;buyer_logistic_name&quot;: &quot;&quot;,&#xd;
-	&quot;seller_logistic_name&quot;: &quot;&quot;,&#xd;
-	&quot;buyer_logistic_no&quot;: &quot;&quot;,&#xd;
-	&quot;seller_logistic_no&quot;: &quot;&quot;,&#xd;
-	&quot;advance_status&quot;: &quot;0&quot;,&#xd;
-	&quot;address&quot;: &quot;&quot;,&#xd;
-	&quot;buyer_address&quot;: &quot;\u4e91\u5357\u7701 \u7ea2\u6cb3\u54c8\u5c3c\u65cf\u5f5d\u65cf\u81ea\u6cbb\u5dde \u7eff\u6625\u53bf \u5927\u5174\u9547 \u4e91\u5357\u7701\u7ea2\u6cb3\u54c8\u5c3c\u65cf\u5f5d\u65cf\u81ea\u6cbb\u5dde\u7eff\u6625\u53bf\u8fce\u6625\u8def223\u53f73\u680b1\u5355\u5143401\u5ba4&quot;,&#xd;
-	&quot;bought_sku&quot;: &quot;4354660905698&quot;,&#xd;
-	&quot;exchange_sku&quot;: &quot;4354660905708&quot;,&#xd;
-	&quot;buyer_phone&quot;: &quot;18287399851&quot;,&#xd;
-	&quot;time_out&quot;: &quot;2020-10-21 14:40:28&quot;,&#xd;
-	&quot;refund_version&quot;: &quot;0&quot;,&#xd;
-	&quot;cs_status&quot;: &quot;1&quot;,&#xd;
-	&quot;operation_contraint&quot;: &quot;&quot;,&#xd;
-	&quot;refund_phase&quot;: &quot;&quot;,&#xd;
-	&quot;return_order_id&quot;: &quot;0&quot;,&#xd;
-	&quot;errcode&quot;: null,&#xd;
-	&quot;errmsg&quot;: null,&#xd;
-	&quot;error_num&quot;: &quot;0&quot;,&#xd;
-	&quot;tran_err_status&quot;: &quot;0&quot;,&#xd;
-	&quot;tran_err_msg&quot;: &quot;&quot;,&#xd;
-	&quot;lastchanged&quot;: &quot;2020-10-19 14:41:08&quot;,&#xd;
-	&quot;is_tran_success&quot;: &quot;0&quot;,&#xd;
-	&quot;tran_err_num&quot;: &quot;0&quot;,&#xd;
-	&quot;exchange_sys_sku&quot;: &quot;&quot;,&#xd;
-	&quot;bought_sys_sku&quot;: &quot;&quot;,&#xd;
-	&quot;is_sync_e3plus&quot;: &quot;0&quot;,&#xd;
-	&quot;sync_err_count&quot;: &quot;0&quot;,&#xd;
-	&quot;sync_err_msg&quot;: &quot;&quot;,&#xd;
-	&quot;exchange_barcode&quot;: &quot;6918030108181&quot;,&#xd;
-	&quot;return_barcode&quot;: &quot;6918030108082&quot;,&#xd;
-	&quot;is_set_meal&quot;: 0,&#xd;
-	&quot;shipping_sn&quot;: &quot;SF${__Random(1000000000000,9999999999913,)}&quot;,&#xd;
-	&quot;shipping_name&quot;: &quot;\u987a\u4e30\u901f\u8fd0&quot;,&#xd;
-	&quot;exchange_desc&quot;: null,&#xd;
-	&quot;mobile&quot;: &quot;18287399851&quot;,&#xd;
-	&quot;shop_code&quot;: &quot;${shop_code}&quot;,&#xd;
-	&quot;shop_name&quot;: &quot;${shopNameEncode}&quot;,&#xd;
-	&quot;goods_url&quot;: &quot;https:\/\/item.taobao.com\/item.htm?id=617272054739&amp;spm=2014.12440355.0.0&quot;,&#xd;
-	&quot;from_platform&quot;: &quot;ALI_OMS_TM&quot;,&#xd;
-	&quot;token&quot;: &quot;admin&quot;&#xd;
-}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain"></stringProp>
-            <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol"></stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/service/api/cms/ALI_OMS_TM?method=tmall.exchange.get&amp;app_key=23212136&amp;target_app_key=23212136</stringProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="-161783868">&quot;status&quot;:0</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="kfs-shop" enabled="true">
-              <stringProp name="delimiter">,</stringProp>
-              <stringProp name="fileEncoding">UTF-8</stringProp>
-              <stringProp name="filename">kfs/shop.csv</stringProp>
-              <boolProp name="ignoreFirstLine">true</boolProp>
-              <boolProp name="quotedData">false</boolProp>
-              <boolProp name="recycle">true</boolProp>
-              <stringProp name="shareMode">shareMode.group</stringProp>
-              <boolProp name="stopThread">false</boolProp>
-              <stringProp name="variableNames">shop_code,shop_name</stringProp>
-            </CSVDataSet>
-            <hashTree/>
-            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-              <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="script">import com.jmeterx.codec.XCodec;
-
-String shopName = vars.get(&quot;shop_name&quot;);
-String shopNameEncode = XCodec.encodeUnicode(shopName);
-
-String biz_order_id = String.valueOf((int)(Math.random()*1000))
-				+ String.valueOf((int)(Math.random()*1000000000)) 
-				+ String.valueOf((int)(Math.random()*1000000000));
-
-vars.put(&quot;biz_order_id&quot;, biz_order_id.toString());
 vars.put(&quot;shopNameEncode&quot;, shopNameEncode);</stringProp>
             </BeanShellPreProcessor>
             <hashTree/>
