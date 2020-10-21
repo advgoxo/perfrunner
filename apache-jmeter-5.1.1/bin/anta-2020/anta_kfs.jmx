@@ -196,9 +196,9 @@
               <stringProp name="filename">kfs/cancel.csv</stringProp>
               <boolProp name="ignoreFirstLine">true</boolProp>
               <boolProp name="quotedData">false</boolProp>
-              <boolProp name="recycle">true</boolProp>
+              <boolProp name="recycle">false</boolProp>
               <stringProp name="shareMode">shareMode.group</stringProp>
-              <boolProp name="stopThread">false</boolProp>
+              <boolProp name="stopThread">true</boolProp>
               <stringProp name="variableNames">tradeNo,subTradeNo,shopCode</stringProp>
             </CSVDataSet>
             <hashTree/>
@@ -1013,9 +1013,9 @@ if (!prev.isSuccessful()) {
               <stringProp name="filename">kfs/cancel.csv</stringProp>
               <boolProp name="ignoreFirstLine">true</boolProp>
               <boolProp name="quotedData">false</boolProp>
-              <boolProp name="recycle">true</boolProp>
+              <boolProp name="recycle">false</boolProp>
               <stringProp name="shareMode">shareMode.group</stringProp>
-              <boolProp name="stopThread">false</boolProp>
+              <boolProp name="stopThread">true</boolProp>
               <stringProp name="variableNames">tradeNo,subTradeNo,shopCode</stringProp>
             </CSVDataSet>
             <hashTree/>
