@@ -193,7 +193,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;ak&quot;:&quot;MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKoinsDhS4zery8szYGGHUEoHfXUNUNgSvKXTBTIZ+qFQru2yUNh0PAQmTb8H59UA/GZxuwyCtIQShnfng3itNkCAwEAAQ==&quot;,&quot;pk&quot;:&quot;0782ee869ca541d59bcf3713c262fe3a&quot;,&quot;number&quot;:9912,&quot;date&quot;:&quot;2020-10-21 09:42:51&quot;,&quot;sign&quot;:&quot;lNgW1EXqEFyGDc9PtgFPtEk675tHwGskS7tIW5BTU5JDEYf0ETu2W2IMSEtk1WB49TNchgQXkpYjSMmBuhTj7A==&quot;,&quot;dataContent&quot;:&quot;[{\&quot;username\&quot;:\&quot;tingyun01\&quot;,\&quot;password\&quot;:\&quot;VGluZ3l1bi4xMjM=\&quot;,\&quot;captchaCode\&quot;:null,\&quot;browser\&quot;:\&quot;webkit\&quot;}]&quot;,&quot;token&quot;:null}</stringProp>
+                  <stringProp name="Argument.value">{&quot;ak&quot;:&quot;MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKoinsDhS4zery8szYGGHUEoHfXUNUNgSvKXTBTIZ+qFQru2yUNh0PAQmTb8H59UA/GZxuwyCtIQShnfng3itNkCAwEAAQ==&quot;,&quot;pk&quot;:&quot;0782ee869ca541d59bcf3713c262fe3a&quot;,&quot;number&quot;:1970,&quot;date&quot;:&quot;2020-10-21 15:40:37&quot;,&quot;sign&quot;:&quot;a4XKGs1znTtrfF7mBZOr+y1D63sCQzW8U+n0eb+Rhnky13NXnnaiDzZl5Tx4aO/V+xAKDS+rLhZZJqQdCIliVg==&quot;,&quot;dataContent&quot;:&quot;[{\&quot;username\&quot;:\&quot;tingyun01\&quot;,\&quot;password\&quot;:\&quot;VGluZ3l1bi4xMjM=\&quot;,\&quot;captchaCode\&quot;:null,\&quot;browser\&quot;:\&quot;webkit\&quot;}]&quot;,&quot;token&quot;:null}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -266,7 +266,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/e3/webopm/web/?app_act=api/sso&amp;userName=tingyun01&amp;requestTime=1603244675027&amp;version=1.0&amp;token=dGluZ3l1bjAxXzZiMTk2YTc0MTk4YTQxY2Y4YjkyZDllMzFlMGUzZGIwX04wbFI1MU9lVlpEcEVQVFBpMGdoMnc9PQ==&amp;sign=8a93142d2fc0ed9b744281f57e047072&amp;channelId=100026</stringProp>
+            <stringProp name="HTTPSampler.path">/e3/webopm/web/?app_act=api/sso&amp;userName=tingyun01&amp;requestTime=1603266370369&amp;version=1.0&amp;token=dGluZ3l1bjAxXzk1ZTE3NjNjMjExODQyZTJhZDRjNmNlOTI1N2RmZThkX04wbFI1MU9lVlpEcEVQVFBpMGdoMnc9PQ==&amp;sign=992f5d3fc8f30c4599c4299c740ee9e1&amp;channelId=100026&quot;,&quot;安踏京东OMS&quot;:&quot;http://116.196.112.170/e3/webopm/web/?app_act=api/sso&amp;userName=tingyun01&amp;requestTime=1603266370369&amp;version=1.0&amp;token=dGluZ3l1bjAxXzk1ZTE3NjNjMjExODQyZTJhZDRjNmNlOTI1N2RmZThkX04wbFI1MU9lVlpEcEVQVFBpMGdoMnc9PQ==&amp;sign=992f5d3fc8f30c4599c4299c740ee9e1&amp;channelId=100026&quot;,&quot;安踏塔下OMS&quot;:&quot;http://fooms.anta.cn:6001/e3/webopm/web/?app_act=api/sso&amp;userName=tingyun01&amp;requestTime=1603266370369&amp;version=1.0&amp;token=dGluZ3l1bjAxXzk1ZTE3NjNjMjExODQyZTJhZDRjNmNlOTI1N2RmZThkX04wbFI1MU9lVlpEcEVQVFBpMGdoMnc9PQ==&amp;sign=992f5d3fc8f30c4599c4299c740ee9e1&amp;channelId=100026</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
