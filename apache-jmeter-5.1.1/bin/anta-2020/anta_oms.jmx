@@ -266,7 +266,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/e3/webopm/web/?app_act=api/sso&amp;userName=tingyun01&amp;requestTime=1603266370369&amp;version=1.0&amp;token=dGluZ3l1bjAxXzk1ZTE3NjNjMjExODQyZTJhZDRjNmNlOTI1N2RmZThkX04wbFI1MU9lVlpEcEVQVFBpMGdoMnc9PQ==&amp;sign=992f5d3fc8f30c4599c4299c740ee9e1&amp;channelId=100026&quot;,&quot;安踏京东OMS&quot;:&quot;http://116.196.112.170/e3/webopm/web/?app_act=api/sso&amp;userName=tingyun01&amp;requestTime=1603266370369&amp;version=1.0&amp;token=dGluZ3l1bjAxXzk1ZTE3NjNjMjExODQyZTJhZDRjNmNlOTI1N2RmZThkX04wbFI1MU9lVlpEcEVQVFBpMGdoMnc9PQ==&amp;sign=992f5d3fc8f30c4599c4299c740ee9e1&amp;channelId=100026&quot;,&quot;安踏塔下OMS&quot;:&quot;http://fooms.anta.cn:6001/e3/webopm/web/?app_act=api/sso&amp;userName=tingyun01&amp;requestTime=1603266370369&amp;version=1.0&amp;token=dGluZ3l1bjAxXzk1ZTE3NjNjMjExODQyZTJhZDRjNmNlOTI1N2RmZThkX04wbFI1MU9lVlpEcEVQVFBpMGdoMnc9PQ==&amp;sign=992f5d3fc8f30c4599c4299c740ee9e1&amp;channelId=100026</stringProp>
+            <stringProp name="HTTPSampler.path">/e3/webopm/web/?app_act=api/sso&amp;userName=tingyun01&amp;requestTime=1603266370369&amp;version=1.0&amp;token=dGluZ3l1bjAxXzk1ZTE3NjNjMjExODQyZTJhZDRjNmNlOTI1N2RmZThkX04wbFI1MU9lVlpEcEVQVFBpMGdoMnc9PQ==&amp;sign=992f5d3fc8f30c4599c4299c740ee9e1&amp;channelId=100026</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
