@@ -55,9 +55,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">3</stringProp>
+          <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">50</stringProp>
         <stringProp name="ThreadGroup.ramp_time">60</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">300</stringProp>
@@ -187,6 +187,77 @@
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
           <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="中台登录" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;ak&quot;:&quot;MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKoinsDhS4zery8szYGGHUEoHfXUNUNgSvKXTBTIZ+qFQru2yUNh0PAQmTb8H59UA/GZxuwyCtIQShnfng3itNkCAwEAAQ==&quot;,&quot;pk&quot;:&quot;0782ee869ca541d59bcf3713c262fe3a&quot;,&quot;number&quot;:9912,&quot;date&quot;:&quot;2020-10-21 09:42:51&quot;,&quot;sign&quot;:&quot;lNgW1EXqEFyGDc9PtgFPtEk675tHwGskS7tIW5BTU5JDEYf0ETu2W2IMSEtk1WB49TNchgQXkpYjSMmBuhTj7A==&quot;,&quot;dataContent&quot;:&quot;[{\&quot;username\&quot;:\&quot;tingyun01\&quot;,\&quot;password\&quot;:\&quot;VGluZ3l1bi4xMjM=\&quot;,\&quot;captchaCode\&quot;:null,\&quot;browser\&quot;:\&quot;webkit\&quot;}]&quot;,&quot;token&quot;:null}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">mwpro.anta.cn</stringProp>
+            <stringProp name="HTTPSampler.port">8083</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/service/userService/login</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">MXFhejJ3c3gzZWRjMQ==\</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://121.199.192.140:8090/src/index.html</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">zh-CN,zh;q=0.9</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">http://121.199.192.140:8090</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">text/plain;charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1453213539">&quot;success&quot;:true},&quot;success&quot;:true</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OMS登录" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
@@ -195,7 +266,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/e3/webopm/web/?app_act=api/sso&amp;userName=tingyun01&amp;requestTime=1603160691629&amp;version=1.0&amp;token=dGluZ3l1bjAxX2Q4YmVkZTZiN2RkOTRlNDhiN2QyZTViYjliMzQ2Mzc0X04wbFI1MU9lVlpEcEVQVFBpMGdoMnc9PQ==&amp;sign=9e9c69dbac41edcec02ee63999d30ad6&amp;channelId=100026</stringProp>
+            <stringProp name="HTTPSampler.path">/e3/webopm/web/?app_act=api/sso&amp;userName=tingyun01&amp;requestTime=1603244675027&amp;version=1.0&amp;token=dGluZ3l1bjAxXzZiMTk2YTc0MTk4YTQxY2Y4YjkyZDllMzFlMGUzZGIwX04wbFI1MU9lVlpEcEVQVFBpMGdoMnc9PQ==&amp;sign=8a93142d2fc0ed9b744281f57e047072&amp;channelId=100026</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
