@@ -7503,7 +7503,7 @@ if (!prev.isSuccessful()) {
         </ConfigTestElement>
         <hashTree/>
         <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="随机变量-buyway" enabled="true">
-          <stringProp name="maximumValue">1</stringProp>
+          <stringProp name="maximumValue">0</stringProp>
           <stringProp name="minimumValue">0</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <boolProp name="perThread">true</boolProp>
@@ -8049,7 +8049,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <hashTree/>
             </hashTree>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="true">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="如果（If）控制器" enabled="false">
             <stringProp name="IfController.condition">${__jexl3(${buyway} &gt; 0,)}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
@@ -8170,7 +8170,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             </hashTree>
           </hashTree>
         </hashTree>
-        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="购买方式" enabled="true">
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="购买方式" enabled="false">
           <stringProp name="SwitchController.value">${buyway}</stringProp>
         </SwitchController>
         <hashTree>
