@@ -5953,7 +5953,7 @@ if (!prev.isSuccessful()) {
       </hashTree>
       <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 商品详情" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">150</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
         <stringProp name="Start users count">50</stringProp>
         <stringProp name="Start users count burst">50</stringProp>
@@ -6012,6 +6012,18 @@ if (!prev.isSuccessful()) {
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </ConfigTestElement>
         <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - goods" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">wds/goods.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">true</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">id_goods,goods_sn,id_shop</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - usertoken4" enabled="true">
           <stringProp name="filename">wds/usertoken4.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
@@ -6035,6 +6047,28 @@ if (!prev.isSuccessful()) {
           <boolProp name="stopThread">false</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
         </CSVDataSet>
+        <hashTree/>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell - usertoken" enabled="true">
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="script">// 根据id_shop设置不同店铺的登陆sesson
+
+int id_shop = Integer.parseInt(vars.get(&quot;id_shop&quot;));
+
+log.info(&quot;id_shop &quot; + vars.get(&quot;id_shop&quot;));
+
+String openid = vars.get(&quot;openid4&quot;);
+String session3rd = vars.get(&quot;session3rd4&quot;);
+
+if (id_shop == 7) {
+	openid = vars.get(&quot;openid7&quot;);
+	session3rd = vars.get(&quot;session3rd7&quot;);
+}
+
+vars.put(&quot;openid&quot;, openid);
+vars.put(&quot;session3rd&quot;, session3rd);</stringProp>
+        </BeanShellPreProcessor>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登陆" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
@@ -6144,10 +6178,10 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="false">
               <stringProp name="delimiter">,</stringProp>
               <stringProp name="fileEncoding">UTF-8</stringProp>
-              <stringProp name="filename">wds/goods.csv</stringProp>
+              <stringProp name="filename">wds/goods4.csv</stringProp>
               <boolProp name="ignoreFirstLine">true</boolProp>
               <boolProp name="quotedData">true</boolProp>
               <boolProp name="recycle">true</boolProp>
@@ -6169,28 +6203,6 @@ if (rand % 2 == 0) {
 } else {
 	vars.put(&quot;id_goods&quot;, &quot;&quot;);
 }</stringProp>
-            </BeanShellPreProcessor>
-            <hashTree/>
-            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell - usertoken" enabled="true">
-              <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="script">// 根据id_shop设置不同店铺的登陆sesson
-
-int id_shop = Integer.parseInt(vars.get(&quot;id_shop&quot;));
-
-log.info(&quot;id_shop &quot; + vars.get(&quot;id_shop&quot;));
-
-String openid = vars.get(&quot;openid4&quot;);
-String session3rd = vars.get(&quot;session3rd4&quot;);
-
-if (id_shop == 7) {
-	openid = vars.get(&quot;openid7&quot;);
-	session3rd = vars.get(&quot;session3rd7&quot;);
-}
-
-vars.put(&quot;openid&quot;, openid);
-vars.put(&quot;session3rd&quot;, session3rd);</stringProp>
             </BeanShellPreProcessor>
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言" enabled="true">
