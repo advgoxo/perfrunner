@@ -1948,13 +1948,6 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">id_goods</stringProp>
                 </elementProp>
-                <elementProp name="goods_sn" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">${goods_sn}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  <stringProp name="Argument.name">goods_sn</stringProp>
-                </elementProp>
               </collectionProp>
             </elementProp>
             <stringProp name="HTTPSampler.domain"></stringProp>
@@ -1983,21 +1976,6 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <boolProp name="stopThread">false</boolProp>
               <stringProp name="variableNames">id_goods,goods_sn,id_shop</stringProp>
             </CSVDataSet>
-            <hashTree/>
-            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-              <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="script">// 初始化
-
-int rand = Math.random()*100;
-
-if (rand % 2 == 0) {
-	vars.put(&quot;goods_sn&quot;, &quot;&quot;);
-} else {
-	vars.put(&quot;id_goods&quot;, &quot;&quot;);
-}</stringProp>
-            </BeanShellPreProcessor>
             <hashTree/>
             <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言" enabled="true">
               <stringProp name="JSON_PATH">$.status</stringProp>
@@ -8430,13 +8408,6 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                     <stringProp name="Argument.name">id_goods</stringProp>
                   </elementProp>
-                  <elementProp name="goods_sn" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.value">${goods_sn}</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                    <stringProp name="Argument.name">goods_sn</stringProp>
-                  </elementProp>
                 </collectionProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain"></stringProp>
@@ -8465,21 +8436,6 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 <boolProp name="stopThread">false</boolProp>
                 <stringProp name="variableNames">id_goods,goods_sn,id_shop</stringProp>
               </CSVDataSet>
-              <hashTree/>
-              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell 预处理程序" enabled="true">
-                <boolProp name="resetInterpreter">false</boolProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="script">// 初始化
-
-int rand = Math.random()*100;
-
-if (rand % 2 == 0) {
-	vars.put(&quot;goods_sn&quot;, &quot;&quot;);
-} else {
-	vars.put(&quot;id_goods&quot;, &quot;&quot;);
-}</stringProp>
-              </BeanShellPreProcessor>
               <hashTree/>
               <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON断言" enabled="true">
                 <stringProp name="JSON_PATH">$.status</stringProp>
