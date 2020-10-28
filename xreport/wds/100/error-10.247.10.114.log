@@ -42034,3 +42034,2751 @@ Caused by: java.net.SocketException: Socket closed
 
 ======end=======
 
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-27 23:34:59.124 - 2020-10-27 23:34:59.172
+Cost 48
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=c4502c15ba46e90139b86b6c960bb867
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取用户标签
+Time 2020-10-27 23:36:14.162 - 2020-10-27 23:36:14.174
+Cost 12
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.getLabel
+
+POST data:
+id_shop=4&session3rd=00951f09f7ed67f4be6b6a1b0af63240
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取店铺全局配置
+Time 2020-10-28 15:20:10.996 - 2020-10-28 15:20:11.001
+Cost 5
+GET https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.getGlobalData&id_shop=4&session3rd=f3d3e03c0a567491b58152c06a9dab94
+
+GET data:
+
+
+[no cookies]
+
+Response data:
+java.net.SocketException: Socket closed
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:348)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取店铺全局配置
+Time 2020-10-28 16:16:50.268 - 2020-10-28 16:16:50.698
+Cost 430
+GET https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.getGlobalData&id_shop=4&session3rd=c1e51caa149aed58459fdc0a75e8c3f8
+
+GET data:
+
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:17:34.643 - 2020-10-28 16:17:34.684
+Cost 41
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=c1e51caa149aed58459fdc0a75e8c3f8
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:17:34.643 - 2020-10-28 16:17:34.684
+Cost 41
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=c1e51caa149aed58459fdc0a75e8c3f8
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:18:28.984 - 2020-10-28 16:18:29.036
+Cost 52
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=c1e51caa149aed58459fdc0a75e8c3f8
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:18:28.984 - 2020-10-28 16:18:29.036
+Cost 52
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=c1e51caa149aed58459fdc0a75e8c3f8
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:18:29.428 - 2020-10-28 16:18:29.476
+Cost 48
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=e5d101ade40d83ec936e401724ec8e6f
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:18:29.428 - 2020-10-28 16:18:29.476
+Cost 48
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=e5d101ade40d83ec936e401724ec8e6f
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:18:31.176 - 2020-10-28 16:18:31.325
+Cost 149
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=ecdd101dfc9129dc07cae9b2ec8b8f72
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:18:31.176 - 2020-10-28 16:18:31.325
+Cost 149
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=ecdd101dfc9129dc07cae9b2ec8b8f72
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:18:32.135 - 2020-10-28 16:18:32.183
+Cost 48
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=089654a193a3d1e45118e549f3d732d9
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:18:32.135 - 2020-10-28 16:18:32.183
+Cost 48
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=089654a193a3d1e45118e549f3d732d9
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:18:32.601 - 2020-10-28 16:18:32.653
+Cost 52
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=2c9f636c4edb5266dd52bf9255d833a8
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:18:32.601 - 2020-10-28 16:18:32.653
+Cost 52
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=2c9f636c4edb5266dd52bf9255d833a8
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:18:34.189 - 2020-10-28 16:18:34.222
+Cost 33
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=804acad178451d32aae745bc76a684d6
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:38.116 - 2020-10-28 16:20:38.167
+Cost 51
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=e5d101ade40d83ec936e401724ec8e6f
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:38.116 - 2020-10-28 16:20:38.167
+Cost 51
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=e5d101ade40d83ec936e401724ec8e6f
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:38.096 - 2020-10-28 16:20:38.203
+Cost 107
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=c1e51caa149aed58459fdc0a75e8c3f8
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:38.096 - 2020-10-28 16:20:38.203
+Cost 107
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=c1e51caa149aed58459fdc0a75e8c3f8
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:38.177 - 2020-10-28 16:20:38.374
+Cost 197
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=ecdd101dfc9129dc07cae9b2ec8b8f72
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:38.177 - 2020-10-28 16:20:38.374
+Cost 197
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=ecdd101dfc9129dc07cae9b2ec8b8f72
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:38.796 - 2020-10-28 16:20:38.931
+Cost 135
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=76e68cb62472ae46db5c46d87a0fa77e
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:38.796 - 2020-10-28 16:20:38.931
+Cost 135
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=76e68cb62472ae46db5c46d87a0fa77e
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:39.263 - 2020-10-28 16:20:39.319
+Cost 56
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=17e8afc24ca1daade55d00e4ff51a490
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:39.263 - 2020-10-28 16:20:39.319
+Cost 56
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=17e8afc24ca1daade55d00e4ff51a490
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:39.264 - 2020-10-28 16:20:39.332
+Cost 68
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=089654a193a3d1e45118e549f3d732d9
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:39.264 - 2020-10-28 16:20:39.332
+Cost 68
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=089654a193a3d1e45118e549f3d732d9
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:39.275 - 2020-10-28 16:20:39.356
+Cost 81
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=2c9f636c4edb5266dd52bf9255d833a8
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:39.275 - 2020-10-28 16:20:39.356
+Cost 81
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=2c9f636c4edb5266dd52bf9255d833a8
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.135 - 2020-10-28 16:20:40.219
+Cost 84
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=09fc7fb416f734fa4b031505e63b70ed
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.135 - 2020-10-28 16:20:40.219
+Cost 84
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=09fc7fb416f734fa4b031505e63b70ed
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.262 - 2020-10-28 16:20:40.327
+Cost 65
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=5c9c39a0cf802874129c25643aaf5ffe
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.262 - 2020-10-28 16:20:40.327
+Cost 65
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=5c9c39a0cf802874129c25643aaf5ffe
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.281 - 2020-10-28 16:20:40.333
+Cost 52
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=d9b251dddad13ac61a30fcc0ac60113b
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.281 - 2020-10-28 16:20:40.333
+Cost 52
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=d9b251dddad13ac61a30fcc0ac60113b
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取店铺全局配置
+Time 2020-10-28 16:20:40.940 - 2020-10-28 16:20:40.971
+Cost 31
+GET https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.getGlobalData&id_shop=4&session3rd=7975004a16174a3dc2d4fec2ecea5dc8
+
+GET data:
+
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1198)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1107)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:400)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:372)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:404)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:364)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.SocketException: Socket closed
+		at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+		at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+		at sun.security.ssl.SSLSocketOutputRecord.encodeAlert(SSLSocketOutputRecord.java:81)
+		at sun.security.ssl.TransportContext.fatal(TransportContext.java:358)
+		... 30 more
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:159)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 27 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:20:39.884 - 2020-10-28 16:20:40.977
+Cost 1093
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=63e3351be247cf13fee4663f08facb5a
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:20:38.247 - 2020-10-28 16:20:40.975
+Cost 2728
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=2287f803ade03a52d76a1dad5979f7fd
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:20:38.478 - 2020-10-28 16:20:40.980
+Cost 2502
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=da8ee39ca0ebcf7d9f41010667fb579a
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取店铺全局配置
+Time 2020-10-28 16:20:40.334 - 2020-10-28 16:20:40.984
+Cost 650
+GET https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.getGlobalData&id_shop=4&session3rd=08148b83a13a9453c6e1b8cf5a584d65
+
+GET data:
+
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1198)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1107)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:400)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:372)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:404)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:364)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.SocketException: Socket closed
+		at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+		at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+		at sun.security.ssl.SSLSocketOutputRecord.encodeAlert(SSLSocketOutputRecord.java:81)
+		at sun.security.ssl.TransportContext.fatal(TransportContext.java:358)
+		... 30 more
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:159)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 27 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:20:39.201 - 2020-10-28 16:20:40.989
+Cost 1788
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=feb9695d77a0d9957575e4405d20bea0
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取店铺全局配置
+Time 2020-10-28 16:20:40.221 - 2020-10-28 16:20:40.991
+Cost 770
+GET https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.getGlobalData&id_shop=4&session3rd=2e75683368e0115ab38006c6ab55a413
+
+GET data:
+
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1198)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1107)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:400)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:372)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:404)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:364)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.SocketException: Socket closed
+		at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+		at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+		at sun.security.ssl.SSLSocketOutputRecord.encodeAlert(SSLSocketOutputRecord.java:81)
+		at sun.security.ssl.TransportContext.fatal(TransportContext.java:358)
+		... 30 more
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:159)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 27 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.706 - 2020-10-28 16:20:40.990
+Cost 284
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=26b3c15ce04c1691fd603031d9fcd914
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1198)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1107)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:400)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:372)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:404)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:364)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.SocketException: Socket closed
+		at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+		at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+		at sun.security.ssl.SSLSocketOutputRecord.encodeAlert(SSLSocketOutputRecord.java:81)
+		at sun.security.ssl.TransportContext.fatal(TransportContext.java:358)
+		... 30 more
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:159)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 27 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.706 - 2020-10-28 16:20:40.990
+Cost 284
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=26b3c15ce04c1691fd603031d9fcd914
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1198)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1107)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:400)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:372)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:404)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:364)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.SocketException: Socket closed
+		at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+		at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+		at sun.security.ssl.SSLSocketOutputRecord.encodeAlert(SSLSocketOutputRecord.java:81)
+		at sun.security.ssl.TransportContext.fatal(TransportContext.java:358)
+		... 30 more
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:159)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 27 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:20:38.573 - 2020-10-28 16:20:40.995
+Cost 2422
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=e40f15745064dd0f225c8d9307612a59
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:20:40.430 - 2020-10-28 16:20:40.994
+Cost 564
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=48c9e5303c3dbe3d8143918aee65ad03
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.989 - 2020-10-28 16:20:40.998
+Cost 9
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=00b067a2d84d102fc814f60a28324a0b
+
+[no cookies]
+
+Response data:
+java.net.SocketException: Socket closed
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:348)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.989 - 2020-10-28 16:20:40.998
+Cost 9
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=00b067a2d84d102fc814f60a28324a0b
+
+[no cookies]
+
+Response data:
+java.net.SocketException: Socket closed
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:348)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:20:40.069 - 2020-10-28 16:20:41.004
+Cost 935
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=385d9390f2bb152019e336168f94e8fe
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:20:38.949 - 2020-10-28 16:20:41.002
+Cost 2053
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=4b0c20b0b369f9e9cd0bcd922fac309e
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:20:40.987 - 2020-10-28 16:20:41.003
+Cost 16
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=500940686ef7362a50e5c75a70a433f3
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取用户标签
+Time 2020-10-28 16:20:40.488 - 2020-10-28 16:20:40.983
+Cost 495
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.getLabel
+
+POST data:
+id_shop=4&session3rd=f3d3e03c0a567491b58152c06a9dab94
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:20:40.364 - 2020-10-28 16:20:41.007
+Cost 643
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=ded1c6b3fe29bbd096c777f030f0a900
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:41.000 - 2020-10-28 16:20:41.008
+Cost 8
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=069e233fbb94962f63b32177359ce1c6
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:41.000 - 2020-10-28 16:20:41.008
+Cost 8
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=069e233fbb94962f63b32177359ce1c6
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取店铺全局配置
+Time 2020-10-28 16:20:40.835 - 2020-10-28 16:20:41.010
+Cost 175
+GET https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.getGlobalData&id_shop=4&session3rd=2676e2ae99bf304a7c03bf97ea3b7266
+
+GET data:
+
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1198)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1107)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:400)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:372)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:404)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:364)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.SocketException: Socket closed
+		at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+		at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+		at sun.security.ssl.SSLSocketOutputRecord.encodeAlert(SSLSocketOutputRecord.java:81)
+		at sun.security.ssl.TransportContext.fatal(TransportContext.java:358)
+		... 30 more
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:159)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 27 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取用户标签
+Time 2020-10-28 16:20:40.463 - 2020-10-28 16:20:41.014
+Cost 551
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.getLabel
+
+POST data:
+id_shop=4&session3rd=31169a6cebaa5f2e55af5202bf70e227
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1198)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1107)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:400)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:372)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:404)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:364)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.SocketException: Socket closed
+		at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+		at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+		at sun.security.ssl.SSLSocketOutputRecord.encodeAlert(SSLSocketOutputRecord.java:81)
+		at sun.security.ssl.TransportContext.fatal(TransportContext.java:358)
+		... 30 more
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:159)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 27 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:20:38.357 - 2020-10-28 16:20:41.013
+Cost 2656
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=23b439930b677269da14fda5d4f49454
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取用户标签
+Time 2020-10-28 16:20:40.868 - 2020-10-28 16:20:41.015
+Cost 147
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.getLabel
+
+POST data:
+id_shop=4&session3rd=f318aa0cf8a38dfae8960f885090960b
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLSocketImpl.handleException(SSLSocketImpl.java:1372)
+	at sun.security.ssl.SSLSocketImpl.access$400(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:850)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:69)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1147)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	... 26 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:20:39.149 - 2020-10-28 16:20:41.016
+Cost 1867
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=ea416fa3d48ebc7a88bf80e07a7f4472
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.652 - 2020-10-28 16:20:41.017
+Cost 365
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=40e919fb221c51fd2a8f4f8b643938de
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1198)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1107)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:400)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:372)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:404)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:364)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.SocketException: Socket closed
+		at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+		at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+		at sun.security.ssl.SSLSocketOutputRecord.encodeAlert(SSLSocketOutputRecord.java:81)
+		at sun.security.ssl.TransportContext.fatal(TransportContext.java:358)
+		... 30 more
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:159)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 27 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.652 - 2020-10-28 16:20:41.017
+Cost 365
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=40e919fb221c51fd2a8f4f8b643938de
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1198)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1107)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:400)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:372)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:404)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:364)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.SocketException: Socket closed
+		at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+		at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+		at sun.security.ssl.SSLSocketOutputRecord.encodeAlert(SSLSocketOutputRecord.java:81)
+		at sun.security.ssl.TransportContext.fatal(TransportContext.java:358)
+		... 30 more
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:159)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 27 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.908 - 2020-10-28 16:20:41.018
+Cost 110
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=95876853c1b9ade24ce638bdeae93a67
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1198)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1107)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:400)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:372)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:404)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:364)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.SocketException: Socket closed
+		at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+		at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+		at sun.security.ssl.SSLSocketOutputRecord.encodeAlert(SSLSocketOutputRecord.java:81)
+		at sun.security.ssl.TransportContext.fatal(TransportContext.java:358)
+		... 30 more
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:159)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 27 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:20:40.908 - 2020-10-28 16:20:41.018
+Cost 110
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=95876853c1b9ade24ce638bdeae93a67
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1198)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1107)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:400)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:372)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:404)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:364)
+	at org.apache.jmeter.protocol.http.sampler.hc.LazyLayeredConnectionSocketFactory.connectSocket(LazyLayeredConnectionSocketFactory.java:92)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:336)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:843)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:574)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+	Suppressed: java.net.SocketException: Socket closed
+		at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+		at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+		at sun.security.ssl.SSLSocketOutputRecord.encodeAlert(SSLSocketOutputRecord.java:81)
+		at sun.security.ssl.TransportContext.fatal(TransportContext.java:358)
+		... 30 more
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:460)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:159)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 27 more
+
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:21:18.937 - 2020-10-28 16:21:18.988
+Cost 51
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=c1e51caa149aed58459fdc0a75e8c3f8
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:21:18.937 - 2020-10-28 16:21:18.988
+Cost 51
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=c1e51caa149aed58459fdc0a75e8c3f8
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:21:19.416 - 2020-10-28 16:21:19.474
+Cost 58
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=e5d101ade40d83ec936e401724ec8e6f
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-检测是否绑定手机号
+Time 2020-10-28 16:21:19.416 - 2020-10-28 16:21:19.474
+Cost 58
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.passport.isBind
+
+POST data:
+id_shop=4&session3rd=e5d101ade40d83ec936e401724ec8e6f
+
+[no cookies]
+
+Response data:
+{"status":-1,"msg":"\u767b\u5f55\u8d85\u65f6\uff0c\u8bf7\u91cd\u65b0\u767b\u5f55"}
+======end=======
+
+sampler error
+======beg=======
+Sampler --首页-获取首页数据
+Time 2020-10-28 16:21:19.924 - 2020-10-28 16:21:20.469
+Cost 545
+POST https://wx-test.fishfay.com/gatewx.html?method=wechat.user.cms.homepage
+
+POST data:
+id=A&id_shop=4&session3rd=ecdd101dfc9129dc07cae9b2ec8b8f72
+
+[no cookies]
+
+Response data:
+javax.net.ssl.SSLException: Socket closed
+	at sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:327)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:270)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:141)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1201)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1168)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:74)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:834)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.io.ChunkedInputStream.getChunkSize(ChunkedInputStream.java:261)
+	at org.apache.http.impl.io.ChunkedInputStream.nextChunk(ChunkedInputStream.java:222)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:183)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:148)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.readResponse(HTTPSamplerBase.java:1850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl.readResponse(HTTPAbstractImpl.java:477)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:600)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1231)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1220)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:622)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:546)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:486)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:253)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:466)
+	at sun.security.ssl.SSLSocketInputRecord.readFully(SSLSocketInputRecord.java:449)
+	at sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:242)
+	at sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:180)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	... 23 more
+
+======end=======
+
