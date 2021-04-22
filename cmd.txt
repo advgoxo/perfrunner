@@ -1,2 +1,8 @@
 jmeter.bat -n -Gxhome=C:\perfrunner -t C:\perfrunner\apache-jmeter-5.1.1\bin\anta-2020\anta_zt.jmx -r -l C:\perfrunner\xreport\zt\100\log\log.jtl -e -o C:\perfrunner\xreport\zt\100\report\ -j C:\perfrunner\xreport\zt\100\log\jmeter.log -Gxplan=100
 
+# 阿里平台
+jmeter.bat -n -Gxhome=C:\perfrunner -t C:\perfrunner\apache-jmeter-5.1.1\bin\anta-2020\anta_zt.jmx -r -l C:\perfrunner\xreport\zt\100\log\log.jtl -e -o C:\perfrunner\xreport\zt\100\report\ -j C:\perfrunner\xreport\zt\100\log\jmeter.log -Gxplan=100
+
+
+# 华为平台
+jmeter.bat -n -Gxhome=C:\perfrunner -t C:\perfrunner\apache-jmeter-5.1.1\bin\anta-2020\anta_zt_huawei.jmx -r -l C:\perfrunner\xreport\zt_huawei\100\log\log.jtl -e -o C:\perfrunner\xreport\zt_huawei\100\report\ -j C:\perfrunner\xreport\zt_huawei\100\log\jmeter.log -Gxplan=100
