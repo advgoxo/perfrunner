@@ -37,7 +37,7 @@
           </elementProp>
           <elementProp name="errSamplerFile" elementType="Argument">
             <stringProp name="Argument.name">errSamplerFile</stringProp>
-            <stringProp name="Argument.value">${__xhome(xreport/wds/${__P(xplan,100)}/error-${__machineIP()}.log,)}</stringProp>
+            <stringProp name="Argument.value">${__xhome(xreport/wgw/${__P(xplan,100)}/error-${__machineIP()}.log,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -95,7 +95,7 @@
         </RandomVariableConfig>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-          <stringProp name="filename">wds/usertoken.csv</stringProp>
+          <stringProp name="filename">wgw/usertoken.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd,id_shop,openid</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -302,7 +302,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wx-test.fishfay.com</stringProp>
+          <stringProp name="HTTPSampler.domain">wechat-test.fishfay.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -314,7 +314,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
         <hashTree/>
         <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="随机变量-buyway" enabled="true">
           <stringProp name="maximumValue">1</stringProp>
-          <stringProp name="minimumValue">0</stringProp>
+          <stringProp name="minimumValue">1</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <boolProp name="perThread">true</boolProp>
           <stringProp name="randomSeed"></stringProp>
@@ -322,7 +322,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
         </RandomVariableConfig>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-          <stringProp name="filename">wds/usertoken4.csv</stringProp>
+          <stringProp name="filename">wgw/usertoken21.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd,id_shop,openid</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -333,7 +333,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
           <stringProp name="shareMode">shareMode.all</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登陆" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登陆" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="method" elementType="HTTPArgument">
@@ -1973,7 +1973,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
               <stringProp name="delimiter">,</stringProp>
               <stringProp name="fileEncoding">UTF-8</stringProp>
-              <stringProp name="filename">wds/goods4.csv</stringProp>
+              <stringProp name="filename">wgw/goods21.csv</stringProp>
               <boolProp name="ignoreFirstLine">true</boolProp>
               <boolProp name="quotedData">true</boolProp>
               <boolProp name="recycle">true</boolProp>
@@ -2295,7 +2295,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="立即购买" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="立即购买" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
@@ -2521,6 +2521,13 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                     <stringProp name="Argument.name">id_ud</stringProp>
                   </elementProp>
+                  <elementProp name="snap" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.value">${unique}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">snap</stringProp>
+                  </elementProp>
                 </collectionProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain"></stringProp>
@@ -2575,7 +2582,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             </hashTree>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="加购物车" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="加购物车" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
@@ -2863,7 +2870,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 </BeanShellPostProcessor>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="--购物车-删除购物车商品" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="--购物车-删除购物车商品" enabled="false">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="id_cn" elementType="HTTPArgument">
@@ -3659,7 +3666,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="预售" enabled="false"/>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-            <stringProp name="filename">wds/ys_goods.csv</stringProp>
+            <stringProp name="filename">wgw/ys_goods.csv</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="variableNames">ys_id_goods,ys_id_shop</stringProp>
             <boolProp name="ignoreFirstLine">true</boolProp>
@@ -3705,7 +3712,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -3778,7 +3785,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -3851,7 +3858,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -3938,7 +3945,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -4005,7 +4012,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -4072,7 +4079,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -4145,7 +4152,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -4218,7 +4225,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -4291,7 +4298,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -4439,7 +4446,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                   <stringProp name="delimiter">,</stringProp>
                   <stringProp name="fileEncoding">UTF-8</stringProp>
-                  <stringProp name="filename">wds/goods4.csv</stringProp>
+                  <stringProp name="filename">wgw/goods4.csv</stringProp>
                   <boolProp name="ignoreFirstLine">true</boolProp>
                   <boolProp name="quotedData">true</boolProp>
                   <boolProp name="recycle">true</boolProp>
@@ -4498,7 +4505,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                   <stringProp name="delimiter">,</stringProp>
                   <stringProp name="fileEncoding">UTF-8</stringProp>
-                  <stringProp name="filename">wds/goods4.csv</stringProp>
+                  <stringProp name="filename">wgw/goods4.csv</stringProp>
                   <boolProp name="ignoreFirstLine">true</boolProp>
                   <boolProp name="quotedData">true</boolProp>
                   <boolProp name="recycle">true</boolProp>
@@ -5727,7 +5734,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             </hashTree>
           </hashTree>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取专题页数据" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取专题页数据" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="id" elementType="HTTPArgument">
@@ -5755,7 +5762,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
         </HTTPSamplerProxy>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-            <stringProp name="filename">wds/cms.csv</stringProp>
+            <stringProp name="filename">wgw/cms.csv</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="variableNames">cms_id,cms_id_shop</stringProp>
             <boolProp name="ignoreFirstLine">true</boolProp>
@@ -5938,7 +5945,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
         </ConfigTestElement>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-          <stringProp name="filename">wds/usertoken.csv</stringProp>
+          <stringProp name="filename">wgw/usertoken.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd,id_shop,openid</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -8110,7 +8117,7 @@ if (!prev.isSuccessful()) {
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - goods" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
-          <stringProp name="filename">wds/goods.csv</stringProp>
+          <stringProp name="filename">wgw/goods.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">true</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -8120,7 +8127,7 @@ if (!prev.isSuccessful()) {
         </CSVDataSet>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - usertoken4" enabled="true">
-          <stringProp name="filename">wds/usertoken4.csv</stringProp>
+          <stringProp name="filename">wgw/usertoken4.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd4,id_shop4,openid4</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -8132,7 +8139,7 @@ if (!prev.isSuccessful()) {
         </CSVDataSet>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - usertoken7" enabled="true">
-          <stringProp name="filename">wds/usertoken7.csv</stringProp>
+          <stringProp name="filename">wgw/usertoken7.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd7,id_shop7,openid7</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -8269,7 +8276,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="false">
               <stringProp name="delimiter">,</stringProp>
               <stringProp name="fileEncoding">UTF-8</stringProp>
-              <stringProp name="filename">wds/goods4.csv</stringProp>
+              <stringProp name="filename">wgw/goods4.csv</stringProp>
               <boolProp name="ignoreFirstLine">true</boolProp>
               <boolProp name="quotedData">true</boolProp>
               <boolProp name="recycle">true</boolProp>
@@ -8862,7 +8869,7 @@ if (!prev.isSuccessful()) {
         </RandomVariableConfig>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - idsku.csv" enabled="true">
-          <stringProp name="filename">wds/idsku.csv</stringProp>
+          <stringProp name="filename">wgw/idsku.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">id_sku,stock,id_goods,id_shop</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -8874,7 +8881,7 @@ if (!prev.isSuccessful()) {
         </CSVDataSet>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - usertoken4" enabled="true">
-          <stringProp name="filename">wds/usertoken4.csv</stringProp>
+          <stringProp name="filename">wgw/usertoken4.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd4,id_shop4,openid4</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -8886,7 +8893,7 @@ if (!prev.isSuccessful()) {
         </CSVDataSet>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - usertoken7" enabled="true">
-          <stringProp name="filename">wds/usertoken7.csv</stringProp>
+          <stringProp name="filename">wgw/usertoken7.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd7,id_shop7,openid7</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -9332,7 +9339,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                     </JSONPathAssertion>
                     <hashTree/>
                     <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - idsku4.csv" enabled="true">
-                      <stringProp name="filename">wds/idsku4.csv</stringProp>
+                      <stringProp name="filename">wgw/idsku4.csv</stringProp>
                       <stringProp name="fileEncoding">UTF-8</stringProp>
                       <stringProp name="variableNames">id_sku4,stock4,id_goods4,id_shop4</stringProp>
                       <boolProp name="ignoreFirstLine">true</boolProp>
@@ -9344,7 +9351,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                     </CSVDataSet>
                     <hashTree/>
                     <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - idsku7.csv" enabled="true">
-                      <stringProp name="filename">wds/idsku7.csv</stringProp>
+                      <stringProp name="filename">wgw/idsku7.csv</stringProp>
                       <stringProp name="fileEncoding">UTF-8</stringProp>
                       <stringProp name="variableNames">id_sku7,stock7,id_goods7,id_shop7</stringProp>
                       <boolProp name="ignoreFirstLine">true</boolProp>
@@ -10350,7 +10357,7 @@ if (!prev.isSuccessful()) {
         </RandomVariableConfig>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-          <stringProp name="filename">wds/usertoken4.csv</stringProp>
+          <stringProp name="filename">wgw/usertoken4.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd,id_shop,openid</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -10470,7 +10477,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -12215,7 +12222,7 @@ if (!prev.isSuccessful()) {
         </RandomVariableConfig>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-          <stringProp name="filename">wds/usertoken4.csv</stringProp>
+          <stringProp name="filename">wgw/usertoken4.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd,id_shop,openid</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -12298,7 +12305,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="预售" enabled="true"/>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-            <stringProp name="filename">wds/ys_goods.csv</stringProp>
+            <stringProp name="filename">wgw/ys_goods.csv</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="variableNames">ys_id_goods,ys_id_shop</stringProp>
             <boolProp name="ignoreFirstLine">true</boolProp>
@@ -12344,7 +12351,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -12417,7 +12424,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -12490,7 +12497,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -12577,7 +12584,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -12644,7 +12651,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -12711,7 +12718,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -12784,7 +12791,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -12857,7 +12864,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -12930,7 +12937,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="filename">wds/goods4.csv</stringProp>
+                <stringProp name="filename">wgw/goods4.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">true</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -13078,7 +13085,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                   <stringProp name="delimiter">,</stringProp>
                   <stringProp name="fileEncoding">UTF-8</stringProp>
-                  <stringProp name="filename">wds/goods4.csv</stringProp>
+                  <stringProp name="filename">wgw/goods4.csv</stringProp>
                   <boolProp name="ignoreFirstLine">true</boolProp>
                   <boolProp name="quotedData">true</boolProp>
                   <boolProp name="recycle">true</boolProp>
@@ -13137,7 +13144,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                 <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
                   <stringProp name="delimiter">,</stringProp>
                   <stringProp name="fileEncoding">UTF-8</stringProp>
-                  <stringProp name="filename">wds/goods4.csv</stringProp>
+                  <stringProp name="filename">wgw/goods4.csv</stringProp>
                   <boolProp name="ignoreFirstLine">true</boolProp>
                   <boolProp name="quotedData">true</boolProp>
                   <boolProp name="recycle">true</boolProp>
@@ -13453,7 +13460,7 @@ if (!prev.isSuccessful()) {
         </RandomVariableConfig>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-          <stringProp name="filename">wds/usertoken4.csv</stringProp>
+          <stringProp name="filename">wgw/usertoken4.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd,id_shop,openid</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -14456,7 +14463,7 @@ if (!prev.isSuccessful()) {
         </RandomVariableConfig>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-          <stringProp name="filename">wds/usertoken4.csv</stringProp>
+          <stringProp name="filename">wgw/usertoken4.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd,id_shop,openid</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -15390,7 +15397,7 @@ if (!prev.isSuccessful()) {
         </RandomVariableConfig>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-          <stringProp name="filename">wds/usertoken4.csv</stringProp>
+          <stringProp name="filename">wgw/usertoken4.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd,id_shop,openid</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
@@ -15498,7 +15505,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
         </HTTPSamplerProxy>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-            <stringProp name="filename">wds/cms.csv</stringProp>
+            <stringProp name="filename">wgw/cms.csv</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="variableNames">cms_id,cms_id_shop</stringProp>
             <boolProp name="ignoreFirstLine">true</boolProp>
