@@ -4320,7 +4320,7 @@ if (!prev.isSuccessful()) {
         </BeanShellListener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 商品详情" enabled="true">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 商品详情" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
@@ -5065,7 +5065,7 @@ if (!prev.isSuccessful()) {
         </BeanShellListener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 立即购买/加购物车-&gt;下单" enabled="false">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 立即购买/加购物车-&gt;下单" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
@@ -5127,8 +5127,8 @@ if (!prev.isSuccessful()) {
         </ConfigTestElement>
         <hashTree/>
         <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="随机变量-buyway" enabled="true">
-          <stringProp name="maximumValue">0</stringProp>
-          <stringProp name="minimumValue">0</stringProp>
+          <stringProp name="maximumValue">1</stringProp>
+          <stringProp name="minimumValue">1</stringProp>
           <stringProp name="outputFormat"></stringProp>
           <boolProp name="perThread">true</boolProp>
           <stringProp name="randomSeed"></stringProp>
@@ -5147,10 +5147,10 @@ if (!prev.isSuccessful()) {
           <stringProp name="shareMode">shareMode.all</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - usertoken4" enabled="true">
-          <stringProp name="filename">wgw/usertoken4.csv</stringProp>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - usertoken21" enabled="true">
+          <stringProp name="filename">wgw/usertoken21.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
-          <stringProp name="variableNames">session3rd4,id_shop4,openid4</stringProp>
+          <stringProp name="variableNames">session3rd21,id_shop21,openid21</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">true</boolProp>
@@ -5159,7 +5159,7 @@ if (!prev.isSuccessful()) {
           <stringProp name="shareMode">shareMode.all</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - usertoken7" enabled="true">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - usertoken7" enabled="false">
           <stringProp name="filename">wgw/usertoken7.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">session3rd7,id_shop7,openid7</stringProp>
@@ -5179,8 +5179,10 @@ if (!prev.isSuccessful()) {
 
 int id_shop = Integer.parseInt(vars.get(&quot;id_shop&quot;));
 
-String openid = vars.get(&quot;openid4&quot;);
-String session3rd = vars.get(&quot;session3rd4&quot;);
+log.info(&quot;id_shop &quot; + vars.get(&quot;id_shop&quot;));
+
+String openid = vars.get(&quot;openid21&quot;);
+String session3rd = vars.get(&quot;session3rd21&quot;);
 
 if (id_shop == 7) {
 	openid = vars.get(&quot;openid7&quot;);
@@ -5605,7 +5607,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                       <boolProp name="ISREGEX">true</boolProp>
                     </JSONPathAssertion>
                     <hashTree/>
-                    <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - idsku4.csv" enabled="true">
+                    <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - idsku4.csv" enabled="false">
                       <stringProp name="filename">wgw/idsku4.csv</stringProp>
                       <stringProp name="fileEncoding">UTF-8</stringProp>
                       <stringProp name="variableNames">id_sku4,stock4,id_goods4,id_shop4</stringProp>
@@ -5617,7 +5619,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                       <stringProp name="shareMode">shareMode.all</stringProp>
                     </CSVDataSet>
                     <hashTree/>
-                    <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - idsku7.csv" enabled="true">
+                    <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - idsku7.csv" enabled="false">
                       <stringProp name="filename">wgw/idsku7.csv</stringProp>
                       <stringProp name="fileEncoding">UTF-8</stringProp>
                       <stringProp name="variableNames">id_sku7,stock7,id_goods7,id_shop7</stringProp>
@@ -5629,7 +5631,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
                       <stringProp name="shareMode">shareMode.all</stringProp>
                     </CSVDataSet>
                     <hashTree/>
-                    <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 后置处理程序" enabled="true">
+                    <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 后置处理程序" enabled="false">
                       <boolProp name="resetInterpreter">false</boolProp>
                       <stringProp name="parameters"></stringProp>
                       <stringProp name="filename"></stringProp>
