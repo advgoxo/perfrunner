@@ -75,7 +75,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wechat-test.fishfay.com</stringProp>
+          <stringProp name="HTTPSampler.domain">wx-test.fishfay.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -349,7 +349,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wechat-test.fishfay.com</stringProp>
+          <stringProp name="HTTPSampler.domain">wx-test.fishfay.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -3006,7 +3006,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 首页-&gt;搜索/砍价/优惠券/分类页" enabled="false">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 首页-&gt;搜索/砍价/优惠券/分类页" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
@@ -3057,7 +3057,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wechat-test.fishfay.com</stringProp>
+          <stringProp name="HTTPSampler.domain">wx-test.fishfay.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -3404,7 +3404,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             <hashTree/>
           </hashTree>
         </hashTree>
-        <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="搜索/砍价/优惠券/分类页" enabled="true">
+        <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="搜索/砍价/优惠券/分类页" enabled="false">
           <intProp name="InterleaveControl.style">1</intProp>
         </RandomController>
         <hashTree>
@@ -4371,7 +4371,7 @@ if (!prev.isSuccessful()) {
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wechat-test.fishfay.com</stringProp>
+          <stringProp name="HTTPSampler.domain">wx-test.fishfay.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -5065,7 +5065,7 @@ if (!prev.isSuccessful()) {
         </BeanShellListener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 立即购买/加购物车-&gt;下单" enabled="true">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 立即购买/加购物车-&gt;下单" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
@@ -5116,7 +5116,7 @@ if (!prev.isSuccessful()) {
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wechat-test.fishfay.com</stringProp>
+          <stringProp name="HTTPSampler.domain">wx-test.fishfay.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -6606,7 +6606,7 @@ if (!prev.isSuccessful()) {
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wechat-test.fishfay.com</stringProp>
+          <stringProp name="HTTPSampler.domain">wx-test.fishfay.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -8471,7 +8471,7 @@ if (!prev.isSuccessful()) {
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wechat-test.fishfay.com</stringProp>
+          <stringProp name="HTTPSampler.domain">wx-test.fishfay.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
