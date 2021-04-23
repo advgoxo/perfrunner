@@ -3175,7 +3175,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="首页" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="首页" enabled="false">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
@@ -3431,7 +3431,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             <hashTree/>
           </hashTree>
         </hashTree>
-        <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="搜索/分类页" enabled="false">
+        <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="搜索/分类页" enabled="true">
           <intProp name="InterleaveControl.style">1</intProp>
         </RandomController>
         <hashTree>
@@ -3725,13 +3725,13 @@ vars.put(&quot;searchword&quot;, words[index]);
 vars.put(&quot;searchword&quot;, &quot;&quot;);
 String[] paras = new String[]{
 	&quot;k2_k9-j1&quot;,
-	&quot;k2_k9-j2&quot;,
+	//&quot;k2_k9-j2&quot;,
 	&quot;k4&quot;,
-	&quot;k2_k9-f1-n11&quot;,
-	&quot;k2_k9-j1-e1&quot;,
-	&quot;k2_k9-j2-e1-f1&quot;,
-	&quot;k2_k9-j1-f4&quot;,
-	&quot;k2_k9-j1-f160&quot;,
+	//&quot;k2_k9-f1-n11&quot;,
+	//&quot;k2_k9-j1-e1&quot;,
+	//&quot;k2_k9-j2-e1-f1&quot;,
+	//&quot;k2_k9-j1-f4&quot;,
+	//&quot;k2_k9-j1-f160&quot;,
 	&quot;k2_k9-j1&quot;
 };
 
@@ -3848,7 +3848,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               </hashTree>
             </hashTree>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="分类页" enabled="true">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="分类页" enabled="false">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
             <boolProp name="TransactionController.parent">false</boolProp>
           </TransactionController>
