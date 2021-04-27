@@ -3084,7 +3084,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wx-test.fishfay.com</stringProp>
+          <stringProp name="HTTPSampler.domain">antawechat.fishfay.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -3175,7 +3175,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="首页" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="首页" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
@@ -3367,7 +3367,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               <hashTree/>
             </hashTree>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="--首页-检测是否绑定手机号" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="--首页-检测是否绑定手机号" enabled="false">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -3435,7 +3435,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
           <intProp name="InterleaveControl.style">1</intProp>
         </RandomController>
         <hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="搜索" enabled="true">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="搜索" enabled="false">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
             <boolProp name="TransactionController.parent">false</boolProp>
           </TransactionController>
@@ -3847,7 +3847,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
               </hashTree>
             </hashTree>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="分类页" enabled="false">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="分类页" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
             <boolProp name="TransactionController.parent">false</boolProp>
           </TransactionController>
@@ -4329,7 +4329,7 @@ if (!prev.isSuccessful()) {
       </hashTree>
       <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 商品详情" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">125</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
         <stringProp name="Start users count">50</stringProp>
         <stringProp name="Start users count burst">50</stringProp>
@@ -4378,7 +4378,7 @@ if (!prev.isSuccessful()) {
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wx-test.fishfay.com</stringProp>
+          <stringProp name="HTTPSampler.domain">antawechat.fishfay.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -4391,7 +4391,7 @@ if (!prev.isSuccessful()) {
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV - goods" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
-          <stringProp name="filename">wgw/goods21.csv</stringProp>
+          <stringProp name="filename">wgw/goods21_prod.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">true</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -4683,7 +4683,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="--商品详情-获取用户收藏信息" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="--商品详情-获取用户收藏信息" enabled="false">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="id_goods" elementType="HTTPArgument">
@@ -4807,7 +4807,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="--商品详情-获取商品sku信息" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="--商品详情-获取商品sku信息" enabled="false">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="id_goods" elementType="HTTPArgument">
@@ -5099,7 +5099,7 @@ if (!prev.isSuccessful()) {
         </BeanShellListener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 商品推荐" enabled="true">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 商品推荐" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">125</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
@@ -8858,9 +8858,9 @@ if (!prev.isSuccessful()) {
         </BeanShellListener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 获取专题页数据" enabled="false">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - 获取专题页数据" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">125</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
         <stringProp name="Start users count">25</stringProp>
         <stringProp name="Start users count burst">25</stringProp>
@@ -8914,7 +8914,7 @@ if (!prev.isSuccessful()) {
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">wx-test.fishfay.com</stringProp>
+          <stringProp name="HTTPSampler.domain">antawechat.fishfay.com</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -9042,7 +9042,7 @@ vars.put(&quot;xResponseData&quot;, prev.getResponseDataAsString());
         </HTTPSamplerProxy>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
-            <stringProp name="filename">wgw/cms.csv</stringProp>
+            <stringProp name="filename">wgw/cms_prod.csv</stringProp>
             <stringProp name="fileEncoding">UTF-8</stringProp>
             <stringProp name="variableNames">cms_id,cms_id_shop</stringProp>
             <boolProp name="ignoreFirstLine">true</boolProp>
